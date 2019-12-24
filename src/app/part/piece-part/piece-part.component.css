@@ -1,0 +1,27 @@
+.input-group-prepend {
+    width: 25%;
+}
+
+.input-group-text {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+h4, h5, p {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 200
+}
+
+p {
+    font-size: .75rem;
+    text-align: justify;
+}
+
+img {
+    height:40%;
+    width: 100%
+}

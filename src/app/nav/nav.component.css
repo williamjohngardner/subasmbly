@@ -1,0 +1,5 @@
+li > a {
+    font-family: 'Montserrrat', sans-serif;
+    font-weight: 400;
+    text-transform: lowercase;
+}

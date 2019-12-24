@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row pt-3 px-3">
+        <div class="col-12 mb-2">
+            <h4>{{this.user}}'s Parts Library</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover mx-3 px-5">
+                <thead class="thead-light">
+                    <th>Part Name</th>
+                    <th>Part Number</th>
+                    <th>Finish</th>
+                    <th>Material</th>
+                    <th>Manufacturer</th>
+                    <th>Revision</th>
+                    <th>Unit Type</th>
+                    <th>Cost/Unit</th>
+                    <th>Price/Unit</th>
+                </thead>
+                <tbody *ngFor="let part of partsList; let i = index">
+                    <tr>
+                        <td (click)="openPart(part._id)" style="cursor: pointer"    >{{part.partName}}</td>
+                        <!-- <td><app-piece-part [part]="part"></app-piece-part></td> -->
+                        <td>{{part.partNumber}}</td>
+                        <td>{{part.finish}}</td>
+                        <td>{{part.material}}</td>
+                        <td>{{part.manufacturer}}</td>
+                        <td>{{part.revision}}</td>
+                        <td>{{part.unitType}}</td>
+                        <td>{{part.costPerUnit}}</td>
+                        <td>{{part.pricePerUnit}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

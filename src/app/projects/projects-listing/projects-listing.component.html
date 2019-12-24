@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row pt-3 px-3">
+        <div class="col-12 mb-2">
+            <h4>{{this.user}}'s Projects Library</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover mx-3 px-5">
+                <thead class="thead-light">
+                    <th>Project Name</th>
+                    <th>Deliverables</th>
+                    <th>Assemblies</th>
+                    <th>SubAssemblies</th>
+                    <th>Piece Parts</th>
+                    <th>Project Cost</th>
+                    <th>Project Price</th>
+                </thead>
+                <tbody *ngFor="let project of _projects['_value']['projects']; let i = index">
+                    <tr>
+                        <td (click)="openProject(project._id)" style="cursor: pointer">{{project.name}}</td>
+                        <td>{{project.deliverables}}</td>
+                        <td>{{project.assemblies}}</td>
+                        <td>{{project.subAssemblies}}</td>
+                        <td>{{project.pieceParts}}</td>
+                        <td>{{project.projectCost | currency}}</td>
+                        <td>{{project.projectPrice | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

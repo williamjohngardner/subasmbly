@@ -1,0 +1,112 @@
+{
+    "parts": [
+        {
+            "_id": 0,
+            "partName": "Wood Screw 1.25 in",
+            "partNumber": "45-45677-25-25",
+            "finish": "Black Coated",
+            "material": "Steel",
+            "manufacturer": "Union Proudcts",
+            "revision": 2,
+            "unitType": "each",
+            "costPerUnit": 0.20,
+            "pricePerUnit": 0.20,
+            "description": "Lorem ipsum dolor amet flexitarian cronut hoodie cold-pressed ethical street art. Freegan salvia stumptown hella seitan, literally listicle blue bottle polaroid everyday carry letterpress."
+        },
+        {
+            "_id": 1,
+            "partName": "Lumber, 2x4x8",
+            "partNumber": "12-87654-25-25",
+            "finish": "None",
+            "material": "Pine",
+            "manufacturer": "Green Mountain Proudcts",
+            "revision": 1,
+            "unitType": "each",
+            "costPerUnit": 3.54,
+            "pricePerUnit": 4.50,
+            "description": "Lorem ipsum dolor amet flexitarian cronut hoodie cold-pressed ethical street art. Freegan salvia stumptown hella seitan, literally listicle blue bottle polaroid everyday carry letterpress."
+        },
+        {
+            "_id": 2,
+            "partName": "Tile 24x24",
+            "partNumber": "33-93847-25-25",
+            "finish": "Black Coated",
+            "material": "Steel",
+            "manufacturer": "Tiles-R-Us",
+            "revision": 1,
+            "unitType": "each",
+            "costPerUnit": 1.43,
+            "pricePerUnit": 2.34,
+            "description": "Lorem ipsum dolor amet flexitarian cronut hoodie cold-pressed ethical street art. Freegan salvia stumptown hella seitan, literally listicle blue bottle polaroid everyday carry letterpress."
+        }
+    ],
+    "projects": [
+        {
+            "name": "IFE",
+            "_id": 1,
+            "deliverables": 12,
+            "assemblies": 15,
+            "subAssemblies": 45,
+            "pieceParts": 182,
+            "projectCost": 45698,
+            "projectPrice": 76594
+        },
+        {
+            "name": "BMK",
+            "_id": 2,
+            "deliverables": 12,
+            "assemblies": 15,
+            "subAssemblies": 45,
+            "pieceParts": 182,
+            "projectCost": 45698,
+            "projectPrice": 76594
+        },
+        {
+            "name": "ALSTOM",
+            "_id": 3,
+            "deliverables": 12,
+            "assemblies": 15,
+            "subAssemblies": 45,
+            "pieceParts": 182,
+            "projectCost": 45698,
+            "projectPrice": 76594
+        },
+        {
+            "name": "Niermann Weeks",
+            "_id": 4,
+            "deliverables": 12,
+            "assemblies": 15,
+            "subAssemblies": 45,
+            "pieceParts": 182,
+            "projectCost": 45698,
+            "projectPrice": 76594
+        }
+    ],
+
+    "assemblies": [
+        {
+            "name": "Balmain Lamp",
+            "_id": 1
+        },
+        {
+            "name": "WMATA 2/3K Door Operator",
+            "_id": 2
+        },
+        {
+            "name": "150 S. East Street",
+            "_id": 3
+        },
+        {
+            "name": "WMATA 6000 Door Operator",
+            "_id": 4
+        }
+    ],
+
+    "profiles": [
+        {
+            "name": "Bill Gardner",
+            "userName": "bgardner",
+            "password": "safepass"
+        }
+    ]
+}
