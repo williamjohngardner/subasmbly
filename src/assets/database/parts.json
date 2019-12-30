@@ -54,32 +54,32 @@
         {
             "name": "BMK",
             "_id": 2,
-            "deliverables": 12,
-            "assemblies": 15,
-            "subAssemblies": 45,
-            "pieceParts": 182,
-            "projectCost": 45698,
-            "projectPrice": 76594
+            "deliverables": 10,
+            "assemblies": 24,
+            "subAssemblies": 56,
+            "pieceParts": 654,
+            "projectCost": 89743,
+            "projectPrice": 90734
         },
         {
             "name": "ALSTOM",
             "_id": 3,
-            "deliverables": 12,
-            "assemblies": 15,
-            "subAssemblies": 45,
-            "pieceParts": 182,
-            "projectCost": 45698,
-            "projectPrice": 76594
+            "deliverables": 3,
+            "assemblies": 45,
+            "subAssemblies": 23,
+            "pieceParts": 45,
+            "projectCost": 23458,
+            "projectPrice": 35412
         },
         {
             "name": "Niermann Weeks",
             "_id": 4,
-            "deliverables": 12,
-            "assemblies": 15,
-            "subAssemblies": 45,
-            "pieceParts": 182,
-            "projectCost": 45698,
-            "projectPrice": 76594
+            "deliverables": 45,
+            "assemblies": 56,
+            "subAssemblies": 68,
+            "pieceParts": 987,
+            "projectCost": 987678,
+            "projectPrice": 15234765
         }
     ],
 

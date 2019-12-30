@@ -20,8 +20,7 @@
                 </thead>
                 <tbody *ngFor="let part of partsList; let i = index">
                     <tr>
-                        <td (click)="openPart(part._id)" style="cursor: pointer"    >{{part.partName}}</td>
-                        <!-- <td><app-piece-part [part]="part"></app-piece-part></td> -->
+                        <td (click)="openPart(part._id)" style="cursor: pointer">{{part.partName}}</td>
                         <td>{{part.partNumber}}</td>
                         <td>{{part.finish}}</td>
                         <td>{{part.material}}</td>

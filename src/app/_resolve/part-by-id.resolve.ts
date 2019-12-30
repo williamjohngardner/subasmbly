@@ -11,7 +11,6 @@ export class PartByIdResolve implements Resolve<Part> {
   constructor () {}
   
   resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    console.log('PARTS: ', parts.parts[route.params.id]);
     return parts.parts[route.params.id];
   }
 }

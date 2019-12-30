@@ -6,11 +6,12 @@ import projects from '../../assets/database/parts.json';
 import { Project } from '../projects/project';
 
 @Injectable()
-export class ProjectResolve implements Resolve<any> {
+export class ProjectByIdResolve implements Resolve<any> {
   
   constructor () {}
   
   resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return projects.projects;
+    console.log('ROUTE PARAMS ID:', route.params.id);
+    return projects.projects[route.params.id];
   }
 }

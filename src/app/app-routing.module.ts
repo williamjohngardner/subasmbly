@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { HomeComponent } from './home/home.component';
+import { ProjectsListingComponent } from './projects/projects-listing/projects-listing.component';
+import { ProjectComponent } from './projects/project/project.component'
 import { PiecePartListingComponent } from './part/piece-part-listing/piece-part-listing.component'
 import { PiecePartComponent } from './part/piece-part/piece-part.component'
-import { ProjectComponent } from './projects/project/project.component'
-import { HomeComponent } from './home/home.component';
 
 import { PartByIdResolve } from './_resolve/part-by-id.resolve';
 import { ProjectResolve } from './_resolve/project.resolve';
-import { ProjectsListingComponent } from './projects/projects-listing/projects-listing.component';
+import { ProjectByIdResolve } from './_resolve/project-by-id.resolve';
+
 
 
 const routes: Routes = [
@@ -44,7 +46,10 @@ const routes: Routes = [
       {
         path: ':id',
         component: ProjectComponent,
-        runGuardsAndResolvers: 'always'
+        runGuardsAndResolvers: 'always',
+        resolve: {
+          project: ProjectByIdResolve
+        }
       }
     ]
   }
@@ -59,7 +64,8 @@ const routes: Routes = [
   ],
   providers: [
     PartByIdResolve,
-    ProjectResolve
+    ProjectResolve,
+    ProjectByIdResolve
   ]
 })
 export class AppRoutingModule { }

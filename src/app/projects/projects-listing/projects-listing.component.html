@@ -17,8 +17,8 @@
                     <th>Project Price</th>
                 </thead>
                 <tbody *ngFor="let project of _projects['_value']['projects']; let i = index">
-                    <tr>
-                        <td (click)="openProject(project._id)" style="cursor: pointer">{{project.name}}</td>
+                    <tr (click)="openProject(project._id)" style="cursor: pointer">
+                        <td>{{project.name}}</td>
                         <td>{{project.deliverables}}</td>
                         <td>{{project.assemblies}}</td>
                         <td>{{project.subAssemblies}}</td>

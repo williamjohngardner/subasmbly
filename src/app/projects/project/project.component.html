@@ -1,1 +1,70 @@
-<p>projects works!</p>
+<div class="container">
+    <div class="row pt-3">
+        <h2>{{_project.partName}}</h2>
+    </div>
+    <div class="row pt-2">
+        <h4>{{_project.name}}</h4>
+    </div>
+    <div class="row pt-3">
+        <div class="col-12 px-0">
+            <form>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text rounded-0 w-100">Name</div>
+                        </div>
+                        <input type="text" class="form-control rounded-0" id="name" placeholder="{{_project.name}}" value="{{_project.name}}">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text rounded-0 w-100">Deliverables</div>
+                        </div>
+                        <input type="text" class="form-control rounded-0" id="deliverables" placeholder="{{_project.deliverables}}" value="{{_project.deliverables}}">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text rounded-0 w-100">Assemblies</div>
+                        </div>
+                        <input type="text" class="form-control rounded-0" id="assemblies" placeholder="{{_project.assemblies}}" value="{{_project.assemblies}}">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text rounded-0 w-100">Sub Assemblies</div>
+                        </div>
+                        <input type="text" class="form-control rounded-0" id="subAssemblies" placeholder="{{_project.subAssemblies}}" value="{{_project.subAssemblies}}">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text rounded-0 w-100">Piece Parts</div>
+                        </div>
+                        <input type="text" class="form-control rounded-0" id="pieceParts" placeholder="{{_project.pieceParts}}" value="{{_project.pieceParts}}">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text rounded-0 w-100">Cost/Project</div>
+                        </div>
+                        <input type="text" class="form-control rounded-0" id="projectCost" placeholder="{{_project.projectCost | currency}}" value="{{_project.projectCost | currency}}">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text rounded-0 w-100">Price/Project</div>
+                        </div>
+                        <input type="text" class="form-control rounded-0" id="projectPrice" placeholder="{{_project.projectPrice | currency}}" value="{{_project.projectPrice | currency}}">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

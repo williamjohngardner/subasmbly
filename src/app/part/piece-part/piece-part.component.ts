@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Subject } from 'rxjs'
 import { Observable } from 'rxjs';
 
 import { Part } from '../part'

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-project',
@@ -7,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  constructor() { }
+  public _project: Observable<object> = this._route.data['_value']['project'];
+
+  constructor(
+    readonly _router: Router,
+    readonly _route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
   }
