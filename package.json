@@ -1,16 +1,10 @@
 {
   "name": "subasmbly",
   "version": "0.0.0",
-  "main": "/lib/subasmbly.js",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
   "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
   "dependencies": {
     "@angular/animations": "~8.2.13",
     "@angular/common": "~8.2.13",
@@ -22,8 +16,14 @@
     "@angular/router": "~8.2.13",
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "bootstrap": "^4.4.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
     "express": "^4.17.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "jquery": "^3.4.1",
     "mongoose": "^5.8.5",
+    "morgan": "~1.9.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

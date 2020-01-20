@@ -41,30 +41,5 @@ const partSchema = new mongoose.Schema({
 
 const Part = mongoose.model('Part', partSchema);
 
-Part.create({
-    partName: 'Wood Screw, ss, #8 x .375',
-    partNumber: '34-3456-34-65',
-    description: 'Wood Screw',
-    catagory: 'hardware',
-    subCategory: 'fasteners',
-    purchasedPart: {
-        purchased: true,
-        manufacturer: 'Wood Screw Mfgs',
-        mfgPn: '1234RTG76',
-        purchasePrice: .35,
-        uom: 'ea',
-        url: 'https://homedepot.com/woodscrew/?pn=1234RTG76',
-        vendor: 'Home Depot'
-    },
-    dimension: '#8 x .375"',
-    material: 'stainless steel',
-    finish: 'none', // Foreign Key to Finish Model
-    plating: 'none', // Foreign Key to Plating Model\
-    uom: 'ea',
-    unitCost: .35,
-    unitPrice: .50
-}, function (err, woodscrew) {
-    if (err) return handleError(err);
-});
 
 module.exports = partSchema;

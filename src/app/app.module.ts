@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -28,6 +29,7 @@ import { ProjectComponent } from './projects/project/project.component';
     BrowserModule,
     AppRoutingModule,
     RouterModule,
+    HttpClientModule,
     NgbModule
   ],
   providers: [],

@@ -1,10 +1,13 @@
 const express = require('express')
 const mongoose = require('mongoose');
-const Part = require(/models/part.js)
 
 // Express Connection
 const app = express()
 const port = 3000
+
+app.get('/api/v1/parts', function (req, res) {
+  res.send('GET request to the homepage')
+})
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
