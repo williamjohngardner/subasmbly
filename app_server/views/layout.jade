@@ -3,6 +3,25 @@ html
   head
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
+  .navbar.navbar-default.navbar-fixed-top
+    .container
+      .navbar-header
+        a.navbar-brand(href='/') Loc8r
+        button.navbar-toggle(type='button', data-toggle='collapse', datatarget='#navbar-main')
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      #navbar-main.navbar-collapse.collapse
+        ul.nav.navbar-nav
+          li
+            a(href='/about/') About
+.container
+  block content
+
+  footer
+    .row
+      .col-xs-12
+        small &copy; Simon Holmes 2014
