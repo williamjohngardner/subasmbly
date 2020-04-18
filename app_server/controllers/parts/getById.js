@@ -2,11 +2,11 @@
 'use strict';
 
 const mongoose = require('mongoose');
-const part = mongoose.model('Part');
+// const part = mongoose.model('Part');
 
-const getById = function (res, status, content) {
-    res.status(status);
-    res.json(content);
+const getById = function (req, res) {
+    res.status(200);
+    res.json({"status" : "success"});
 };
 
 module.exports = getById;
