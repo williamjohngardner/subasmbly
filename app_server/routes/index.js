@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 // const ctrlMain = require('../controllers/main');
-const dashboard = require('../controllers/dashboard')
-const parts = require('../controllers/parts');
-const projects = require('../controllers/projects');
-const subassemblies = require('../controllers/subassemblies');
+const dashboard = require('./dashboard')
+const parts = require('./parts');
+const projects = require('./projects');
+const subassemblies = require('./subassemblies');
 
 /* Dashboard API */
 router.get('/', dashboard.get);

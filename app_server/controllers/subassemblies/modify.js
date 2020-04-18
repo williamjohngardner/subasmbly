@@ -3,6 +3,4 @@ const modify = function (res, status, content) {
     res.json(content);
 };
 
-module.exports.locationsCreate = function (req, res) {
-    modify(res, 200, { "status": "success" });
-};
+module.exports = modify;

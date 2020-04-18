@@ -42,4 +42,4 @@ const partSchema = new mongoose.Schema({
 const Part = mongoose.model('Part', partSchema);
 
 
-module.exports = partSchema;
+module.exports = Part;
