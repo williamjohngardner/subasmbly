@@ -7,6 +7,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { WINDOW_PROVIDERS } from './_services/window.provider';
+import { HostProviderService } from './_services/host-provider.service';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
@@ -32,7 +35,10 @@ import { ProjectComponent } from './projects/project/project.component';
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [
+    WINDOW_PROVIDERS,
+    HostProviderService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

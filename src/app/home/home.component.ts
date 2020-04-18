@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import { DataService } from '../_services/data.service';
 
@@ -7,14 +7,14 @@ import { DataService } from '../_services/data.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements AfterViewInit {
   public data: any;
 
   constructor(
     readonly _dataService: DataService
   ) { }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this._dataService.getData()
       .subscribe(data => {
         data = this.data;
