@@ -17,7 +17,7 @@ export class HomeComponent implements AfterViewInit {
   ngAfterViewInit() {
     this._dataService.getData()
       .subscribe(data => {
-        data = this.data;
+        this.data = data;
         console.log('DATA: ', data);
       })
   }

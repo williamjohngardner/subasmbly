@@ -19,20 +19,28 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser()); // parses cookie info from incoming request
 app.use(express.static(path.join(__dirname, 'public')));
 
-/*
- * This prevents the web service from blocking these type of requests from other
- * servers on the system.
-*/
-// app.use(function (req, res, next) {
-//   res.header('Access-Control-Expose-Headers', 'X-TotalCount');
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Authorization, Accept, Access-Control-Allow-Headers');
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE, CONNECT');
-//   next();
-// });
+// Add headers
+app.use(function (req, res, next) {
+
+  // Website you wish to allow to connect
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
+
+  // Request methods you wish to allow
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+  // Request headers you wish to allow
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+  // Set to true if you need the website to include cookies in the requests sent
+  // to the API (e.g. in case you use sessions)
+  res.setHeader('Access-Control-Allow-Credentials', true);
+
+  // Pass to next layer of middleware
+  next();
+});
 
 // ROUTES
-app.use('/', indexRouter);
+app.use('/api/v1', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class DataService {
   readonly hostname: string = this._host.getHostname();
-  readonly dataUrl: string = `http://localhost:3000/parts`
+  readonly dataUrl: string = `http://localhost:3000/api/v1/`
   // readonly _header = {
   //   headers: new HttpHeaders({
   //     'Content-Type': 'application/json',
@@ -23,6 +23,6 @@ export class DataService {
   ) { }
 
   public getData (): Observable<any> {
-    return this.http.get<any>(this.dataUrl);
+    return this.http.get<any>(`${this.dataUrl}parts`);
   }
 }
