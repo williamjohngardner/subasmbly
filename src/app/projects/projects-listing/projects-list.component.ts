@@ -4,11 +4,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-projects-listing',
-  templateUrl: './projects-listing.component.html',
-  styleUrls: ['./projects-listing.component.css']
+  selector: 'app-projects-list',
+  templateUrl: './projects-list.component.html',
+  styleUrls: ['./projects-list.component.css']
 })
-export class ProjectsListingComponent {
+export class ProjectsListComponent {
 
   public user: string = 'Bill Gardner';
   public _projects: Observable<object> = this._route.data;

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component';
-import { ProjectsListingComponent } from './projects/projects-listing/projects-listing.component';
+import { HomeComponent } from './dashboard/dashboard.component';
+import { ProjectsListComponent } from './projects/projects-listing/projects-list.component';
 import { ProjectComponent } from './projects/project/project.component'
 import { PiecePartListingComponent } from './part/piece-part-listing/piece-part-listing.component'
 import { PiecePartComponent } from './part/piece-part/piece-part.component'
@@ -37,7 +37,7 @@ const routes: Routes = [
     children: [
       { 
         path: '',
-        component: ProjectsListingComponent,
+        component: ProjectsListComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
           projects: ProjectResolve

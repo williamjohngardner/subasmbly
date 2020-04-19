@@ -11,12 +11,14 @@ import { WINDOW_PROVIDERS } from './_services/window.provider';
 import { HostProviderService } from './_services/host-provider.service';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './dashboard/dashboard.component';
 import { NavComponent } from './nav/nav.component';
 import { PiecePartComponent } from './part/piece-part/piece-part.component';
 import { PiecePartListingComponent } from './part/piece-part-listing/piece-part-listing.component';
-import { ProjectsListingComponent } from './projects/projects-listing/projects-listing.component';
+import { ProjectsListComponent } from './projects/projects-listing/projects-list.component';
 import { ProjectComponent } from './projects/project/project.component';
+import { AssemblyComponent } from './assembly/assembly.component';
+import { SubassemblyComponent } from './subassembly/subassembly.component';
 
 @NgModule({
   declarations: [
@@ -25,8 +27,10 @@ import { ProjectComponent } from './projects/project/project.component';
     HomeComponent,
     NavComponent,
     PiecePartListingComponent,
-    ProjectsListingComponent,
-    ProjectComponent
+    ProjectsListComponent,
+    ProjectComponent,
+    AssemblyComponent,
+    SubassemblyComponent
   ],
   imports: [
     BrowserModule,
