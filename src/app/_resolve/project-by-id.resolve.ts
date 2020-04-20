@@ -3,7 +3,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 
 import projects from '../../assets/database/parts.json';
 
-import { Project } from '../projects/project';
+import { Project } from '../project/project';
 
 @Injectable()
 export class ProjectByIdResolve implements Resolve<any> {

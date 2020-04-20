@@ -2,32 +2,39 @@ const express = require('express');
 const router = express.Router();
 // const ctrlMain = require('../controllers/main');
 const dashboard = require('./dashboard')
-const parts = require('./parts');
-const projects = require('./projects');
-const subassemblies = require('./subassemblies');
+const parts = require('./part');
+const projects = require('./project');
+const subassembly = require('./subassembly');
 
 /* Dashboard API */
 router.get('/', dashboard.get);
 
-/* Projects API */
-router.get('/projects', projects.get);
-router.get('/projects/:id', projects.getById);
-router.post('/projects', projects.create);
-router.put('/projects/:id', projects.modify);
-router.delete('/projects/:id', projects.remove);
-
-/* Subassemblies API */
-router.get('/subassemblies', subassemblies.get);
-router.get('/subassemblies/:id', subassemblies.getById);
-router.post('/subassemblies', subassemblies.create);
-router.put('/subassemblies/:id', subassemblies.modify);
-router.delete('/subassemblies/:id', subassemblies.remove);
+/* Assembly API */
+router.get('/assembly', subassembly.get);
+router.get('/assembly/:id', subassembly.getById);
+router.post('/assembly', subassembly.create);
+router.put('/assembly/:id', subassembly.modify);
+router.delete('/assembly/:id', subassembly.remove);
 
 /* Parts API */
-router.get('/parts', parts.get);
-router.get('/parts/:id', parts.getById);
-router.post('/parts', parts.create);
-router.put('/parts/:id', parts.modify);
-router.delete('/parts/:id', parts.remove);
+router.get('/part', parts.get);
+router.get('/part/:id', parts.getById);
+router.post('/part', parts.create);
+router.put('/part/:id', parts.modify);
+router.delete('/part/:id', parts.remove);
+
+/* Projects API */
+router.get('/project', projects.get);
+router.get('/project/:id', projects.getById);
+router.post('/project', projects.create);
+router.put('/project/:id', projects.modify);
+router.delete('/project/:id', projects.remove);
+
+/* Subassembly API */
+router.get('/subassembly', subassembly.get);
+router.get('/subassembly/:id', subassembly.getById);
+router.post('/subassembly', subassembly.create);
+router.put('/subassembly/:id', subassembly.modify);
+router.delete('/subassembly/:id', subassembly.remove);
 
 module.exports = router;

@@ -13,24 +13,28 @@ import { HostProviderService } from './_services/host-provider.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './dashboard/dashboard.component';
 import { NavComponent } from './nav/nav.component';
+import { AssemblyComponent } from './assembly/assembly/assembly.component';
+import { AssemblyListingComponent } from './assembly/assembly-listing/assembly-listing.component';
 import { PiecePartComponent } from './part/piece-part/piece-part.component';
 import { PiecePartListingComponent } from './part/piece-part-listing/piece-part-listing.component';
-import { ProjectsListComponent } from './projects/projects-listing/projects-list.component';
-import { ProjectComponent } from './projects/project/project.component';
-import { AssemblyComponent } from './assembly/assembly.component';
-import { SubassemblyComponent } from './subassembly/subassembly.component';
+import { ProjectComponent } from './project/project/project.component';
+import { ProjectsListComponent } from './project/projects-listing/projects-list.component';
+import { SubassemblyComponent } from './subassembly/subassembly/subassembly.component';
+import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PiecePartComponent,
     HomeComponent,
     NavComponent,
-    PiecePartListingComponent,
-    ProjectsListComponent,
-    ProjectComponent,
     AssemblyComponent,
-    SubassemblyComponent
+    AssemblyListingComponent,
+    PiecePartComponent,
+    PiecePartListingComponent,
+    ProjectComponent,
+    ProjectsListComponent,
+    SubassemblyComponent,
+    SubassemblyListingComponent
   ],
   imports: [
     BrowserModule,

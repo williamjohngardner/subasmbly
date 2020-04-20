@@ -2,10 +2,14 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './dashboard/dashboard.component';
-import { ProjectsListComponent } from './projects/projects-listing/projects-list.component';
-import { ProjectComponent } from './projects/project/project.component'
-import { PiecePartListingComponent } from './part/piece-part-listing/piece-part-listing.component'
-import { PiecePartComponent } from './part/piece-part/piece-part.component'
+import { AssemblyComponent } from './assembly/assembly/assembly.component';
+import { AssemblyListingComponent } from './assembly/assembly-listing/assembly-listing.component';
+import { PiecePartComponent } from './part/piece-part/piece-part.component';
+import { PiecePartListingComponent } from './part/piece-part-listing/piece-part-listing.component';
+import { ProjectComponent } from './project/project/project.component';
+import { ProjectsListComponent } from './project/projects-listing/projects-list.component';
+import { SubassemblyComponent } from './subassembly/subassembly/subassembly.component';
+import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
 
 import { PartByIdResolve } from './_resolve/part-by-id.resolve';
 import { ProjectResolve } from './_resolve/project.resolve';
@@ -16,7 +20,24 @@ import { ProjectByIdResolve } from './_resolve/project-by-id.resolve';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'parts',
+    path: 'assembly',
+    children: [
+      { 
+        path: '',
+        component: AssemblyListingComponent
+      },
+      {
+        path: ':id',
+        component: AssemblyComponent,
+        runGuardsAndResolvers: 'always',
+        resolve: {
+          part: PartByIdResolve
+        }
+      }
+    ],
+  },
+  {
+    path: 'part',
     children: [
       { 
         path: '',
@@ -33,7 +54,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'projects',
+    path: 'project',
     children: [
       { 
         path: '',
@@ -52,7 +73,24 @@ const routes: Routes = [
         }
       }
     ]
-  }
+  },
+  {
+    path: 'subassembly',
+    children: [
+      { 
+        path: '',
+        component: SubassemblyListingComponent
+      },
+      {
+        path: ':id',
+        component: SubassemblyComponent,
+        runGuardsAndResolvers: 'always',
+        resolve: {
+          part: PartByIdResolve
+        }
+      }
+    ],
+  },
 ];
 
 @NgModule({
