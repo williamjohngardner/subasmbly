@@ -19,8 +19,10 @@ import { PiecePartComponent } from './part/piece-part/piece-part.component';
 import { PiecePartListingComponent } from './part/piece-part-listing/piece-part-listing.component';
 import { ProjectComponent } from './project/project/project.component';
 import { ProjectsListComponent } from './project/projects-listing/projects-list.component';
+import { PurchaseComponent } from './purchase/purchase.component';
 import { SubassemblyComponent } from './subassembly/subassembly/subassembly.component';
 import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
+import { SupplyComponent } from './supply/supply.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { SubassemblyListingComponent } from './subassembly/subassembly-listing/s
     ProjectComponent,
     ProjectsListComponent,
     SubassemblyComponent,
-    SubassemblyListingComponent
+    SubassemblyListingComponent,
+    PurchaseComponent,
+    SupplyComponent
   ],
   imports: [
     BrowserModule,
