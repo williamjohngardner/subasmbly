@@ -4,7 +4,9 @@ const router = express.Router();
 const dashboard = require('./dashboard')
 const parts = require('./part');
 const projects = require('./project');
+const purchase = require('./purchase');
 const subassembly = require('./subassembly');
+const supply = require('./supply')
 
 /* Dashboard API */
 router.get('/', dashboard.get);

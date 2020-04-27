@@ -23,6 +23,6 @@ export class DataService {
   ) { }
 
   public getData (): Observable<any> {
-    return this.http.get<any>(`${this.dataUrl}parts`);
+    return this.http.get<any>(`${this.dataUrl}`);
   }
 }
