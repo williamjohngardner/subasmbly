@@ -5,17 +5,15 @@
 const Part = require('../../models/part.js');
 
 const create = function (req, res, next) {
-    let part = new Part();
+    console.log('REQ:', req.body);
+    let part = new Part(req.body);
     part.save().then(function (result) {
-        res.setHeader('X-TotalCount', 1);
         res.status(200);
         res.json(result);
         return next();
       }).catch(function(err) {
-          alert(err);
+          console.error(err);
       });
-    // res.status(200);
-    // res.json({"status" : "success"});
 };
 
 module.exports = create;
