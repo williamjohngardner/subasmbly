@@ -1,7 +1,6 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const mongoose = require('mongoose');
 const Part = require('../../models/part.js');
 
 const get = function (req, res) {
@@ -14,5 +13,3 @@ const get = function (req, res) {
 };
 
 module.exports = get;
-
-

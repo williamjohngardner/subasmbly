@@ -1,12 +1,15 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const mongoose = require('mongoose');
-// const part = mongoose.model('Part');
+const Part = require('../../models/part.js');
 
-const remove = function (req, res) {
-    res.status(200);
-    res.json({"status" : "success"});
+const get = function (req, res) {
+    Part.deleteOne({ _id: req.params.id }).then(function (doc) {
+        res.status(200);
+        res.send(doc);
+    }).catch(function(err) {
+        console.error(err);
+    })
 };
 
-module.exports = remove;
+module.exports = get;
