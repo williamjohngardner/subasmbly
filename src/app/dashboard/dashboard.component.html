@@ -2,6 +2,9 @@
     <div class="row">
         <div class="col-4 mb-3 pl-0">
             <h2>Dashboard</h2>
+            <!-- <div *ngFor="let part of this.data['_value']; let i = index">
+                <h5>{{i}}:&nbsp;{{part}}</h5>
+            </div> -->
             {{this.data | json}}<br>
         </div>
         <div class="col-8">

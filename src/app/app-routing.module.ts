@@ -13,6 +13,7 @@ import { SubassemblyComponent } from './subassembly/subassembly/subassembly.comp
 import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
 import { SupplyComponent } from './supply/supply.component';
 
+import { PartResolve } from './_resolve/part.resolve';
 import { PartByIdResolve } from './_resolve/part-by-id.resolve';
 import { ProjectResolve } from './_resolve/project.resolve';
 import { ProjectByIdResolve } from './_resolve/project-by-id.resolve';
@@ -43,7 +44,11 @@ const routes: Routes = [
     children: [
       { 
         path: '',
-        component: PiecePartListingComponent
+        component: PiecePartListingComponent,
+        runGuardsAndResolvers: 'always',
+        resolve: {
+          part: PartResolve
+        }
       },
       {
         path: ':id',
@@ -137,6 +142,7 @@ const routes: Routes = [
     RouterModule
   ],
   providers: [
+    PartResolve,
     PartByIdResolve,
     ProjectResolve,
     ProjectByIdResolve

@@ -1,7 +1,10 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { DataService } from '../_services/data.service';
 import { AdafruitApiService } from '../_services/adafruit-api.service';
+
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,19 +12,21 @@ import { AdafruitApiService } from '../_services/adafruit-api.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class HomeComponent implements AfterViewInit {
-  public data: any;
+  public data: Observable<object> = this._activatedRoute.data;
   public adafruitProducts: object;
 
   constructor(
     readonly _dataService: DataService,
-    readonly _adafruitService: AdafruitApiService
+    readonly _adafruitService: AdafruitApiService,
+    readonly _activatedRoute: ActivatedRoute,
+    readonly _router: Router,
   ) { }
 
   ngAfterViewInit() {
-    this._dataService.getData()
+    this._dataService.getParts()
       .subscribe(data => {
-        this.data = data;
-        console.log('DATA: ', data);
+        // this.data = data;
+        console.log('DATA: ', this.data);
       })
       // this._adafruitService.getAdafruitProducts()
       // .subscribe(data => {

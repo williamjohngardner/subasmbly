@@ -40,8 +40,6 @@ app.use(function (req, res, next) {
 app.use('/api/v1', indexRouter);
 app.use('/users', usersRouter);
 
-// app.use(function(req, res, next){console.log('MIDDLEWARE REQ', req); console.log('MIDDLEWARE RES', res)})
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
