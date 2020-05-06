@@ -14,11 +14,12 @@ import { Part } from '../part'
   styleUrls: ['./piece-part-listing.component.css']
 })
 export class PiecePartListingComponent implements OnInit {
+  public _part: Observable<object> = this._route.data;
 
-  public user: string = 'Bill Gardner';
-  public partsList: Array<Part> = parts.parts;
+  // public user: string = 'Bill Gardner';
+  // public partsList: Array<Part> = parts.parts;
   
-  readonly _partUrl: string = `http://localhost:3000/api/v1/parts/`;
+  // readonly _partUrl: string = `http://localhost:3000/api/v1/parts/`;
 
   constructor(
     readonly http: HttpClient,
@@ -27,14 +28,15 @@ export class PiecePartListingComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    const parts: any = this.getParts().subscribe(res => {
-      console.log('PARTS: ', res);
-    });
+    console.log('PART: ', this._part);
+    // const parts: any = this.getParts().subscribe(res => {
+    //   console.log('PARTS: ', res);
+    // });
   }
 
-  public getParts (): Observable<any> {
-    return this.http.get<any>(this._partUrl);
-  }
+  // public getParts (): Observable<any> {
+  //   return this.http.get<any>(this._partUrl);
+  // }
 
   openPart (id: number) {
     this._router.navigate([id], {relativeTo: this._route});

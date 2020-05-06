@@ -1,12 +1,17 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const mongoose = require('mongoose');
-// const part = mongoose.model('Part');
+const Part = require('../../models/part.js');
 
-const create = function (req, res) {
-    res.status(200);
-    res.json({"status" : "success"});
+const create = function (req, res, next) {
+  let part = new Part(req.body);
+  part.save().then(function (result) {
+      res.status(200);
+      res.json(result);
+      return next();
+    }).catch(function (err) {
+      console.error(err);
+  });
 };
 
 module.exports = create;

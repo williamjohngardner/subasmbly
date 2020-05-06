@@ -1,12 +1,15 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const mongoose = require('mongoose');
-// const part = mongoose.model('Part');
+const Part = require('../../models/part.js');
 
 const get = function (req, res) {
-    res.status(200);
-    res.json({"status" : "success"});
+    Part.find().then(function (doc) {
+        res.status(200);
+        res.send(doc);
+    }).catch(function (err) {
+        console.error(err);
+    })
 };
 
 module.exports = get;

@@ -18,7 +18,7 @@
                     <th>Cost/Unit</th>
                     <th>Price/Unit</th>
                 </thead>
-                <tbody *ngFor="let part of partsList; let i = index">
+                <tbody *ngFor="let part of this._part['_value']['part']['body']; let i = index">
                     <tr>
                         <td (click)="openPart(part._id)" style="cursor: pointer">{{part.partName}}</td>
                         <td>{{part.partNumber}}</td>
