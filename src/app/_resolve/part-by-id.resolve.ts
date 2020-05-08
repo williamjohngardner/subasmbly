@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { HttpResponse } from '@angular/common/http';
 
-import { DataService } from '../_services/data.service';
+import { PartService } from '../_services/data.service';
 
 import { Part } from '../part/part';
 
@@ -10,10 +10,10 @@ import { Part } from '../part/part';
 export class PartByIdResolve implements Resolve<HttpResponse<Part>> {
   
   constructor (
-      readonly _dataService: DataService
+      readonly _partService: PartService
   ) {}
   
   resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return this._dataService.getPartById(route.params.id);
+    return this._partService.getPartById(route.params.id);
   }
 }

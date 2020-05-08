@@ -23,6 +23,7 @@ import { PurchaseComponent } from './purchase/purchase.component';
 import { SubassemblyComponent } from './subassembly/subassembly/subassembly.component';
 import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
 import { SupplyComponent } from './supply/supply.component';
+import { CreatePartComponent } from './part/create-part/create-part.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { SupplyComponent } from './supply/supply.component';
     SubassemblyComponent,
     SubassemblyListingComponent,
     PurchaseComponent,
-    SupplyComponent
+    SupplyComponent,
+    CreatePartComponent
   ],
   imports: [
     BrowserModule,

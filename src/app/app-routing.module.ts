@@ -6,6 +6,7 @@ import { AssemblyComponent } from './assembly/assembly/assembly.component';
 import { AssemblyListingComponent } from './assembly/assembly-listing/assembly-listing.component';
 import { PiecePartComponent } from './part/piece-part/piece-part.component';
 import { PiecePartListingComponent } from './part/piece-part-listing/piece-part-listing.component';
+import { CreatePartModalWrapperComponent } from './part/create-part/create-part-modal-wrapper.component';
 import { ProjectComponent } from './project/project/project.component';
 import { ProjectsListComponent } from './project/projects-listing/projects-list.component';
 import { PurchaseComponent } from './purchase/purchase.component';
@@ -36,6 +37,16 @@ const routes: Routes = [
         resolve: {
           part: PartByIdResolve
         }
+      }
+    ],
+  },
+  {
+    path: 'create',
+    children: [
+      { 
+        path: 'part',
+        component: CreatePartModalWrapperComponent  ,
+        runGuardsAndResolvers: 'always'
       }
     ],
   },

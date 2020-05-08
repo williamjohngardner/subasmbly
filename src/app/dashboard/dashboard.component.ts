@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { DataService } from '../_services/data.service';
+import { PartService } from '../_services/data.service';
 import { AdafruitApiService } from '../_services/adafruit-api.service';
 
 import { Observable } from 'rxjs';
@@ -16,14 +16,14 @@ export class HomeComponent implements AfterViewInit {
   public adafruitProducts: object;
 
   constructor(
-    readonly _dataService: DataService,
+    readonly _partService: PartService,
     readonly _adafruitService: AdafruitApiService,
     readonly _activatedRoute: ActivatedRoute,
     readonly _router: Router,
   ) { }
 
   ngAfterViewInit() {
-    this._dataService.getParts()
+    this._partService.getParts()
       .subscribe(data => {
         // this.data = data;
         console.log('DATA: ', this.data);

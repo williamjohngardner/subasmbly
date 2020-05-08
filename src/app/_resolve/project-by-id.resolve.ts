@@ -11,7 +11,6 @@ export class ProjectByIdResolve implements Resolve<any> {
   constructor () {}
   
   resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    console.log('ROUTE PARAMS ID:', route.params.id);
     return projects.projects[route.params.id];
   }
 }
