@@ -1,21 +1,109 @@
 <div>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-      <button type="button" class="close" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-        <form [formGroup]="createPartForm">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="createFormName">Part Name</span>
-                </div>
-                <input formControlName="partName" type="text" class="form-control" placeholder="partName" aria-label="Username" aria-describedby="basic-addon1">
-              </div>
-        </form>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="onSubmit()">Save</button>
-    </div>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
+  <div class="modal-body">
+    <form [formGroup]="createPartForm">
+      <div class="form-row">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="partName" class="input-group-text rounded-0" id="createFormName">Part Name</label>
+          </div>
+          <input formControlName="partName" type="text" class="form-control rounded-0">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="partNumber" class="input-group-text rounded-0" id="createFormName">Part Number</label>
+          </div>
+          <input formControlName="partNumber" type="text" class="form-control rounded-0">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group mb-3">
+          <label for="partName" class="input-group-text rounded-0 w-100" id="createFormName">Description</label>
+          <textarea formControlName="description" type="text" class="form-control rounded-0"></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="category" class="input-group-text rounded-0" id="createFormName">Category</label>
+          </div>
+          <select formControlName="category" class="form-control rounded-0" name="category" id="category">
+            <option *ngFor="let c of this.categories" value="{{c.v}}">{{c.n}}</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="subCategory" class="input-group-text rounded-0" id="createFormName">Sub-Category</label>
+          </div>
+          <select formControlName="subCategory" class="form-control rounded-0" name="subCategory" id="subCategory">
+            <option *ngFor="let s of this.subCategories" value="{{s.v}}">{{s.n}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="material" class="input-group-text rounded-0" id="createFormName">Material</label>
+          </div>
+          <input formControlName="material" type="text" class="form-control rounded-0">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="finish" class="input-group-text rounded-0" id="createFormName">Finish</label>
+          </div>
+          <input formControlName="finish" type="text" class="form-control rounded-0">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="plating" class="input-group-text rounded-0" id="createFormName">Plating</label>
+          </div>
+          <input formControlName="plating" type="text" class="form-control rounded-0">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="uom" class="input-group-text rounded-0" id="createFormUnitOfMeasureLabel">Unit of Measure</label>
+          </div>
+          <input formControlName="uom" type="text" class="form-control rounded-0" id="createFormUnitOfMeasure">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="unitCost" class="input-group-text rounded-0" id="createFormUnitCostLabel">Unit Cost</label>
+          </div>
+          <input formControlName="unitCost" type="text" class="form-control rounded-0" id="createFormUnitCost">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="unitPrice" class="input-group-text rounded-0" id="createFormUnitPriceLabel">Unit Price</label>
+          </div>
+          <input formControlName="unitPrice" type="text" class="form-control rounded-0" id="createFormUnitPrice">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="dateCreated" class="input-group-text rounded-0" id="createFormDateCreatedLabel">Date Created</label>
+          </div>
+          <input formControlName="dateCreated" type="text" class="form-control rounded-0" id="createFormDateCreated">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label for="dateUpdated" class="input-group-text rounded-0" id="createFormDateUpdatedLabel">Date Updated</label>
+          </div>
+          <input formControlName="dateUpdated" type="text" class="form-control rounded-0" id="createFormDateUpdated">
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="onSubmit()">Save</button>
+  </div>
+</div>

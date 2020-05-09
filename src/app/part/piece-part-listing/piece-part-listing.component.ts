@@ -31,6 +31,6 @@ export class PiecePartListingComponent implements OnInit {
   }
 
   createPart () {
-    this._router.navigate(['create', 'part'], {relativeTo: this._route});
+    this._router.navigate(['create', 'part']);
   }
 }

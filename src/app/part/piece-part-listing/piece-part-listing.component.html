@@ -1,35 +1,42 @@
 <div class="container-fluid">
     <div class="row pt-3 px-3">
         <div class="col-12 mb-2">
-            <!-- <h4>{{this.user}}'s Parts Library</h4> -->
+            <button type="button" class="btn btn-success rounded-0" (click)="createPart()">Make New Part</button>
         </div>
     </div>
-    <button type="button" class="btn btn-success" (click)="createPart()">Make New Part</button>
     <div class="row">
         <div class="col-12">
             <table class="table table-hover mx-3 px-5">
                 <thead class="thead-light">
                     <th>Part Name</th>
                     <th>Part Number</th>
-                    <th>Finish</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>SubCategory</th>
                     <th>Material</th>
-                    <th>Manufacturer</th>
-                    <th>Revision</th>
-                    <th>Unit Type</th>
+                    <th>Finish</th>
+                    <th>Plating</th>
+                    <th>UoM</th>
                     <th>Cost/Unit</th>
                     <th>Price/Unit</th>
+                    <th>Date Created</th>
+                    <th>Date Updated</th>
                 </thead>
                 <tbody *ngFor="let part of this._part['_value']['part']['body']; let i = index">
                     <tr>
                         <td (click)="openPart(part._id)" style="cursor: pointer">{{part.partName}}</td>
                         <td>{{part.partNumber}}</td>
-                        <td>{{part.finish}}</td>
+                        <td>{{part.description}}</td>
+                        <td>{{part.category}}</td>
+                        <td>{{part.subCategory}}</td>
                         <td>{{part.material}}</td>
-                        <td>{{part.manufacturer}}</td>
-                        <td>{{part.revision}}</td>
-                        <td>{{part.unitType}}</td>
-                        <td>{{part.costPerUnit}}</td>
-                        <td>{{part.pricePerUnit}}</td>
+                        <td>{{part.finish}}</td>
+                        <td>{{part.plating}}</td>
+                        <td>{{part.uom}}</td>
+                        <td>{{part.unitCost}}</td>
+                        <td>{{part.unitPrice}}</td>
+                        <td>{{part._dateCreated}}</td>
+                        <td>{{part._dateUpdated}}</td>
                     </tr>
                 </tbody>
             </table>
