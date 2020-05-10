@@ -8,76 +8,109 @@
     <div class="row pt-3">
         <div class="col-4 pl-0">
             <img src="../../assets/images/2010-10-24 10.27.40.jpg" alt="hermanMillerImage">
-            <div>
+            <div [formGroup]="partForm">
                 <h5 class="pt-3 pb-2">description:</h5>
-                <p class="pr-2">Lorem ipsum dolor amet flexitarian cronut hoodie cold-pressed ethical street art. Freegan salvia stumptown hella seitan, literally listicle blue bottle polaroid everyday carry letterpress.</p>
+                <textarea formControlName="description" class="pr-2"></textarea>
             </div>
+            <button class="btn btn-success rounded-0" (click)="updatePart()">Update Part</button>
             <button class="btn btn-danger rounded-0" (click)="deletePart()">Delete Part</button>
         </div>
         <div class="col-8">
-            <form>
+            <form [formGroup]="partForm">
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text rounded-0 w-100">Part Name</div>
+                            <label class="input-group-text rounded-0 w-100">Part Name</label>
                         </div>
-                        <input type="text" class="form-control rounded-0" id="partName" placeholder="{{_part['partName']}}" value="{{_part['partName']}}">
+                        <input formControlName="partName" type="text" class="form-control rounded-0" id="partName">
                     </div>
                 </div>
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text rounded-0 w-100">Part Number</div>
+                            <label class="input-group-text rounded-0 w-100">Part Number</label>
                         </div>
-                        <input type="text" class="form-control rounded-0" id="partNumber" placeholder="{{_part['partNumber']}}" value="{{_part['partNumber']}}">
+                        <input formControlName="partNumber" type="text" class="form-control rounded-0" id="partNumber">
                     </div>
                 </div>
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text rounded-0 w-100">Finish</div>
+                            <label class="input-group-text rounded-0 w-100">Category</label>
                         </div>
-                        <input type="text" class="form-control rounded-0" id="partName" placeholder="{{_part['finish']}}" value="{{_part['finish']}}">
+                        <input formControlName="category" type="text" class="form-control rounded-0" id="partCategory">
                     </div>
                 </div>
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text rounded-0 w-100">Material</div>
+                            <label class="input-group-text rounded-0 w-100">Sub-Category</label>
                         </div>
-                        <input type="text" class="form-control rounded-0" id="partNumber" placeholder="{{_part['material']}}" value="{{_part['material']}}">
+                        <input formControlName="subCategory" type="text" class="form-control rounded-0" id="partSubCategory">
                     </div>
                 </div>
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text rounded-0 w-100">Manufacturer</div>
+                            <label class="input-group-text rounded-0 w-100">Finish</label>
                         </div>
-                        <input type="text" class="form-control rounded-0" id="partName" placeholder="{{_part['manufacturer']}}" value="{{_part['manufacturer']}}">
+                        <input formControlName="finish" type="text" class="form-control rounded-0" id="partFinish">
                     </div>
                 </div>
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text rounded-0 w-100">Revision</div>
+                            <label class="input-group-text rounded-0 w-100">Material</label>
                         </div>
-                        <input type="text" class="form-control rounded-0" id="partNumber" placeholder="{{_part['revision']}}" value="{{_part['revision']}}">
+                        <input formControlName="material" type="text" class="form-control rounded-0" id="partMaterial">
                     </div>
                 </div>
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text rounded-0 w-100">Cost/Unit</div>
+                            <label class="input-group-text rounded-0 w-100">Plating</label>
                         </div>
-                        <input type="text" class="form-control rounded-0" id="partName" placeholder="{{_part['costPerUnit'] | currency}}" value="{{_part['costPerUnit'] | currency}}">
+                        <input formControlName="plating" type="text" class="form-control rounded-0" id="partPlating">
                     </div>
                 </div>
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <div class="input-group-text rounded-0 w-100">Price/Unit</div>
+                            <label class="input-group-text rounded-0 w-100">UoM</label>
                         </div>
-                        <input type="text" class="form-control rounded-0" id="partNumber" placeholder="{{_part['pricePerUnit'] | currency}}" value="{{_part['pricePerUnit'] | currency}}">
+                        <input formControlName="uom" type="text" class="form-control rounded-0" id="partUom">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Unit Cost</label>
+                        </div>
+                        <input formControlName="unitCost" type="text" class="form-control rounded-0" id="partUnitCost">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Unit Price</label>
+                        </div>
+                        <input formControlName="unitPrice" type="text" class="form-control rounded-0" id="partUnitPrice">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Date Created</label>
+                        </div>
+                        <input formControlName="dateCreated" type="text" class="form-control rounded-0" id="partDateCreated">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Date Updated</label>
+                        </div>
+                        <input formControlName="dateUpdated" type="text" class="form-control rounded-0" id="partDateUpdated">
                     </div>
                 </div>
             </form>

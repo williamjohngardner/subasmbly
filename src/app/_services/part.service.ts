@@ -31,25 +31,26 @@ export class PartService {
     });
   }
 
-  public getPartById (id: string): Observable<any> {
+  public getPartById (id: string): Observable<HttpResponse<Part>> {
     return this.http.get<Part>(`${this.partUrl}${id}`, { 
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
+      observe: 'response'
     });
   }
 
-  public createPart (value: object): Observable<any> {
+  public createPart (value: object): Observable<Part> {
     return this.http.post<Part>(`${this.partUrl}`, value, { 
       headers: { 'Content-Type': 'application/json' }
     });
   }
 
-  public updatePart (id: string, value: object): Observable<any> {
+  public updatePart (id: string, value: object): Observable<Part> {
     return this.http.put<Part>(`${this.partUrl}${id}`, value, { 
       headers: { 'Content-Type': 'application/json' }
     });
   }
 
-  public deletePart (id: string): Observable<any> {
+  public deletePart (id: string): Observable<Part> {
     return this.http.delete<Part>(`${this.partUrl}${id}`, { 
       headers: { 'Content-Type': 'application/json' }
     });

@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { PartService } from '../_services/data.service';
+import { PartService } from '../_services/part.service';
 import { AdafruitApiService } from '../_services/adafruit-api.service';
 
 import { Observable } from 'rxjs';

@@ -1,11 +1,11 @@
 <div>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+  <div class="modal-header p-5">
+    <h4 class="modal-title" id="modal-basic-title">Create A New Part</h4>
     <button type="button" class="close" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
+  <div class="modal-body p-5">
     <form [formGroup]="createPartForm">
       <div class="form-row">
         <div class="input-group mb-3">
@@ -103,7 +103,7 @@
       </div>
     </form>
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="onSubmit()">Save</button>
+  <div class="modal-footer p-5">
+    <button type="button" class="btn btn-success rounded-0 w-25" (click)="onSubmit()">Create Part</button>
   </div>
 </div>

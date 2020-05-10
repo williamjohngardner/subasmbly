@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { HttpResponse } from '@angular/common/http';
 
-import { PartService } from '../_services/data.service';
+import { PartService } from '../_services/part.service';
 
 import { Part } from '../part/part';
 

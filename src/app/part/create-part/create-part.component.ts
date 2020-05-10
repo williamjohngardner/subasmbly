@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-import { PartService } from '../../_services/data.service';
+import { PartService } from '../../_services/part.service';
 
 @Component({
   selector: 'app-create-part',

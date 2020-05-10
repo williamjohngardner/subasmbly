@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 
-import { PartService } from '../../_services/data.service'
+import { PartService } from '../../_services/part.service'
 
 import { Observable } from 'rxjs';
 
@@ -15,22 +16,54 @@ import { Part } from '../part'
 export class PiecePartComponent implements OnInit {
 
   public _part: Observable<object> = this._route.data['_value']['part'];
+  public partForm: FormGroup;
 
   constructor(
+    readonly _formBuilder: FormBuilder,
+    readonly _partService: PartService,
     readonly _router: Router,
     readonly _route: ActivatedRoute,
-    readonly _partService: PartService
   ) {}
 
   ngOnInit () {
-    console.log('_PART: ', this._part);
+    // console.log('_PART: ', this._part);
+    this.createPartForm();
+  }
+
+  createPartForm () {
+    this.partForm = this._formBuilder.group({
+      partName: [{ value: this._part['partName'], disabled: false }],
+      partNumber: [{ value: this._part['partNumber'], disabled: false }],
+      description: [{ value: this._part['description'], disabled: false }],
+      category: [{ value: this._part['category'], disabled: false }],
+      subCategory: [{ value: this._part['subCategory'], disabled: false }],
+      material: [{ value: this._part['material'], disabled: false }],
+      finish: [{ value: this._part['finish'], disabled: false }],
+      plating: [{ value: this._part['plating'], disabled: false }],
+      uom: [{ value: this._part['uom'], disabled: false }],
+      unitCost: [{ value: this._part['unitCost'], disabled: false }],
+      unitPrice: [{ value: this._part['unitPrice'], disabled: false }],
+      dateCreated: [{ value: this._part['_dateCreated'], disabled: false }],
+      dateUpdated: [{ value: this._part['_dateUpdated'], disabled: false }]
+    })
+  }
+
+  updatePart () {
+    const values: object = this.partForm.value;
+    console.log('PART FORM: ', values);
+    this._partService.updatePart(this._part['_id'], values).subscribe(() => {
+      alert('Part Successfully Created');
+      this._router.navigate(['part']);
+    }, Error => {
+      alert(Error);
+    });
   }
 
   deletePart () {
     const result = confirm('Please Confirm That You Want To Delete This Part.');
     if (result) {
       this._partService.deletePart(this._part['_id']).subscribe(() => {
-        alert('Part Successfully Deleted')
+        alert('Part Successfully Deleted');
         this._router.navigate(['part']);
       }, Error => {
         alert(Error);
