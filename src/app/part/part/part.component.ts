@@ -6,14 +6,12 @@ import { PartService } from '../../_services/part.service'
 
 import { Observable } from 'rxjs';
 
-import { Part } from '../part'
-
 @Component({
-  selector: 'app-piece-part',
-  templateUrl: './piece-part.component.html',
-  styleUrls: ['./piece-part.component.css']
+  selector: 'app-part',
+  templateUrl: './part.component.html',
+  styleUrls: ['./part.component.css']
 })
-export class PiecePartComponent implements OnInit {
+export class PartComponent implements OnInit {
 
   public _part: Observable<object> = this._route.data['_value']['part'];
   public partForm: FormGroup;
@@ -52,7 +50,7 @@ export class PiecePartComponent implements OnInit {
     const values: object = this.partForm.value;
     console.log('PART FORM: ', values);
     this._partService.updatePart(this._part['_id'], values).subscribe(() => {
-      alert('Part Successfully Created');
+      alert('Part Successfully Updated');
       this._router.navigate(['part']);
     }, Error => {
       alert(Error);

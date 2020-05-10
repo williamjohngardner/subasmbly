@@ -1,18 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'
 import { HttpClient } from '@angular/common/http';
 
 import { PartService } from '../../_services/part.service';
 import { Observable } from 'rxjs'
 
-import { Part } from '../part'
-
 @Component({
-  selector: 'app-piece-part-listing',
-  templateUrl: './piece-part-listing.component.html',
-  styleUrls: ['./piece-part-listing.component.css']
+  selector: 'app-part-listing',
+  templateUrl: './part-listing.component.html',
+  styleUrls: ['./part-listing.component.css']
 })
-export class PiecePartListingComponent {
+export class PartListingComponent {
   public _part: Observable<object> = this._route.data;
 
   constructor(

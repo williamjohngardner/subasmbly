@@ -1,10 +1,10 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const Part = require('../../models/part.js');
+const Subassembly = require('../../models/subassembly.js');
 
 const get = function (req, res) {
-    Part.deleteOne({ _id: req.params.id }).then(function (doc) {
+    Subassembly.deleteOne({ _id: req.params.id }).then(function (doc) {
         res.status(200);
         res.send(doc);
         return next();

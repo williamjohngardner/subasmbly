@@ -4,8 +4,8 @@
 const mongoose = require('mongoose');
 
 const create = function (req, res, next) {
-  let update = req.body;
-  mongoose.model('part').findByIdAndUpdate(req.params.id, update, function (err, data) {
+  const update = req.body;
+  mongoose.model('subassembly').findByIdAndUpdate(req.params.id, update, function (err, data) {
     if (err) {
       console.error('ERROR', err);
       return

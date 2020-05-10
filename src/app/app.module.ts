@@ -16,8 +16,8 @@ import { HomeComponent } from './dashboard/dashboard.component';
 import { NavComponent } from './nav/nav.component';
 import { AssemblyComponent } from './assembly/assembly/assembly.component';
 import { AssemblyListingComponent } from './assembly/assembly-listing/assembly-listing.component';
-import { PiecePartComponent } from './part/piece-part/piece-part.component';
-import { PiecePartListingComponent } from './part/piece-part-listing/piece-part-listing.component';
+import { PartComponent } from './part/part/part.component';
+import { PartListingComponent } from './part/part-listing/part-listing.component';
 import { ProjectComponent } from './project/project/project.component';
 import { ProjectsListComponent } from './project/projects-listing/projects-list.component';
 import { PurchaseComponent } from './purchase/purchase.component';
@@ -33,8 +33,8 @@ import { CreatePartComponent } from './part/create-part/create-part.component';
     NavComponent,
     AssemblyComponent,
     AssemblyListingComponent,
-    PiecePartComponent,
-    PiecePartListingComponent,
+    PartComponent,
+    PartListingComponent,
     ProjectComponent,
     ProjectsListComponent,
     SubassemblyComponent,

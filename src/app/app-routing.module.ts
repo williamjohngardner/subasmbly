@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './dashboard/dashboard.component';
 import { AssemblyComponent } from './assembly/assembly/assembly.component';
 import { AssemblyListingComponent } from './assembly/assembly-listing/assembly-listing.component';
-import { PiecePartComponent } from './part/piece-part/piece-part.component';
-import { PiecePartListingComponent } from './part/piece-part-listing/piece-part-listing.component';
+import { PartComponent } from './part/part/part.component';
+import { PartListingComponent } from './part/part-listing/part-listing.component';
 import { CreatePartModalWrapperComponent } from './part/create-part/create-part-modal-wrapper.component';
 import { ProjectComponent } from './project/project/project.component';
 import { ProjectsListComponent } from './project/projects-listing/projects-list.component';
@@ -18,6 +18,8 @@ import { PartResolve } from './_resolve/part.resolve';
 import { PartByIdResolve } from './_resolve/part-by-id.resolve';
 import { ProjectResolve } from './_resolve/project.resolve';
 import { ProjectByIdResolve } from './_resolve/project-by-id.resolve';
+import { SubassemblyResolve } from './_resolve/subassembly.resolve';
+import { SubassemblyByIdResolve } from './_resolve/subassembly-by-id.resolve';
 
 
 
@@ -55,7 +57,7 @@ const routes: Routes = [
     children: [
       { 
         path: '',
-        component: PiecePartListingComponent,
+        component: PartListingComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
           part: PartResolve
@@ -63,7 +65,7 @@ const routes: Routes = [
       },
       {
         path: ':id',
-        component: PiecePartComponent,
+        component: PartComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
           part: PartByIdResolve
@@ -114,14 +116,18 @@ const routes: Routes = [
     children: [
       { 
         path: '',
-        component: SubassemblyListingComponent
+        component: SubassemblyListingComponent,
+        runGuardsAndResolvers: 'always',
+        resolve: {
+          subassembly: SubassemblyResolve
+        }
       },
       {
         path: ':id',
         component: SubassemblyComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
-          part: PartByIdResolve
+          subassembly: SubassemblyByIdResolve
         }
       }
     ],
@@ -156,7 +162,9 @@ const routes: Routes = [
     PartResolve,
     PartByIdResolve,
     ProjectResolve,
-    ProjectByIdResolve
+    ProjectByIdResolve,
+    SubassemblyResolve,
+    SubassemblyByIdResolve
   ]
 })
 export class AppRoutingModule { }

@@ -1,6 +1,6 @@
 'use strict';
 
-/** Piece Part Schema */
+/** Part Schema */
 
 const mongoose = require('mongoose');
 

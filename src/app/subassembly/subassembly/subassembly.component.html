@@ -1,1 +1,94 @@
-<p>subassembly works!</p>
+<div class="container">
+    <div class="row pt-3">
+        <h2>{{_subassembly['subassemblyName']}}</h2>
+    </div>
+    <div class="row pt-2">
+        <h4>{{_subassembly['subassemblyNumber']}}</h4>
+    </div>
+    <div class="row pt-3">
+        <div class="col-4 pl-0">
+            <div [formGroup]="subassemblyForm">
+                <h5 class="pt-3 pb-2">description:</h5>
+                <textarea formControlName="description" class="pr-2"></textarea>
+            </div>
+            <button class="btn btn-success rounded-0" (click)="updateSubassembly()">Update Subassembly</button>
+            <button class="btn btn-danger rounded-0" (click)="deleteSubassembly()">Delete Subassembly</button>
+        </div>
+        <div class="col-8">
+            <form [formGroup]="subassemblyForm">
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Subassembly Name</label>
+                        </div>
+                        <input formControlName="subassemblyName" type="text" class="form-control rounded-0" id="subassemblyName">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Subassembly Number</label>
+                        </div>
+                        <input formControlName="subassemblyNumber" type="text" class="form-control rounded-0" id="subassemblyNumber">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Category</label>
+                        </div>
+                        <input formControlName="category" type="text" class="form-control rounded-0" id="subassemblyCategory">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Sub-Category</label>
+                        </div>
+                        <input formControlName="subCategory" type="text" class="form-control rounded-0" id="subassemblySubCategory">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">UoM</label>
+                        </div>
+                        <input formControlName="uom" type="text" class="form-control rounded-0" id="subassemblyUom">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Unit Cost</label>
+                        </div>
+                        <input formControlName="unitCost" type="text" class="form-control rounded-0" id="subassemblyUnitCost">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Unit Price</label>
+                        </div>
+                        <input formControlName="unitPrice" type="text" class="form-control rounded-0" id="subassemblyUnitPrice">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Date Created</label>
+                        </div>
+                        <input formControlName="dateCreated" type="text" class="form-control rounded-0" id="subassemblyDateCreated">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Date Updated</label>
+                        </div>
+                        <input formControlName="dateUpdated" type="text" class="form-control rounded-0" id="subassemblyDateUpdated">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

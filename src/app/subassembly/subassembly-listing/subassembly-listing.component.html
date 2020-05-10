@@ -1,1 +1,39 @@
-<p>subassembly-listing works!</p>
+<div class="container-fluid">
+    <div class="row pt-3 px-3">
+        <div class="col-12 mb-2">
+            <button type="button" class="btn btn-success rounded-0" (click)="createSubassembly()">Make New Subassembly</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover mx-3 px-5">
+                <thead class="thead-light">
+                    <th>Subassembly Name</th>
+                    <th>Subassembly Number</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>SubCategory</th>
+                    <th>UoM</th>
+                    <th>Cost/Unit</th>
+                    <th>Price/Unit</th>
+                    <th>Date Created</th>
+                    <th>Date Updated</th>
+                </thead>
+                <tbody *ngFor="let subassembly of this._subassembly['_value']['subassembly']['body']; let i = index">
+                    <tr>
+                        <td (click)="openSubassembly(subassembly._id)" style="cursor: pointer">{{subassembly.subassemblyName}}</td>
+                        <td>{{subassembly.subassemblyNumber}}</td>
+                        <td>{{subassembly.description}}</td>
+                        <td>{{subassembly.category}}</td>
+                        <td>{{subassembly.subCategory}}</td>
+                        <td>{{subassembly.uom}}</td>
+                        <td>{{subassembly.unitCost}}</td>
+                        <td>{{subassembly.unitPrice}}</td>
+                        <td>{{subassembly._dateCreated}}</td>
+                        <td>{{subassembly._dateUpdated}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
