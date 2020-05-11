@@ -3,7 +3,7 @@
 
 const Subassembly = require('../../models/subassembly.js');
 
-const get = function (req, res) {
+const remove = function (req, res) {
     Subassembly.deleteOne({ _id: req.params.id }).then(function (doc) {
         res.status(200);
         res.send(doc);
@@ -13,4 +13,4 @@ const get = function (req, res) {
     });
 };
 
-module.exports = get;
+module.exports = remove;

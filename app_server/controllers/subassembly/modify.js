@@ -1,11 +1,11 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const mongoose = require('mongoose');
+const Subassembly = require('../../models/subassembly.js');
 
-const create = function (req, res, next) {
+const modify = function (req, res, next) {
   const update = req.body;
-  mongoose.model('subassembly').findByIdAndUpdate(req.params.id, update, function (err, data) {
+  Subassembly.findByIdAndUpdate(req.params.id, update, function (err, data) {
     if (err) {
       console.error('ERROR', err);
       return
@@ -19,4 +19,4 @@ const create = function (req, res, next) {
   }).catch(next);
 };
 
-module.exports = create;
+module.exports = modify;

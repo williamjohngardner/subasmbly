@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const ctrlMain = require('../controllers/main');
+const assembly = require('./assembly');
 const dashboard = require('./dashboard')
 const parts = require('./part');
 const projects = require('./project');
@@ -12,11 +12,11 @@ const supply = require('./supply')
 router.get('/', dashboard.get);
 
 /* Assembly API */
-router.get('/assembly', subassembly.get);
-router.get('/assembly/:id', subassembly.getById);
-router.post('/assembly', subassembly.create);
-router.put('/assembly/:id', subassembly.modify);
-router.delete('/assembly/:id', subassembly.remove);
+router.get('/assembly', assembly.get);
+router.get('/assembly/:id', assembly.getById);
+router.post('/assembly', assembly.create);
+router.put('/assembly/:id', assembly.modify);
+router.delete('/assembly/:id', assembly.remove);
 
 /* Parts API */
 router.get('/part', parts.get);

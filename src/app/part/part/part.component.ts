@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class PartComponent implements OnInit {
 
-  public _part: Observable<object> = this._route.data['_value']['part'];
+  public _part: Observable<object> = this._route.data['_value']['part']['body'];
   public partForm: FormGroup;
 
   constructor(

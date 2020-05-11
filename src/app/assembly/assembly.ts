@@ -1,10 +1,16 @@
-export interface Subassembly {
-    subassemblyName: string;
-    subassemblyNumber: string;
+export interface Assembly {
+    assemblyName: string;
+    assemblyNumber: string;
     description: string;
     category: string;
     subCategory: string;
     parts: [
+        {
+            partName: string;
+            _id: string;
+        }
+    ];
+    subassemblies: [
         {
             partName: string;
             _id: string;

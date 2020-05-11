@@ -1,1 +1,39 @@
-<p>assembly-listing works!</p>
+<div class="container-fluid">
+    <div class="row pt-3 px-3">
+        <div class="col-12 mb-2">
+            <button type="button" class="btn btn-success rounded-0" (click)="createAssembly()">Make New Assembly</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover mx-3 px-5">
+                <thead class="thead-light">
+                    <th>Assembly Name</th>
+                    <th>Assembly Number</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>SubCategory</th>
+                    <th>UoM</th>
+                    <th>Cost/Unit</th>
+                    <th>Price/Unit</th>
+                    <th>Date Created</th>
+                    <th>Date Updated</th>
+                </thead>
+                <tbody *ngFor="let assembly of this._assembly['_value']['assembly']['body']; let i = index">
+                    <tr>
+                        <td (click)="openAssembly(assembly._id)" style="cursor: pointer">{{assembly.assemblyName}}</td>
+                        <td>{{assembly.assemblyNumber}}</td>
+                        <td>{{assembly.description}}</td>
+                        <td>{{assembly.category}}</td>
+                        <td>{{assembly.subCategory}}</td>
+                        <td>{{assembly.uom}}</td>
+                        <td>{{assembly.unitCost}}</td>
+                        <td>{{assembly.unitPrice}}</td>
+                        <td>{{assembly._dateCreated}}</td>
+                        <td>{{assembly._dateUpdated}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

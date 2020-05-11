@@ -3,8 +3,28 @@
 /** Assembly Schema */
 
 const mongoose = require('mongoose');
-const partSchema = require('./part.js')
-const subassemblySchema = require('./subassembly.js')
+
+const partSchema = new mongoose.Schema({
+    _id: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: false
+    },
+    partName: {
+        type: String,
+        required: true,
+    }
+});
+
+const subassemblySchema = new mongoose.Schema({
+    _id: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: false
+    },
+    partName: {
+        type: String,
+        required: true,
+    }
+});
 
 const assemblySchema = mongoose.Schema({
     assemblyName: { type: String },

@@ -1,10 +1,10 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const Part = require('../../models/part.js');
+const Assembly = require('../../models/assembly.js');
 
-const get = function (req, res) {
-    Part.deleteOne({ _id: req.params.id }).then(function (doc) {
+const remove = function (req, res) {
+    Assembly.deleteOne({ _id: req.params.id }).then(function (doc) {
         res.status(200);
         res.send(doc);
         return next();
@@ -13,4 +13,4 @@ const get = function (req, res) {
     });
 };
 
-module.exports = get;
+module.exports = remove;

@@ -1,10 +1,10 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const Part = require('../../models/part.js');
+const Assembly = require('../../models/assembly.js');
 
-const get = function (req, res) {
-    Part.findById(req.params.id).then(function (doc) {
+const getById = function (req, res) {
+    Assembly.findById(req.params.id).then(function (doc) {
         res.status(200);
         res.send(doc);
     }).catch(function (err) {
@@ -12,4 +12,4 @@ const get = function (req, res) {
     })
 };
 
-module.exports = get;
+module.exports = getById;

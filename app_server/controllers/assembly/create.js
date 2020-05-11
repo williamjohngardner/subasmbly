@@ -1,11 +1,12 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const Part = require('../../models/part.js');
+const Assembly = require('../../models/assembly.js');
 
 const create = function (req, res, next) {
-  let part = new Part(req.body);
-  part.save().then(function (result) {
+  console.log('REQ AT ASSEMBLY', req.body);
+  let assembly = new Assembly(req.body);
+  assembly.save().then(function (result) {
       res.status(200);
       res.json(result);
       return next();

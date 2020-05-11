@@ -1,10 +1,10 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const Part = require('../../models/part.js');
+const Assembly = require('../../models/assembly.js');
 
 const get = function (req, res) {
-    Part.find().then(function (doc) {
+    Assembly.find().then(function (doc) {
         res.status(200);
         res.send(doc);
     }).catch(function (err) {
