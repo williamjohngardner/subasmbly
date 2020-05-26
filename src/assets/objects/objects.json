@@ -1,0 +1,82 @@
+[
+    {
+        "assembly": {
+            "assemblyName": "THIS THE FIRST ASSEMBLY",
+            "assemblyNumber": "23456-654",
+            "description": "This is a description of an assembly",
+            "category": "Here is your category",
+            "subCategory": "Here is SOME subCategory",
+            "parts": [
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make YETI New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make Fourth New Part Name"
+                }
+            ],
+            "subassemblies": [
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make YETI New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make Fourth New Part Name"
+                }
+            ],
+            "uom": "each",
+            "unitCost": 100,
+            "unitPrice": 250
+        }
+    },
+    {
+        "subassembly": {
+            "subassemblyName": "THIS NOT THE FIFTH SUBASSEMBLY",
+            "subassemblyNumber": "23456-654",
+            "description": "This is a description of a subassembly",
+            "category": "Here is your category",
+            "subCategory": "Here is SOME subCategory",
+            "parts": [
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make Another New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make Third New Part Name"
+                }
+            ],
+            "uom": "each",
+            "unitCost": 100,
+            "unitPrice": 250
+        }
+    },
+    {
+        "part": {
+            "partName": "Test Part From UI",
+            "partNumber": "45-34543-45-45",
+            "description": "",
+            "subCategory": "",
+            "material": "Wood",
+            "finish": "More Paint",
+            "plating": "No Plating",
+            "uom": "ea",
+            "unitCost": 78,
+            "unitPrice": 94
+        }
+    }
+]

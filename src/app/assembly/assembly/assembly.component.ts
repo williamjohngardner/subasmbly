@@ -53,7 +53,7 @@ export class AssemblyComponent implements OnInit {
     });
   }
 
-  deleteassembly () {
+  deleteAssembly () {
     const result = confirm('Please Confirm That You Want To Delete This assembly.');
     if (result) {
       this._assemblyService.deleteAssembly(this._assembly['_id']).subscribe(() => {
