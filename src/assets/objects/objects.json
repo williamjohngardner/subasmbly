@@ -1,5 +1,58 @@
 [
     {
+        "project": {
+            "projectName": "THIS IS THE FIRST PROJECT",
+            "projectNumber": "12345678",
+            "description": "This is a project",
+            "category": "Here is a category",
+            "subCategory": "Here is a subCategory",
+            "parts": [
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make YETI New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make Fourth New Part Name"
+                }
+            ],
+            "subassemblies": [
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make YETI New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make Fourth New Part Name"
+                }
+            ],
+            "assemblies": [
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make YETI New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make New Part Name"
+                },
+                {
+                    "_id": "5eb734d6f717370678f7bcd2",
+                    "partName": "Lets Make Fourth New Part Name"
+                }
+            ],
+            "projectCost": 100000,
+            "projectPrice": 250000
+        }
+    },
+    {
         "assembly": {
             "assemblyName": "THIS THE FIRST ASSEMBLY",
             "assemblyNumber": "23456-654",

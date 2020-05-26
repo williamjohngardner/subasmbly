@@ -4,7 +4,6 @@
 const Assembly = require('../../models/assembly.js');
 
 const create = function (req, res, next) {
-  console.log('REQ AT ASSEMBLY', req.body);
   let assembly = new Assembly(req.body);
   assembly.save().then(function (result) {
       res.status(200);
