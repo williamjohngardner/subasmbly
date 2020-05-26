@@ -4,7 +4,7 @@
 
 const mongoose = require('mongoose');
 
-const partSchema = new mongoose.Schema({
+const partSchema = mongoose.Schema({
     _id: {
         type: mongoose.Schema.Types.ObjectId,
         required: false
@@ -15,7 +15,7 @@ const partSchema = new mongoose.Schema({
     }
 });
 
-const subassemblySchema = new mongoose.Schema({
+const subassemblySchema = mongoose.Schema({
     _id: {
         type: mongoose.Schema.Types.ObjectId,
         required: false

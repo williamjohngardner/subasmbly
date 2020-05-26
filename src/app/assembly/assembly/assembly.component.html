@@ -1,1 +1,94 @@
-<p>assembly works!</p>
+<div class="container">
+    <div class="row pt-3">
+        <h2>{{_assembly['assemblyName']}}</h2>
+    </div>
+    <div class="row pt-2">
+        <h4>{{_assembly['assemblyNumber']}}</h4>
+    </div>
+    <div class="row pt-3">
+        <div class="col-4 pl-0">
+            <div [formGroup]="assemblyForm">
+                <h5 class="pt-3 pb-2">description:</h5>
+                <textarea formControlName="description" class="pr-2"></textarea>
+            </div>
+            <button class="btn btn-success rounded-0" (click)="updateAssembly()">Update Assembly</button>
+            <button class="btn btn-danger rounded-0" (click)="deleteAssembly()">Delete Assembly</button>
+        </div>
+        <div class="col-8">
+            <form [formGroup]="assemblyForm">
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">assembly Name</label>
+                        </div>
+                        <input formControlName="assemblyName" type="text" class="form-control rounded-0" id="assemblyName">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">assembly Number</label>
+                        </div>
+                        <input formControlName="assemblyNumber" type="text" class="form-control rounded-0" id="assemblyNumber">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Category</label>
+                        </div>
+                        <input formControlName="category" type="text" class="form-control rounded-0" id="assemblyCategory">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Sub-Category</label>
+                        </div>
+                        <input formControlName="subCategory" type="text" class="form-control rounded-0" id="assemblySubCategory">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">UoM</label>
+                        </div>
+                        <input formControlName="uom" type="text" class="form-control rounded-0" id="assemblyUom">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Unit Cost</label>
+                        </div>
+                        <input formControlName="unitCost" type="text" class="form-control rounded-0" id="assemblyUnitCost">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Unit Price</label>
+                        </div>
+                        <input formControlName="unitPrice" type="text" class="form-control rounded-0" id="assemblyUnitPrice">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Date Created</label>
+                        </div>
+                        <input formControlName="dateCreated" type="text" class="form-control rounded-0" id="assemblyDateCreated">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Date Updated</label>
+                        </div>
+                        <input formControlName="dateUpdated" type="text" class="form-control rounded-0" id="assemblyDateUpdated">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

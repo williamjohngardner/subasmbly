@@ -19,7 +19,7 @@
                     <th>Date Created</th>
                     <th>Date Updated</th>
                 </thead>
-                <tbody *ngFor="let subassembly of this._subassembly['_value']['subassembly']['body']; let i = index">
+                <tbody *ngFor="let subassembly of this._subassembly['_value']['subassemblies']['body']; let i = index">
                     <tr>
                         <td (click)="openSubassembly(subassembly._id)" style="cursor: pointer">{{subassembly.subassemblyName}}</td>
                         <td>{{subassembly.subassemblyNumber}}</td>

@@ -20,6 +20,10 @@ export class AssemblyListingComponent {
     readonly _assemblyService: SubassemblyService
   ) {}
 
+  ngOnInit () {
+    console.log('ASSEMBLY: ', this._assembly);
+  }
+
   openAssembly (id: number) {
     this._router.navigate([id], {relativeTo: this._route});
   }

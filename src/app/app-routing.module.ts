@@ -14,6 +14,7 @@ import { SubassemblyComponent } from './subassembly/subassembly/subassembly.comp
 import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
 import { SupplyComponent } from './supply/supply.component';
 
+import { AssemblyResolve } from './_resolve/assembly.resolve'
 import { PartResolve } from './_resolve/part.resolve';
 import { PartByIdResolve } from './_resolve/part-by-id.resolve';
 import { ProjectResolve } from './_resolve/project.resolve';
@@ -30,14 +31,18 @@ const routes: Routes = [
     children: [
       { 
         path: '',
-        component: AssemblyListingComponent
+        component: AssemblyListingComponent,
+        runGuardsAndResolvers: 'always',
+        resolve: {
+          assemblies: AssemblyResolve
+        }
       },
       {
         path: ':id',
         component: AssemblyComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
-          part: PartByIdResolve
+          assembly: PartByIdResolve
         }
       }
     ],
@@ -119,7 +124,7 @@ const routes: Routes = [
         component: SubassemblyListingComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
-          subassembly: SubassemblyResolve
+          subassemblies: SubassemblyResolve
         }
       },
       {
@@ -159,6 +164,7 @@ const routes: Routes = [
     RouterModule
   ],
   providers: [
+    AssemblyResolve,
     PartResolve,
     PartByIdResolve,
     ProjectResolve,
