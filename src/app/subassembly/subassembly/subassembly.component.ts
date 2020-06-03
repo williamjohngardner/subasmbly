@@ -34,7 +34,9 @@ export class SubassemblyComponent implements OnInit {
       description: [{ value: this._subassembly['description'], disabled: false }],
       category: [{ value: this._subassembly['category'], disabled: false }],
       subCategory: [{ value: this._subassembly['subCategory'], disabled: false }],
-      // parts: [{ value: this._subassembly['plating'], disabled: false }],
+      parts: this._formBuilder.group({
+        partName: [{ value: this._subassembly['parts'], disabled: false }]
+      }),
       uom: [{ value: this._subassembly['uom'], disabled: false }],
       unitCost: [{ value: this._subassembly['unitCost'], disabled: false }],
       unitPrice: [{ value: this._subassembly['unitPrice'], disabled: false }],

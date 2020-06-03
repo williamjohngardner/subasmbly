@@ -1,0 +1,81 @@
+<div>
+    <div class="modal-header p-5">
+      <h4 class="modal-title" id="modal-basic-title">Create A New Subassembly</h4>
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body p-5">
+      <form [formGroup]="createSubassemblyForm">
+        <div class="form-row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="subassemblyName" class="input-group-text rounded-0" id="createFormName">Subassembly Name</label>
+            </div>
+            <input formControlName="subassemblyName" type="text" class="form-control rounded-0">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="subassemblyNumber" class="input-group-text rounded-0" id="createFormName">Subassembly Number</label>
+            </div>
+            <input formControlName="subassemblyNumber" type="text" class="form-control rounded-0">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group mb-3">
+            <label for="description" class="input-group-text rounded-0 w-100" id="createFormName">Description</label>
+            <textarea formControlName="description" type="text" class="form-control rounded-0"></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="category" class="input-group-text rounded-0" id="createFormName">Category</label>
+            </div>
+            <select formControlName="category" class="form-control rounded-0" name="category" id="category">
+              <option *ngFor="let c of this.categories" value="{{c.v}}">{{c.n}}</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="subCategory" class="input-group-text rounded-0" id="createFormName">Sub-Category</label>
+            </div>
+            <select formControlName="subCategory" class="form-control rounded-0" name="subCategory" id="subCategory">
+              <option *ngFor="let s of this.subCategories" value="{{s.v}}">{{s.n}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row" formGroupName="parts">
+            <div class="input-group mb-3">
+              <label for="partName" class="input-group-text rounded-0 w-100" id="createPartName">Part Name</label>
+              <input formControlName="partName" type="text" class="form-control rounded-0">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <label for="uom" class="input-group-text rounded-0" id="createFormUomLabel">UoM</label>
+              </div>
+              <input formControlName="uom" type="text" class="form-control rounded-0" id="createFormUom">
+            </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="unitCost" class="input-group-text rounded-0" id="createFormUnitCostLabel">Unit Cost</label>
+            </div>
+            <input formControlName="unitCost" type="text" class="form-control rounded-0" id="createFormUnitCost">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="unitPrice" class="input-group-text rounded-0" id="createFormUnitPriceLabel">Unit Price</label>
+            </div>
+            <input formControlName="unitPrice" type="text" class="form-control rounded-0" id="createFormUnitPrice">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer p-5">
+      <button type="button" class="btn btn-success rounded-0 w-25" (click)="onSubmit()">Create Subassembly</button>
+    </div>
+  </div>

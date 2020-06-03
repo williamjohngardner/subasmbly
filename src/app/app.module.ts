@@ -25,6 +25,8 @@ import { SubassemblyComponent } from './subassembly/subassembly/subassembly.comp
 import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
 import { SupplyComponent } from './supply/supply.component';
 import { CreatePartComponent } from './part/create-part/create-part.component';
+import { CreateSubassemblyComponent } from './subassembly/create-subassembly/create-subassembly.component';
+import { CreateAssemblyComponent } from './assembly/create-assembly/create-assembly.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { CreatePartComponent } from './part/create-part/create-part.component';
     SubassemblyListingComponent,
     PurchaseComponent,
     SupplyComponent,
-    CreatePartComponent
+    CreatePartComponent,
+    CreateSubassemblyComponent,
+    CreateAssemblyComponent
   ],
   imports: [
     BrowserModule,

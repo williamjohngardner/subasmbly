@@ -12,6 +12,7 @@ import { ProjectsListComponent } from './project/projects-listing/projects-list.
 import { PurchaseComponent } from './purchase/purchase.component';
 import { SubassemblyComponent } from './subassembly/subassembly/subassembly.component';
 import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
+import { CreateSubassemblyModalWrapperComponent } from './subassembly/create-subassembly/create-subassembly-modal-wrapper';
 import { SupplyComponent } from './supply/supply.component';
 
 import { AssemblyResolve } from './_resolve/assembly.resolve'
@@ -52,7 +53,12 @@ const routes: Routes = [
     children: [
       { 
         path: 'part',
-        component: CreatePartModalWrapperComponent  ,
+        component: CreatePartModalWrapperComponent,
+        runGuardsAndResolvers: 'always'
+      },
+      { 
+        path: 'subassembly',
+        component: CreateSubassemblyModalWrapperComponent,
         runGuardsAndResolvers: 'always'
       }
     ],

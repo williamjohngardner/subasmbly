@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-import { PartService } from '../../_services/part.service';
+import { SubassemblyService } from '../../_services/subassembly.service';
 
 @Component({
-  selector: 'app-create-part',
-  templateUrl: './create-part.component.html',
-  styleUrls: ['./create-part.component.css']
+  selector: 'app-create-subassembly',
+  templateUrl: './create-subassembly.component.html',
+  styleUrls: ['./create-subassembly.component.css']
 })
-export class CreatePartComponent implements OnInit {
-  public createPartForm: FormGroup;
+export class CreateSubassemblyComponent implements OnInit {
+  public createSubassemblyForm: FormGroup;
   public categories: Array<object> = [
     { n: 'Paints', v: 'Paint' },
     { n: 'Metals', v: 'Metal' },
@@ -25,7 +26,8 @@ export class CreatePartComponent implements OnInit {
   constructor(
     readonly _modal: NgbModal,
     readonly _formBuilder: FormBuilder,
-    readonly _partSerivce: PartService
+    readonly _router: Router,
+    readonly _subassbmlyService: SubassemblyService
   ) { }
 
   ngOnInit(): void {
@@ -33,15 +35,15 @@ export class CreatePartComponent implements OnInit {
   }
 
   createForm() {
-    this.createPartForm = this._formBuilder.group({
-      partName: [{ value: '', disabled: false }],
-      partNumber: [{ value: '', disabled: false }],
+    this.createSubassemblyForm = this._formBuilder.group({
+      subassemblyName: [{ value: '', disabled: false }],
+      subassemblyNumber: [{ value: '', disabled: false }],
       description: [{ value: '', disabled: false }],
       category: [{ value: '', disabled: false }],
       subCategory: [{ value: '', disabled: false }],
-      material: [{ value: '', disabled: false }],
-      finish: [{ value: '', disabled: false }],
-      plating: [{ value: '', disabled: false }],
+      parts: this._formBuilder.group({
+        partName: [{ value: '', disabled: false }]
+      }),
       uom: [{ value: '', disabled: false }],
       unitCost: [{ value: '', disabled: false }],
       unitPrice: [{ value: '', disabled: false }]
@@ -49,13 +51,14 @@ export class CreatePartComponent implements OnInit {
   }
 
   onSubmit() {
-    const value: object = this.createPartForm.value;
-    this._partSerivce.createPart(value).subscribe(() => {
-      alert('Part was created successfully');
+    console.log('ON SUBMIT', this.createSubassemblyForm.value);
+    const value: object = this.createSubassemblyForm.value;
+    this._subassbmlyService.createSubassembly(value).subscribe(() => {
+      alert('Subassembly was created successfully');
+      this._router.navigate(['subassembly']);
     },
       Error => {
         alert(Error);
       });
   }
-
 }

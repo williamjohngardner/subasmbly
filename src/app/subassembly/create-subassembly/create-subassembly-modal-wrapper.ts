@@ -5,13 +5,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
-import { CreatePartComponent } from '../create-part/create-part.component';
+import { CreateSubassemblyComponent } from '../create-subassembly/create-subassembly.component';
 
 @Component({
-  selector: 'app-create-part-modal-wrapper',
+  selector: 'app-create-subassembly-modal-wrapper',
   template: ''
 })
-export class CreatePartModalWrapperComponent implements OnDestroy {
+export class CreateSubassemblyModalWrapperComponent implements OnDestroy {
 
   destroy: Subject<any> = new Subject<any>();
   currentDialog: any = null;
@@ -24,17 +24,17 @@ export class CreatePartModalWrapperComponent implements OnDestroy {
     _route.params.pipe(takeUntil(this.destroy)).subscribe(() => {
       if (this.modalService.hasOpenModals() === false) {
         // When router navigates to this component is takes the params and opens up the modal
-        this.currentDialog = this.modalService.open(CreatePartComponent, {centered: true});
+        this.currentDialog = this.modalService.open(CreateSubassemblyComponent, {centered: true});
       } else {
         this.modalService.dismissAll();
-        this.currentDialog = this.modalService.open(CreatePartComponent, {centered: true});
+        this.currentDialog = this.modalService.open(CreateSubassemblyComponent, {centered: true});
       }
 
       // Go back to home page after the modal is closed
       this.currentDialog.result.then((result: any) => {
-        _router.navigateByUrl('/part');
+        _router.navigateByUrl('/subassembly');
       }, (reason: any) => {
-        _router.navigateByUrl('/part');
+        _router.navigateByUrl('/subassembly');
       });
     });
   }
