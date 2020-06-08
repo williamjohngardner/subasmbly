@@ -1,14 +1,7 @@
 <div class="container-fluid">
     <div class="row pt-3 px-3">
-        <div class="col-4 mb-2">
-            <h4>{{this.user}}'s Projects Library</h4>
-        </div>
-        <div class="col-8">
-            <div class="btn-group btn-group-sm float-right" role="group" aria-label="Project Dashboard Buttons">
-                <button type="button" class="btn btn-secondary rounded-0">Create Project</button>
-                <button type="button" class="btn btn-info rounded-0">Edit Project</button>
-                <button type="button" class="btn btn-danger rounded-0">Remove Project</button>
-            </div>
+        <div class="col-12 mb-2">
+            <button type="button" class="btn btn-success rounded-0" (click)="createProject()">Make New Project</button>
         </div>
     </div>
     <div class="row">
@@ -23,13 +16,13 @@
                     <th>Project Cost</th>
                     <th>Project Price</th>
                 </thead>
-                <tbody *ngFor="let project of _projects['_value']['projects']; let i = index">
+                <tbody *ngFor="let project of _projects; let i = index">
                     <tr (click)="openProject(project._id)" style="cursor: pointer">
-                        <td>{{project.name}}</td>
-                        <td>{{project.deliverables}}</td>
-                        <td>{{project.assemblies}}</td>
-                        <td>{{project.subAssemblies}}</td>
-                        <td>{{project.pieceParts}}</td>
+                        <td>{{project.projectName}}</td>
+                        <td>{{project.projectNumber}}</td>
+                        <td>{{project.description}}</td>
+                        <td>{{project.category}}</td>
+                        <td>{{project.subCategory}}</td>
                         <td>{{project.projectCost | currency}}</td>
                         <td>{{project.projectPrice | currency}}</td>
                     </tr>

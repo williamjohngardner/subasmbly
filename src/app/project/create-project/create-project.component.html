@@ -1,0 +1,85 @@
+<div>
+    <div class="modal-header p-5">
+      <h4 class="modal-title" id="modal-basic-title">Create A New Project</h4>
+      <button type="button" class="close" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body p-5">
+      <form [formGroup]="createProjectForm">
+        <div class="form-row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="projectName" class="input-group-text rounded-0" id="createFormName">Project Name</label>
+            </div>
+            <input formControlName="projectName" type="text" class="form-control rounded-0">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="projectNumber" class="input-group-text rounded-0" id="createFormNumber">Project Number</label>
+            </div>
+            <input formControlName="projectNumber" type="text" class="form-control rounded-0">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group mb-3">
+            <label for="description" class="input-group-text rounded-0 w-100" id="createFormDesc">Description</label>
+            <textarea formControlName="description" type="text" class="form-control rounded-0"></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="category" class="input-group-text rounded-0" id="createFormName">Category</label>
+            </div>
+            <select formControlName="category" class="form-control rounded-0" name="category" id="category">
+              <option *ngFor="let c of this.categories" value="{{c.v}}">{{c.n}}</option>
+            </select>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="subCategory" class="input-group-text rounded-0" id="createFormName">Sub-Category</label>
+            </div>
+            <select formControlName="subCategory" class="form-control rounded-0" name="subCategory" id="subCategory">
+              <option *ngFor="let s of this.subCategories" value="{{s.v}}">{{s.n}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row" formGroupName="parts">
+            <div class="input-group mb-3">
+              <label for="partName" class="input-group-text rounded-0 w-100" id="createPartName">Part Name</label>
+              <input formControlName="partName" type="text" class="form-control rounded-0">
+            </div>
+        </div>
+        <div class="form-row" formGroupName="subassemblies">
+            <div class="input-group mb-3">
+              <label for="subassemblyName" class="input-group-text rounded-0 w-100" id="createSubassemblyName">Subassembly Name</label>
+              <input formControlName="subassemblyName" type="text" class="form-control rounded-0">
+            </div>
+        </div>
+        <div class="form-row" formGroupName="assemblies">
+            <div class="input-group mb-3">
+              <label for="assemblyName" class="input-group-text rounded-0 w-100" id="createAssemblyName">Assembly Name</label>
+              <input formControlName="assemblyName" type="text" class="form-control rounded-0">
+            </div>
+        </div>
+        <div class="form-row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="projectCost" class="input-group-text rounded-0" id="createFormProjectCostLabel">Project Cost</label>
+            </div>
+            <input formControlName="projectCost" type="text" class="form-control rounded-0" id="createFormProjectCost">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label for="projectPrice" class="input-group-text rounded-0" id="createFormProjectPriceLabel">Project Price</label>
+            </div>
+            <input formControlName="projectPrice" type="text" class="form-control rounded-0" id="createFormProjectPrice">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer p-5">
+      <button type="button" class="btn btn-success rounded-0 w-25" (click)="onSubmit()">Create Project</button>
+    </div>
+  </div>

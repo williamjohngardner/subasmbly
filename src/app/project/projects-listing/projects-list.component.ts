@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router'
+import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-projects-list',
@@ -9,16 +10,23 @@ import { Observable } from 'rxjs';
   styleUrls: ['./projects-list.component.css']
 })
 export class ProjectsListComponent {
-
-  public user: string = 'Bill Gardner';
-  public _projects: Observable<object> = this._route.data;
+  public _projects: Observable<object> = this._route.data['_value']['projects']['body'];
 
   constructor(
+    readonly http: HttpClient,
     readonly _router: Router,
     readonly _route: ActivatedRoute
   ) {}
 
-  openProject (id: string) {
-    this._router.navigate([id], {relativeTo: this._route})
+  ngOnInit () {
+    console.log('PROJECTS: ', this._projects);
+  }
+  
+  openProject (id: number) {
+    this._router.navigate([id], {relativeTo: this._route});
+  }
+
+  createProject () {
+    this._router.navigate(['create', 'project']);
   }
 }

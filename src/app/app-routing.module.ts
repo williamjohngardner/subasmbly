@@ -10,6 +10,7 @@ import { PartListingComponent } from './part/part-listing/part-listing.component
 import { CreatePartModalWrapperComponent } from './part/create-part/create-part-modal-wrapper.component';
 import { ProjectComponent } from './project/project/project.component';
 import { ProjectsListComponent } from './project/projects-listing/projects-list.component';
+import { CreateProjectModalWrapperComponent } from './project/create-project/create-project-modal-wrapper.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { SubassemblyComponent } from './subassembly/subassembly/subassembly.component';
 import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
@@ -54,18 +55,23 @@ const routes: Routes = [
     path: 'create',
     children: [
       { 
+        path: 'assembly',
+        component: CreateAssemblyModalWrapperComponent,
+        runGuardsAndResolvers: 'always'
+      },
+      { 
         path: 'part',
         component: CreatePartModalWrapperComponent,
         runGuardsAndResolvers: 'always'
       },
       { 
-        path: 'subassembly',
-        component: CreateSubassemblyModalWrapperComponent,
+        path: 'project',
+        component: CreateProjectModalWrapperComponent,
         runGuardsAndResolvers: 'always'
       },
       { 
-        path: 'assembly',
-        component: CreateAssemblyModalWrapperComponent,
+        path: 'subassembly',
+        component: CreateSubassemblyModalWrapperComponent,
         runGuardsAndResolvers: 'always'
       }
     ],

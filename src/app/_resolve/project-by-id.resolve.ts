@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { HttpResponse } from '@angular/common/http';
 
-import projects from '../../assets/database/parts.json';
+import { ProjectService } from '../_services/project.service';
 
 import { Project } from '../project/project';
 
 @Injectable()
-export class ProjectByIdResolve implements Resolve<any> {
+export class ProjectByIdResolve implements Resolve<HttpResponse<Project>> {
   
-  constructor () {}
+  constructor (
+    readonly _projectService: ProjectService
+) {}
   
   resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return projects.projects[route.params.id];
+    return this._projectService.getProjectById[route.params.id];
   }
 }

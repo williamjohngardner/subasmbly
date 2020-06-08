@@ -27,6 +27,7 @@ import { SupplyComponent } from './supply/supply.component';
 import { CreatePartComponent } from './part/create-part/create-part.component';
 import { CreateSubassemblyComponent } from './subassembly/create-subassembly/create-subassembly.component';
 import { CreateAssemblyComponent } from './assembly/create-assembly/create-assembly.component';
+import { CreateProjectComponent } from './project/create-project/create-project.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { CreateAssemblyComponent } from './assembly/create-assembly/create-assem
     SupplyComponent,
     CreatePartComponent,
     CreateSubassemblyComponent,
-    CreateAssemblyComponent
+    CreateAssemblyComponent,
+    CreateProjectComponent
   ],
   imports: [
     BrowserModule,
