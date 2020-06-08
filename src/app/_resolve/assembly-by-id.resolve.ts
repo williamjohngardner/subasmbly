@@ -7,7 +7,7 @@ import { AssemblyService } from '../_services/assembly.service';
 import { Assembly } from '../assembly/assembly';
 
 @Injectable()
-export class PartByIdResolve implements Resolve<HttpResponse<Assembly>> {
+export class AssemblyByIdResolve implements Resolve<HttpResponse<Assembly>> {
   
   constructor (
       readonly _assemblyService: AssemblyService

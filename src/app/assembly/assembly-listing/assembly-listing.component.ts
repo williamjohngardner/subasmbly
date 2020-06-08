@@ -29,6 +29,6 @@ export class AssemblyListingComponent {
   }
 
   createAssembly () {
-    this._router.navigate(['create', 'subassembly']);
+    this._router.navigate(['create', 'assembly']);
   }
 }

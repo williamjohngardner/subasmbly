@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './dashboard/dashboard.component';
 import { AssemblyComponent } from './assembly/assembly/assembly.component';
 import { AssemblyListingComponent } from './assembly/assembly-listing/assembly-listing.component';
+import { CreateAssemblyModalWrapperComponent } from './assembly/create-assembly/create-assembly-modal-wrapper.component';
 import { PartComponent } from './part/part/part.component';
 import { PartListingComponent } from './part/part-listing/part-listing.component';
 import { CreatePartModalWrapperComponent } from './part/create-part/create-part-modal-wrapper.component';
@@ -15,7 +16,8 @@ import { SubassemblyListingComponent } from './subassembly/subassembly-listing/s
 import { CreateSubassemblyModalWrapperComponent } from './subassembly/create-subassembly/create-subassembly-modal-wrapper';
 import { SupplyComponent } from './supply/supply.component';
 
-import { AssemblyResolve } from './_resolve/assembly.resolve'
+import { AssemblyResolve } from './_resolve/assembly.resolve';
+import { AssemblyByIdResolve } from './_resolve/assembly-by-id.resolve';
 import { PartResolve } from './_resolve/part.resolve';
 import { PartByIdResolve } from './_resolve/part-by-id.resolve';
 import { ProjectResolve } from './_resolve/project.resolve';
@@ -43,7 +45,7 @@ const routes: Routes = [
         component: AssemblyComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
-          assembly: PartByIdResolve
+          assembly: AssemblyByIdResolve
         }
       }
     ],
@@ -59,6 +61,11 @@ const routes: Routes = [
       { 
         path: 'subassembly',
         component: CreateSubassemblyModalWrapperComponent,
+        runGuardsAndResolvers: 'always'
+      },
+      { 
+        path: 'assembly',
+        component: CreateAssemblyModalWrapperComponent,
         runGuardsAndResolvers: 'always'
       }
     ],
@@ -171,6 +178,7 @@ const routes: Routes = [
   ],
   providers: [
     AssemblyResolve,
+    AssemblyByIdResolve,
     PartResolve,
     PartByIdResolve,
     ProjectResolve,

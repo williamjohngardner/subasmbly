@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { SubassemblyService } from '../../_services/subassembly.service';
 
@@ -27,7 +27,7 @@ export class CreateSubassemblyComponent implements OnInit {
     readonly _modal: NgbModal,
     readonly _formBuilder: FormBuilder,
     readonly _router: Router,
-    readonly _subassbmlyService: SubassemblyService
+    readonly _subassemblyService: SubassemblyService
   ) { }
 
   ngOnInit(): void {
@@ -51,9 +51,8 @@ export class CreateSubassemblyComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('ON SUBMIT', this.createSubassemblyForm.value);
     const value: object = this.createSubassemblyForm.value;
-    this._subassbmlyService.createSubassembly(value).subscribe(() => {
+    this._subassemblyService.createSubassembly(value).subscribe(() => {
       alert('Subassembly was created successfully');
       this._router.navigate(['subassembly']);
     },

@@ -20,7 +20,7 @@ const subassemblySchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: false
     },
-    partName: {
+    subassemblyName: {
         type: String,
         required: true,
     }
