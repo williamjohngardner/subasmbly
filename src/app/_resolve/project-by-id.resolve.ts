@@ -14,6 +14,6 @@ export class ProjectByIdResolve implements Resolve<HttpResponse<Project>> {
 ) {}
   
   resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    return this._projectService.getProjectById[route.params.id];
+    return this._projectService.getProjectById(route.params.id);
   }
 }

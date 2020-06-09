@@ -27,7 +27,7 @@
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">project Number</label>
+                            <label class="input-group-text rounded-0 w-100">Project Number</label>
                         </div>
                         <input formControlName="projectNumber" type="text" class="form-control rounded-0" id="projectNumber">
                     </div>
@@ -49,27 +49,43 @@
                     </div>
                 </div>
                 <div class="form-group mb-2">
-                    <div class="input-group">
+                    <div class="input-group" formGroupName="parts">
                         <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">UoM</label>
+                            <label class="input-group-text rounded-0 w-100">Parts</label>
                         </div>
-                        <input formControlName="uom" type="text" class="form-control rounded-0" id="projectUom">
+                        <input formControlName="partName" type="text" class="form-control rounded-0" id="projectParts">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group" formGroupName="subassemblies">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Subassemblies</label>
+                        </div>
+                        <input formControlName="subassemblyName" type="text" class="form-control rounded-0" id="projectSubassemblies">
+                    </div>
+                </div>
+                <div class="form-group mb-2">
+                    <div class="input-group" formGroupName="assemblies">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text rounded-0 w-100">Assemblies</label>
+                        </div>
+                        <input formControlName="assemblyName" type="text" class="form-control rounded-0" id="projectAssemblies">
                     </div>
                 </div>
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Unit Cost</label>
+                            <label class="input-group-text rounded-0 w-100">Project Cost</label>
                         </div>
-                        <input formControlName="unitCost" type="text" class="form-control rounded-0" id="projectUnitCost">
+                        <input formControlName="projectCost" type="text" class="form-control rounded-0" id="projectProjectCost">
                     </div>
                 </div>
                 <div class="form-group mb-2">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Unit Price</label>
+                            <label class="input-group-text rounded-0 w-100">Project Price</label>
                         </div>
-                        <input formControlName="unitPrice" type="text" class="form-control rounded-0" id="projectUnitPrice">
+                        <input formControlName="projectPrice" type="text" class="form-control rounded-0" id="projectProjectPrice">
                     </div>
                 </div>
                 <div class="form-group mb-2">

@@ -7,7 +7,7 @@ const get = function (req, res) {
     Part.deleteOne({ _id: req.params.id }).then(function (doc) {
         res.status(200);
         res.send(doc);
-        return next();
+        return next(doc);
     }).catch(function (err) {
         console.error(err);
     });

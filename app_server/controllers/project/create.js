@@ -1,11 +1,11 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const Part = require('../../models/part.js');
+const Project = require('../../models/project.js');
 
 const create = function (req, res, next) {
-  let part = new Part(req.body);
-  part.save().then(function (result) {
+  let project = new Project(req.body);
+  project.save().then(function (result) {
       res.status(200);
       res.json(result);
       return next();

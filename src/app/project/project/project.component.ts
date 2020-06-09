@@ -33,16 +33,18 @@ export class ProjectComponent implements OnInit {
       projectNumber: [{ value: this._project['projectNumber'], disabled: false }],
       description: [{ value: this._project['description'], disabled: false }],
       category: [{ value: this._project['category'], disabled: false }],
-      subCategory: [{ value: this._project['Category'], disabled: false }],
+      subCategory: [{ value: this._project['subCategory'], disabled: false }],
       parts: this._formBuilder.group({
-        partName: [{ value: this._project['parts'], disabled: false }]
+        partName: [{ value: this._project['parts']['partName'], disabled: false }]
       }),
       subassemblies: this._formBuilder.group({
-        subprojectName: [{ value: this._project['subassemblies'], disabled: false }]
+        subassemblyName: [{ value: this._project['subassemblies']['subassemblyName'], disabled: false }]
       }),
-      uom: [{ value: this._project['uom'], disabled: false }],
-      unitCost: [{ value: this._project['unitCost'], disabled: false }],
-      unitPrice: [{ value: this._project['unitPrice'], disabled: false }],
+      assemblies: this._formBuilder.group({
+        assemblyName: [{ value: this._project['assemblies']['assemblyName'], disabled: false }]
+      }),
+      projectCost: [{ value: this._project['projectCost'], disabled: false }],
+      projectPrice: [{ value: this._project['projectPrice'], disabled: false }],
       dateCreated: [{ value: this._project['_dateCreated'], disabled: false }],
       dateUpdated: [{ value: this._project['_dateUpdated'], disabled: false }]
     })

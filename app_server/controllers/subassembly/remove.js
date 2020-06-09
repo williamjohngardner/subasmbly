@@ -7,7 +7,7 @@ const remove = function (req, res) {
     Subassembly.deleteOne({ _id: req.params.id }).then(function (doc) {
         res.status(200);
         res.send(doc);
-        return next();
+        return next(doc);
     }).catch(function (err) {
         console.error(err);
     });
