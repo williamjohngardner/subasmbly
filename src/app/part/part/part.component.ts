@@ -23,7 +23,6 @@ export class PartComponent implements OnInit {
   ) {}
 
   ngOnInit () {
-    // console.log('_PART: ', this._part);
     this.createPartForm();
   }
 
@@ -47,7 +46,6 @@ export class PartComponent implements OnInit {
 
   updatePart () {
     const values: object = this.partForm.value;
-    console.log('PART FORM: ', values);
     this._partService.updatePart(this._part['_id'], values).subscribe(() => {
       alert('Part Successfully Updated');
       this._router.navigate(['part']);
