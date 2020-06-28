@@ -11,23 +11,19 @@ import { Observable } from 'rxjs';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class HomeComponent implements AfterViewInit {
-  public data: Observable<object> = this._activatedRoute.data;
+export class DashboardComponent implements AfterViewInit {
+  public data: Observable<object> = this._route.data['_value']['dashboard']['body'];
   public adafruitProducts: object;
 
   constructor(
     readonly _partService: PartService,
     readonly _adafruitService: AdafruitApiService,
-    readonly _activatedRoute: ActivatedRoute,
+    readonly _route: ActivatedRoute,
     readonly _router: Router,
   ) { }
 
   ngAfterViewInit() {
-    this._partService.getParts()
-      .subscribe(data => {
-        // this.data = data;
-        console.log('DATA: ', this.data);
-      })
+    console.log('DASHBOARD: ', this.data);
       // this._adafruitService.getAdafruitProducts()
       // .subscribe(data => {
       //   this.adafruitProducts = data;

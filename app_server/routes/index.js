@@ -9,7 +9,7 @@ const subassembly = require('./subassembly');
 const supply = require('./supply')
 
 /* Dashboard API */
-router.get('/', dashboard.get);
+router.get('/dashboard', dashboard.get);
 
 /* Assembly API */
 router.get('/assembly', assembly.get);

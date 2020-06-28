@@ -12,7 +12,7 @@ import { WINDOW_PROVIDERS } from './_services/window.provider';
 import { HostProviderService } from './_services/host-provider.service';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavComponent } from './nav/nav.component';
 import { AssemblyComponent } from './assembly/assembly/assembly.component';
 import { AssemblyListingComponent } from './assembly/assembly-listing/assembly-listing.component';
@@ -32,7 +32,7 @@ import { CreateProjectComponent } from './project/create-project/create-project.
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    DashboardComponent,
     NavComponent,
     AssemblyComponent,
     AssemblyListingComponent,

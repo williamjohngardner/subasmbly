@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { AssemblyComponent } from './assembly/assembly/assembly.component';
 import { AssemblyListingComponent } from './assembly/assembly-listing/assembly-listing.component';
 import { CreateAssemblyModalWrapperComponent } from './assembly/create-assembly/create-assembly-modal-wrapper.component';
@@ -19,6 +19,7 @@ import { SupplyComponent } from './supply/supply.component';
 
 import { AssemblyResolve } from './_resolve/assembly.resolve';
 import { AssemblyByIdResolve } from './_resolve/assembly-by-id.resolve';
+import { DashboardResolve } from './_resolve/dashboard.resolve';
 import { PartResolve } from './_resolve/part.resolve';
 import { PartByIdResolve } from './_resolve/part-by-id.resolve';
 import { ProjectResolve } from './_resolve/project.resolve';
@@ -29,7 +30,13 @@ import { SubassemblyByIdResolve } from './_resolve/subassembly-by-id.resolve';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '',
+    component: DashboardComponent,
+    runGuardsAndResolvers: 'always',
+    resolve: {
+      dashboard: DashboardResolve
+    }
+  },
   {
     path: 'assembly',
     children: [
@@ -185,6 +192,7 @@ const routes: Routes = [
   providers: [
     AssemblyResolve,
     AssemblyByIdResolve,
+    DashboardResolve,
     PartResolve,
     PartByIdResolve,
     ProjectResolve,

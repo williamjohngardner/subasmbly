@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class PartService {
   readonly hostname: string = this._host.getHostname();
-  readonly partUrl: string = `http://localhost:3000/api/v1/part/`
+  readonly partUrl: string = `http://localhost:3000/api/v1/part/`;
   // readonly _header = {
   //   headers: new HttpHeaders({
   //     'Content-Type': 'application/json',
