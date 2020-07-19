@@ -25,8 +25,4 @@ export class ProjectsListComponent {
   openProject (id: number) {
     this._router.navigate([id], {relativeTo: this._route});
   }
-
-  createProject () {
-    this._router.navigate(['create', 'project']);
-  }
 }

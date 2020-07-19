@@ -23,8 +23,4 @@ export class PartListingComponent {
   openPart (id: number) {
     this._router.navigate([id], {relativeTo: this._route});
   }
-
-  createPart () {
-    this._router.navigate(['create', 'part']);
-  }
 }

@@ -23,8 +23,4 @@ export class SubassemblyListingComponent {
   openSubassembly (id: number) {
     this._router.navigate([id], {relativeTo: this._route});
   }
-
-  createSubassembly () {
-    this._router.navigate(['create', 'subassembly']);
-  }
 }

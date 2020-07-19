@@ -17,7 +17,7 @@
             </div>
             <div class="row pt-3">
                 <div class="col-4 pl-0">
-                    <img class="shadow" src="../../assets/images/HTC82105A08R.jpeg" alt="hermanMillerImage">
+                    <img class="shadow" src="../../assets/images/HTC82105A08R.jpeg" alt="ballPeenHamerImage">
                     <div [formGroup]="partForm">
                         <div class="form-group mt-2">
                             <h5 class="pb-2">description:</h5>
@@ -146,7 +146,7 @@
                                         <div class="input-group-prepend">
                                             <label class="input-group-text rounded-0 w-100">Date Updated</label>
                                         </div>
-                                        <input formControlName="dateUpdated" type="text" class="form-control rounded-0" id="partDateUpdated">
+                                        <input formControlName="{{'dateUpdated' | date}}" type="text" class="form-control rounded-0" id="partDateUpdated">
                                     </div>
                                 </div>
                             </div>

@@ -1,33 +1,42 @@
-<div class="container-fluid">
-    <div class="row pt-3 px-3">
-        <div class="col-12 mb-2">
-            <button type="button" class="btn btn-success rounded-0" (click)="createProject()">Make New Project</button>
+<div class="container">
+    <div class="card pt-0 px-0 h-25 rounded-0 shadow tableModal">
+        <div class="card-header bg-secondary rounded-0">
+            <div class="row pt-3">
+                <div class="col-7">
+                    <h5 class="text-white">Projects Listing</h5>
+                </div>
+                <div class="col-5">
+                    <div class="btn-group btn-group-sm float-right shadow-sm" role="group" aria-label="Create Project">
+                        <button type="button" class="btn btn-light text-black-50 rounded-0" routerLink="/create/project">Create a New Project</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <table class="table table-hover mx-3 px-5">
-                <thead class="thead-light">
-                    <th>Project Name</th>
-                    <th>Project Number</th>
-                    <th>Description</th>
-                    <th>Category</th>
-                    <th>Sub Category</th>
-                    <th>Project Cost</th>
-                    <th>Project Price</th>
-                </thead>
-                <tbody *ngFor="let project of _projects; let i = index">
-                    <tr (click)="openProject(project._id)" style="cursor: pointer">
-                        <td>{{project.projectName}}</td>
-                        <td>{{project.projectNumber}}</td>
-                        <td>{{project.description}}</td>
-                        <td>{{project.category}}</td>
-                        <td>{{project.subCategory}}</td>
-                        <td>{{project.projectCost | currency}}</td>
-                        <td>{{project.projectPrice | currency}}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card-body pt-0 px-5">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-hover">
+                        <thead>
+                            <th>Project Name</th>
+                            <th>Project Number</th>
+                            <th>Category</th>
+                            <th>Sub Category</th>
+                            <th>Project Cost</th>
+                            <th>Project Price</th>
+                        </thead>
+                        <tbody *ngFor="let project of _projects; let i = index">
+                            <tr (click)="openProject(project._id)" style="cursor: pointer">
+                                <td>{{project.projectName}}</td>
+                                <td>{{project.projectNumber}}</td>
+                                <td>{{project.category}}</td>
+                                <td>{{project.subCategory}}</td>
+                                <td>{{project.projectCost | currency}}</td>
+                                <td>{{project.projectPrice | currency}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,39 +1,42 @@
-<div class="container-fluid">
-    <div class="row pt-3 px-3">
-        <div class="col-12 mb-2">
-            <button type="button" class="btn btn-success rounded-0" (click)="createSubassembly()">Make New Subassembly</button>
+<div class="container">
+    <div class="card pt-0 px-0 rounded-0 shadow h-25 tableModal">
+        <div class="card-header bg-secondary rounded-0">
+            <div class="row pt-3">
+                <div class="col-7">
+                    <h5 class="text-white">Subassembly Listing</h5>
+                </div>
+                <div class="col-5">
+                    <div class="btn-group btn-group-sm float-right shadow-sm" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-light text-black-50 rounded-0" routerLink="/create/subassembly">Create a New Subassembly</button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <table class="table table-hover mx-3 px-5">
-                <thead class="thead-light">
-                    <th>Subassembly Name</th>
-                    <th>Subassembly Number</th>
-                    <th>Description</th>
-                    <th>Category</th>
-                    <th>SubCategory</th>
-                    <th>UoM</th>
-                    <th>Cost/Unit</th>
-                    <th>Price/Unit</th>
-                    <th>Date Created</th>
-                    <th>Date Updated</th>
-                </thead>
-                <tbody *ngFor="let subassembly of this._subassembly['_value']['subassemblies']['body']; let i = index">
-                    <tr>
-                        <td (click)="openSubassembly(subassembly._id)" style="cursor: pointer">{{subassembly.subassemblyName}}</td>
-                        <td>{{subassembly.subassemblyNumber}}</td>
-                        <td>{{subassembly.description}}</td>
-                        <td>{{subassembly.category}}</td>
-                        <td>{{subassembly.subCategory}}</td>
-                        <td>{{subassembly.uom}}</td>
-                        <td>{{subassembly.unitCost}}</td>
-                        <td>{{subassembly.unitPrice}}</td>
-                        <td>{{subassembly._dateCreated}}</td>
-                        <td>{{subassembly._dateUpdated}}</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card-body pt-0 px-5">
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-hover">
+                        <thead>
+                            <th>Subassembly Name</th>
+                            <th>Subassembly Number</th>
+                            <th>Category</th>
+                            <th>SubCategory</th>
+                            <th>Cost/Unit</th>
+                            <th>Price/Unit</th>
+                        </thead>
+                        <tbody *ngFor="let subassembly of this._subassembly['_value']['subassemblies']['body']; let i = index">
+                            <tr>
+                                <td (click)="openSubassembly(subassembly._id)" style="cursor: pointer">{{subassembly.subassemblyName}}</td>
+                                <td>{{subassembly.subassemblyNumber}}</td>
+                                <td>{{subassembly.category}}</td>
+                                <td>{{subassembly.subCategory}}</td>
+                                <td>{{subassembly.unitCost}}</td>
+                                <td>{{subassembly.unitPrice}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
+    </div>            
 </div>
