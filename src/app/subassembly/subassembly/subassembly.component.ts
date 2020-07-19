@@ -34,15 +34,27 @@ export class SubassemblyComponent implements OnInit {
       description: [{ value: this._subassembly['description'], disabled: false }],
       category: [{ value: this._subassembly['category'], disabled: false }],
       subCategory: [{ value: this._subassembly['subCategory'], disabled: false }],
-      parts: this._formBuilder.group({
-        partName: [{ value: this._subassembly['parts'], disabled: false }]
-      }),
+      parts: this._formBuilder.array([]),
       uom: [{ value: this._subassembly['uom'], disabled: false }],
       unitCost: [{ value: this._subassembly['unitCost'], disabled: false }],
       unitPrice: [{ value: this._subassembly['unitPrice'], disabled: false }],
       dateCreated: [{ value: this._subassembly['_dateCreated'], disabled: false }],
       dateUpdated: [{ value: this._subassembly['_dateUpdated'], disabled: false }]
     })
+  }
+
+  createPartsArray () {
+    const control: FormArray = this.subassemblyForm.get('parts') as FormArray;
+    for (let item = 0; item < this._subassembly['parts'].length; item++) {
+      control.push(this.createPartsFormGroup(this._subassembly['parts'][item]));
+    }
+  }
+
+  createPartsFormGroup (part: any) {
+    return new FormGroup({
+      partName: new FormControl(part.partName),
+      _id: new FormControl(part._id),
+    });
   }
 
   updateSubassembly () {
