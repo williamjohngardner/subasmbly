@@ -77,7 +77,7 @@
                                             <div class="input-group-prepend">
                                                 <label class="input-group-text rounded-0 w-100">Part {{i + 1}}</label>
                                             </div>
-                                            <input type="text" class="form-control rounded-0" id="subassemblyPartName" value="{{part.partName}}">
+                                            <input type="text" class="form-control rounded-0" id="subassemblyPartName{{i}}" value="{{part.partName}}">
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                             <div class="col">
                                 <div class="form-group mb-2 shadow-sm">
                                     <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
+                                        <div class="input-group-prepend input-group-prepend-short">
                                             <label class="input-group-text rounded-0 w-100">Unit Cost</label>
                                         </div>
                                         <input formControlName="unitCost" type="text" class="form-control rounded-0" id="subassemblyUnitCost">
@@ -109,7 +109,7 @@
                             <div class="col">
                                 <div class="form-group mb-2 shadow-sm">
                                     <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
+                                        <div class="input-group-prepend input-group-prepend-short">
                                             <label class="input-group-text rounded-0 w-100">Unit Price</label>
                                         </div>
                                         <input formControlName="unitPrice" type="text" class="form-control rounded-0" id="subassemblyUnitPrice">
@@ -121,7 +121,7 @@
                             <div class="col">
                                 <div class="form-group mb-2 shadow-sm">
                                     <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
+                                        <div class="input-group-prepend input-group-prepend-short">
                                             <label class="input-group-text rounded-0 w-100">Date Created</label>
                                         </div>
                                         <input formControlName="dateCreated" type="text" class="form-control rounded-0" id="subassemblyDateCreated">
@@ -131,7 +131,7 @@
                             <div class="col">
                                 <div class="form-group mb-2 shadow-sm">
                                     <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
+                                        <div class="input-group-prepend input-group-prepend-short">
                                             <label class="input-group-text rounded-0 w-100">Date Updated</label>
                                         </div>
                                         <input formControlName="dateUpdated" type="text" class="form-control rounded-0" id="subassemblyDateUpdated">

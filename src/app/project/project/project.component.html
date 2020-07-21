@@ -1,110 +1,173 @@
 <div class="container">
-    <div class="row pt-3">
-        <h2>{{_project['projectName']}}</h2>
-    </div>
-    <div class="row pt-2">
-        <h4>{{_project['projectNumber']}}</h4>
-    </div>
-    <div class="row pt-3">
-        <div class="col-4 pl-0">
-            <div [formGroup]="projectForm">
-                <h5 class="pt-3 pb-2">description:</h5>
-                <textarea formControlName="description" class="pr-2"></textarea>
+    <div class="card pt-0 px-0 h-25 rounded-0 shadow">
+        <div class="card-header px-5">
+            <div class="row pt-3">
+                <div class="col-3 px-0">
+                    <h2>{{_project['projectName']}}</h2>
+                    <h4>{{_project['projectNumber']}}</h4>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-5">
+                    <div class="btn-group btn-group-sm float-right shadow-sm" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-light text-black-50 rounded-0" (click)="updateProject()">Update Project</button>
+                        <button type="button" class="btn btn-light text-black-50 rounded-0" routerLink="/create/project">Create Project</button>
+                        <button type="button" class="btn btn-light text-black-50 rounded-0" (click)="deleteProject()">Delete Project</button>
+                    </div>
+                </div>
             </div>
-            <button class="btn btn-success rounded-0" (click)="updateProject()">Update Project</button>
-            <button class="btn btn-danger rounded-0" (click)="deleteProject()">Delete Project</button>
         </div>
-        <div class="col-8">
-            <form [formGroup]="projectForm">
-                <div class="form-group mb-2">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Project Name</label>
+        <div class="card-body pt-3 px-5">
+            <div class="row pt-3 px-4">
+                <div class="col-4 pl-0">
+                    <img class="shadow" src="../../assets/images/HTC82105A08R.jpeg" alt="ballPeenHamerImage">
+                </div>
+                <div class="col-8">
+                    <form [formGroup]="projectForm">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group mb-2 shadow-sm">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text rounded-0 w-100">Project Name</label>
+                                        </div>
+                                        <input formControlName="projectName" type="text" class="form-control rounded-0" id="projectName">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <input formControlName="projectName" type="text" class="form-control rounded-0" id="projectName">
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group mb-2 shadow-sm">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend">
+                                            <label class="input-group-text rounded-0 w-100">Project Number</label>
+                                        </div>
+                                        <input formControlName="projectNumber" type="text" class="form-control rounded-0" id="projectNumber">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group mb-2 shadow-sm">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend input-group-prepend-short">
+                                            <label class="input-group-text rounded-0 w-100">Category</label>
+                                        </div>
+                                        <input formControlName="category" type="text" class="form-control rounded-0" id="projectCategory">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group mb-2 shadow-sm">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend input-group-prepend-short">
+                                            <label class="input-group-text rounded-0 w-100">Sub-Category</label>
+                                        </div>
+                                        <input formControlName="subCategory" type="text" class="form-control rounded-0" id="projectSubCategory">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngFor="let part of this._project['parts']; let i=index">
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group mb-2 shadow-sm">
+                                        <div class="input-group input-group-sm">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text rounded-0 w-100">Part {{i + 1}}</label>
+                                            </div>
+                                            <input type="text" class="form-control rounded-0" id="projectPartName{{i}}" value="{{part.partName}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngFor="let subassembly of this._project['subassemblies']; let i=index">
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group mb-2 shadow-sm">
+                                        <div class="input-group input-group-sm">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text rounded-0 w-100">Subassembly {{i + 1}}</label>
+                                            </div>
+                                            <input type="text" class="form-control rounded-0" id="projectSubassemblyName{{i}}" value="{{subassembly.subassemblyName}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngFor="let assembly of this._project['assemblies']; let i=index">
+                            <div class="form-row">
+                                <div class="col">
+                                    <div class="form-group mb-2 shadow-sm">
+                                        <div class="input-group input-group-sm">
+                                            <div class="input-group-prepend">
+                                                <label class="input-group-text rounded-0 w-100">Assembly {{i + 1}}</label>
+                                            </div>
+                                            <input type="text" class="form-control rounded-0" id="projectAssemblyName{{i}}" value="{{assembly.assemblyName}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group mb-2 shadow-sm">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend input-group-prepend-short">
+                                            <label class="input-group-text rounded-0 w-100">Project Cost</label>
+                                        </div>
+                                        <input formControlName="projectCost" type="text" class="form-control rounded-0" id="projectProjectCost">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group mb-2 shadow-sm">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend input-group-prepend-short">
+                                            <label class="input-group-text rounded-0 w-100">Project Price</label>
+                                        </div>
+                                        <input formControlName="projectPrice" type="text" class="form-control rounded-0" id="projectProjectPrice">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group mb-2 shadow-sm">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend input-group-prepend-short">
+                                            <label class="input-group-text rounded-0 w-100">Date Created</label>
+                                        </div>
+                                        <input formControlName="dateCreated" type="text" class="form-control rounded-0" id="projectDateCreated">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group mb-2 shadow-sm">
+                                    <div class="input-group input-group-sm">
+                                        <div class="input-group-prepend input-group-prepend-short">
+                                            <label class="input-group-text rounded-0 w-100">Date Updated</label>
+                                        </div>
+                                        <input formControlName="dateUpdated" type="text" class="form-control rounded-0" id="projectDateUpdated">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row pt-3 px-3">
+                <div class="col">
+                    <div [formGroup]="projectForm">
+                        <div class="form-group mt-2">
+                            <h5 class="pb-2">description:</h5>
+                            <textarea formControlName="description" class="pr-2 w-100" style="border: none;"></textarea>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group mb-2">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Project Number</label>
-                        </div>
-                        <input formControlName="projectNumber" type="text" class="form-control rounded-0" id="projectNumber">
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Category</label>
-                        </div>
-                        <input formControlName="category" type="text" class="form-control rounded-0" id="projectCategory">
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Sub-Category</label>
-                        </div>
-                        <input formControlName="subCategory" type="text" class="form-control rounded-0" id="projectSubCategory">
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <div class="input-group" formGroupName="parts">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Parts</label>
-                        </div>
-                        <input formControlName="partName" type="text" class="form-control rounded-0" id="projectParts">
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <div class="input-group" formGroupName="subassemblies">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Subassemblies</label>
-                        </div>
-                        <input formControlName="subassemblyName" type="text" class="form-control rounded-0" id="projectSubassemblies">
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <div class="input-group" formGroupName="assemblies">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Assemblies</label>
-                        </div>
-                        <input formControlName="assemblyName" type="text" class="form-control rounded-0" id="projectAssemblies">
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Project Cost</label>
-                        </div>
-                        <input formControlName="projectCost" type="text" class="form-control rounded-0" id="projectProjectCost">
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Project Price</label>
-                        </div>
-                        <input formControlName="projectPrice" type="text" class="form-control rounded-0" id="projectProjectPrice">
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Date Created</label>
-                        </div>
-                        <input formControlName="dateCreated" type="text" class="form-control rounded-0" id="projectDateCreated">
-                    </div>
-                </div>
-                <div class="form-group mb-2">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <label class="input-group-text rounded-0 w-100">Date Updated</label>
-                        </div>
-                        <input formControlName="dateUpdated" type="text" class="form-control rounded-0" id="projectDateUpdated">
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

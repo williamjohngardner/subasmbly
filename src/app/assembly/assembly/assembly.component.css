@@ -1,0 +1,36 @@
+.input-group-prepend {
+    width: 25%;
+}
+
+.input-group-prepend-short {
+    width: 50%;
+}
+
+.input-group-text, input {
+    font-family: 'Yantramanav', sans-serif;
+}
+
+h2 {
+    font-family: 'Yantramanav', sans-serif;
+    font-weight: 300;
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h4, h5, p, textarea {
+    font-family: 'Yantramanav', Arial, Helvetica, sans-serif;
+    font-weight: 200
+}
+
+p {
+    font-size: .75rem;
+    text-align: justify;
+}
+
+img {
+    height:300px;
+    width: 300px;
+}
