@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'
 import { HttpClient } from '@angular/common/http';
 
-import { PartService } from '../../_services/part.service';
+import { AdafruitApiService } from '../../_services/adafruit-api.service';
+
 import { Observable } from 'rxjs'
 
 @Component({
@@ -10,17 +11,26 @@ import { Observable } from 'rxjs'
   templateUrl: './part-listing.component.html',
   styleUrls: ['./part-listing.component.css']
 })
-export class PartListingComponent {
+export class PartListingComponent implements OnInit {
   public _part: Observable<object> = this._route.data;
+  public adaFruit: object = {};
 
   constructor(
     readonly http: HttpClient,
     readonly _router: Router,
     readonly _route: ActivatedRoute,
-    readonly _data: PartService
-  ) {}
+    readonly _adafruit: AdafruitApiService
+  ) { }
 
-  openPart (id: number) {
-    this._router.navigate([id], {relativeTo: this._route});
+  ngOnInit() {
+    this._adafruit.getAdafruitProducts()
+      .subscribe(ada => {
+        this.adaFruit = ada;
+        console.log('ADAFRUIT: ', this.adaFruit);
+      })
+  }
+
+  openPart(id: number) {
+    this._router.navigate([id], { relativeTo: this._route });
   }
 }

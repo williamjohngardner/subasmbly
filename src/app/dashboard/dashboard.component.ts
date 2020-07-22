@@ -23,12 +23,12 @@ export class DashboardComponent implements AfterViewInit {
   ) { }
 
   ngAfterViewInit() {
-    console.log('DASHBOARD: ', this.data);
-      // this._adafruitService.getAdafruitProducts()
-      // .subscribe(data => {
-      //   this.adafruitProducts = data;
-      //   console.log('ADAFRUIT: ', this.adafruitProducts);
-      // })
+    // console.log('DASHBOARD: ', this.data);
+      this._adafruitService.getAdafruitProducts()
+      .subscribe(data => {
+        this.adafruitProducts = data;
+        console.log('ADAFRUIT: ', this.adafruitProducts);
+      })
   }
 
 }

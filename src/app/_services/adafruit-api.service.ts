@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AdafruitApiService {
-  readonly dataUrl: string = `https://www.adafruit.com/api/products/`
+  readonly dataUrl: string = `https://www.adafruit.com/api/products/`;
+  readonly proxyUrl: string = `https://aqueous-temple-36708.herokuapp.com/`;
   // readonly _header = {
   //   headers: new HttpHeaders({
   //     'Content-Type': 'application/json',
@@ -19,6 +20,6 @@ export class AdafruitApiService {
   ) { }
 
   public getAdafruitProducts (): Observable<object> {
-    return this.http.get<object>(`${this.dataUrl}parts`);
+    return this.http.get<object>(`${this.proxyUrl}${this.dataUrl}`);
   }
 }
