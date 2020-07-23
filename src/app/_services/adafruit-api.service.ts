@@ -16,7 +16,7 @@ export class AdafruitApiService {
   // }
 
   constructor(
-    readonly http: HttpClient,
+    readonly http: HttpClient
   ) { }
 
   public getAdafruitProducts (): Observable<object> {

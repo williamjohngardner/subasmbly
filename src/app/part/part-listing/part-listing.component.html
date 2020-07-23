@@ -62,7 +62,9 @@
                     <h5 class="card-title text-white">Adafruit 2</h5>
                 </div>
                 <div class="card-body bg-white">
-                    content
+                    <div *ngFor="let item of bestBuy['categories']; let i = index;">
+                        <h6>{{i + 1}}&nbsp;&nbsp;{{item.id}}</h6>
+                    </div>
                 </div>
             </div>
         </div>
