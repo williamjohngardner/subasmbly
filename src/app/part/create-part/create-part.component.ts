@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { PartService } from '../../_services/part.service';
 
@@ -24,6 +24,7 @@ export class CreatePartComponent implements OnInit {
 
   constructor(
     readonly _modal: NgbModal,
+    readonly _activeModal: NgbActiveModal,
     readonly _formBuilder: FormBuilder,
     readonly _partSerivce: PartService
   ) { }
@@ -58,4 +59,7 @@ export class CreatePartComponent implements OnInit {
       });
   }
 
+  closeModal () {
+    this._activeModal.close();
+  }
 }

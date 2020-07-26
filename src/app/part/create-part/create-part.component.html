@@ -1,95 +1,135 @@
-<div>
+<div class="shadow">
   <div class="modal-header p-5">
     <h4 class="modal-title" id="modal-basic-title">Create A New Part</h4>
-    <button type="button" class="close" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
+    <button type="button" class="close" aria-label="Close" (click)="closeModal()"><span aria-hidden="true">&times;</span></button>
   </div>
-  <div class="modal-body p-5">
+  <div class="modal-body pt-5 px-5">
     <form [formGroup]="createPartForm">
       <div class="form-row">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label for="partName" class="input-group-text rounded-0" id="createFormName">Part Name</label>
+        <div class="col">
+          <div class="form-group mb-2 shadow-sm">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <label class="input-group-text rounded-0 w-100">Part Name</label>
+              </div>
+              <input formControlName="partName" type="text" class="form-control rounded-0" id="partName">
+            </div>
           </div>
-          <input formControlName="partName" type="text" class="form-control rounded-0">
         </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label for="partNumber" class="input-group-text rounded-0" id="createFormName">Part Number</label>
+        <div class="col">
+          <div class="form-group mb-2 shadow-sm">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <label class="input-group-text rounded-0 w-100">Part Number</label>
+              </div>
+              <input formControlName="partNumber" type="text" class="form-control rounded-0" id="partNumber">
+            </div>
           </div>
-          <input formControlName="partNumber" type="text" class="form-control rounded-0">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-group mb-3">
-          <label for="description" class="input-group-text rounded-0 w-100" id="createFormName">Description</label>
-          <textarea formControlName="description" type="text" class="form-control rounded-0"></textarea>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label for="category" class="input-group-text rounded-0" id="createFormName">Category</label>
-          </div>
-          <select formControlName="category" class="form-control rounded-0" name="category" id="category">
-            <option *ngFor="let c of this.categories" value="{{c.v}}">{{c.n}}</option>
-          </select>
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label for="subCategory" class="input-group-text rounded-0" id="createFormName">Sub-Category</label>
-          </div>
-          <select formControlName="subCategory" class="form-control rounded-0" name="subCategory" id="subCategory">
-            <option *ngFor="let s of this.subCategories" value="{{s.v}}">{{s.n}}</option>
-          </select>
         </div>
       </div>
       <div class="form-row">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label for="material" class="input-group-text rounded-0" id="createFormName">Material</label>
+        <div class="col">
+          <div class="input-group input-group-sm mb-1">
+            <label for="description" class="input-group-text rounded-0 w-100" id="createFormName" style="height: 31px; font-size: .875rem; padding-left: .5rem">Description</label>
+            <textarea formControlName="description" type="text" class="form-control rounded-0"></textarea>
           </div>
-          <input formControlName="material" type="text" class="form-control rounded-0">
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label for="finish" class="input-group-text rounded-0" id="createFormName">Finish</label>
-          </div>
-          <input formControlName="finish" type="text" class="form-control rounded-0">
         </div>
       </div>
       <div class="form-row">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label for="plating" class="input-group-text rounded-0" id="createFormName">Plating</label>
+        <div class="col">
+          <div class="form-group mb-2 shadow-sm">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <label for="category" class="input-group-text rounded-0 w-100" id="createFormName">Category</label>
+              </div>
+              <select formControlName="category" class="form-control rounded-0" name="category" id="category">
+                <option *ngFor="let c of this.categories" value="{{c.v}}">{{c.n}}</option>
+              </select>
+            </div>
           </div>
-          <input formControlName="plating" type="text" class="form-control rounded-0">
         </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label for="uom" class="input-group-text rounded-0" id="createFormUnitOfMeasureLabel">Unit of Measure</label>
+        <div class="col">
+          <div class="form-group mb-2 shadow-sm">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <label for="subCategory" class="input-group-text rounded-0 w-100" id="createFormName">Sub-Category</label>
+              </div>
+              <select formControlName="subCategory" class="form-control rounded-0" name="subCategory" id="subCategory">
+                <option *ngFor="let s of this.subCategories" value="{{s.v}}">{{s.n}}</option>
+              </select>
+            </div>
           </div>
-          <input formControlName="uom" type="text" class="form-control rounded-0" id="createFormUnitOfMeasure">
         </div>
       </div>
       <div class="form-row">
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label for="unitCost" class="input-group-text rounded-0" id="createFormUnitCostLabel">Unit Cost</label>
+        <div class="col">
+          <div class="form-group mb-2 shadow-sm">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <label for="material" class="input-group-text rounded-0 w-100" id="createFormName">Material</label>
+              </div>
+              <input formControlName="material" type="text" class="form-control rounded-0">
+            </div>
           </div>
-          <input formControlName="unitCost" type="text" class="form-control rounded-0" id="createFormUnitCost">
         </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label for="unitPrice" class="input-group-text rounded-0" id="createFormUnitPriceLabel">Unit Price</label>
+        <div class="col">
+          <div class="form-group mb-2 shadow-sm">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <label for="finish" class="input-group-text rounded-0 w-100" id="createFormName">Finish</label>
+              </div>
+              <input formControlName="finish" type="text" class="form-control rounded-0">
+            </div>
           </div>
-          <input formControlName="unitPrice" type="text" class="form-control rounded-0" id="createFormUnitPrice">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group mb-2 shadow-sm">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <label for="plating" class="input-group-text rounded-0 w-100" id="createFormName">Plating</label>
+              </div>
+              <input formControlName="plating" type="text" class="form-control rounded-0">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group mb-2 shadow-sm">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <label for="uom" class="input-group-text rounded-0 w-100" id="createFormUnitOfMeasureLabel">Unit of Measure</label>
+              </div>
+              <input formControlName="uom" type="text" class="form-control rounded-0" id="createFormUnitOfMeasure">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group mb-2 shadow-sm">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <label for="unitCost" class="input-group-text rounded-0 w-100" id="createFormUnitCostLabel">Unit Cost</label>
+              </div>
+              <input formControlName="unitCost" type="text" class="form-control rounded-0" id="createFormUnitCost">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group mb-2 shadow-sm">
+            <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                <label for="unitPrice" class="input-group-text rounded-0 w-100" id="createFormUnitPriceLabel">Unit Price</label>
+              </div>
+              <input formControlName="unitPrice" type="text" class="form-control rounded-0" id="createFormUnitPrice">
+            </div>
+          </div>
         </div>
       </div>
     </form>
   </div>
-  <div class="modal-footer p-5">
-    <button type="button" class="btn btn-success rounded-0 w-25" (click)="onSubmit()">Create Part</button>
+  <div class="modal-footer pb-5 px-5">
+    <button type="button" class="btn btn-success rounded-0 w-25 shadow-sm" (click)="onSubmit()">Create Part</button>
   </div>
 </div>
