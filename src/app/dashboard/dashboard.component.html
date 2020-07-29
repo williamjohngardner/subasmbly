@@ -1,99 +1,147 @@
-<div class="container mt-4">
-    <div class="row"><h2 class="mb-3 ml-5">Dashboard</h2></div>
-
-    <div class="row m-5">
-        {{this.adafruitProducts | json}}
-    </div>
-    <div class="row mb-3">
-        <div class="col-4 pl-0">
-            <div class="card shadow" style="border-top-left-radius: 60px;">
-                <div class="card-body p-5">
-                    <h3 class="card-title">Parts</h3>
-                    <table class="table table-borderless table-hover table-sm">
-                        <thead></thead>
-                        <tbody>
-                            <tr *ngFor="let part of this.data" >
-                                <td>{{part.partName}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 pl-0">
-            <div class="card shadow rounded-0">
-                <div class="card-body p-5">
-                    <h3 class="card-title">Parts</h3>
-                    <table class="table table-borderless table-hover table-sm">
-                        <thead></thead>
-                        <tbody>
-                            <tr *ngFor="let part of this.data" >
-                                <td>{{part.partName}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-4 pl-0">
-            <div class="card shadow" style="border-top-right-radius: 60px;">
-                <div class="card-body p-5">
-                    <h3 class="card-title">Parts</h3>
-                    <table class="table table-borderless table-hover table-sm">
-                        <thead></thead>
-                        <tbody>
-                            <tr *ngFor="let part of this.data" >
-                                <td>{{part.partName}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="container">
     <div class="row">
-        <div class="col-4 mb-5 pl-0">
-            <div class="card shadow" style="border-bottom-left-radius: 60px;">
-                <div class="card-body p-5">
-                    <h3 class="card-title">Parts</h3>
-                    <table class="table table-borderless table-hover table-sm">
-                        <thead></thead>
-                        <tbody>
-                            <tr *ngFor="let part of this.data" >
-                                <td>{{part.partName}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="col-9">
+            <div class="card p-3 border border-light rounded-0 shadow">
+                <div class="row mb-3">
+                    <div class="col-4">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body p-5">
+                                <h3 class="card-title">Parts</h3>
+                                <table class="table table-borderless table-hover table-sm">
+                                    <thead></thead>
+                                    <tbody>
+                                        <tr *ngFor="let part of this.data" >
+                                            <td>{{part.partName}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pl-0">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body p-5">
+                                <h3 class="card-title">Parts</h3>
+                                <table class="table table-borderless table-hover table-sm">
+                                    <thead></thead>
+                                    <tbody>
+                                        <tr *ngFor="let part of this.data" >
+                                            <td>{{part.partName}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pl-0">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body p-5">
+                                <h3 class="card-title">Parts</h3>
+                                <table class="table table-borderless table-hover table-sm">
+                                    <thead></thead>
+                                    <tbody>
+                                        <tr *ngFor="let part of this.data" >
+                                            <td>{{part.partName}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pl-0">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pl-0">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="card p-3 border border-light shadow rounded-0">
+                        <div class="table table-responsive">
+                            <thead class="thead-dark">
+                                <th>Part Name</th>
+                                <th>Part Number</th>
+                                <th>Unit Cost</th>
+                                <th>Part Name</th>
+                                <th>Part Number</th>
+                                <th>Unit Cost</th>
+                            </thead>
+                            <tbody *ngFor="let part of this.data">
+                                <tr>
+                                    <td>{{part.partName}}</td>
+                                    <td>{{part.partNumber}}</td>
+                                    <td>{{part.unitCost}}</td>
+                                    <td>{{part.partName}}</td>
+                                    <td>{{part.partNumber}}</td>
+                                    <td>{{part.unitCost}}</td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-4 mb-5 pl-0">
-            <div class="card shadow rounded-0">
-                <div class="card-body p-5">
-                    <h3 class="card-title">Parts</h3>
-                    <table class="table table-borderless table-hover table-sm">
-                        <thead></thead>
-                        <tbody>
-                            <tr *ngFor="let part of this.data" >
-                                <td>{{part.partName}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <div class="col-3">
+            <div class="card p-3 border border-light shadow rounded-0">
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-4 mb-5 pl-0">
-            <div class="card shadow" style="border-bottom-right-radius: 60px;">
-                <div class="card-body p-5">
-                    <h3 class="card-title">Parts</h3>
-                    <table class="table table-borderless table-hover table-sm">
-                        <thead></thead>
-                        <tbody>
-                            <tr *ngFor="let part of this.data" >
-                                <td>{{part.partName}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="card mt-3 p-3 border border-light shadow rounded-0">
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
