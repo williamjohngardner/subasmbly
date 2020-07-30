@@ -1,22 +1,39 @@
-<!-- <nav class="float-right">
-    <div class="row">
+<nav>
+    <div class="row pr-4">
         <div class="col-12">
-            <div class="btn-group float-right shadow-sm" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary text-black-50 rounded-0" routerLink="/">Dashboard</button>
-                <button type="button" class="btn btn-secondary text-black-50 rounded-0" routerLink="/project">Project</button>
-                <button type="button" class="btn btn-secondary text-black-50 rounded-0" routerLink="/assembly">Assembly</button>
-                <button type="button" class="btn btn-secondary text-black-50 rounded-0" routerLink="/subassembly">Subassembly</button>
-                <button type="button" class="btn btn-secondary text-black-50 rounded-0" routerLink="/part">Part</button>
-                <button type="button" class="btn btn-light text-black-50 rounded-0" routerLink="/purchase">Purchase</button>
-                <button type="button" class="btn btn-light text-black-50 rounded-0" routerLink="/supply">Supply</button>
-            </div>
+            <h6 class="nav-link text-white-50" routerLink="/">Dashboard</h6>
         </div>
     </div>
-</nav> -->
-  <nav class="nav flex-column">
-    <a class="nav-link text-black" routerLink="/">Dashboard</a>
-    <a class="nav-link text-black" routerLink="/project">Project</a>
-    <a class="nav-link text-black" routerLink="/assembly">Assembly</a>
-    <a class="nav-link text-black" routerLink="/subassembly">Subassembly</a>
-    <a class="nav-link text-black" routerLink="/part">Part</a>
-  </nav>
+    <div class="row pr-4">
+        <div class="col-10">
+            <h6 class="nav-link text-white-50" routerLink="/project">Projects</h6>
+        </div>
+        <div class="col-2">
+            <span class="badge badge-light">{{this.totalProjects}}</span>
+        </div>
+    </div>
+    <div class="row pr-4">
+        <div class="col-10">
+            <h6 class="nav-link text-white-50" routerLink="/assembly">Assemblies</h6>
+        </div>
+        <div class="col-2">
+            <span class="badge badge-light">{{this.totalAssemblies}}</span>
+        </div>
+    </div>
+    <div class="row pr-4">
+        <div class="col-10">
+            <h6 class="nav-link text-white-50" routerLink="/subassembly">Subassemblies</h6>
+        </div>
+        <div class="col-2">
+            <span class="badge badge-light">{{this.totalSubassemblies}}</span>
+        </div>
+    </div>
+    <div class="row pr-4">
+        <div class="col-10">
+            <h6 class="nav-link text-white-50" routerLink="/part">Parts</h6>
+        </div>
+        <div class="col-2">
+            <span class="badge badge-light">{{this.totalParts}}</span>
+        </div>
+    </div>
+</nav>

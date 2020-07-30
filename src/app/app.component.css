@@ -8,3 +8,11 @@ h1 {
     font-weight: 800;
     text-transform: lowercase;
 }
+
+.gradient {
+    min-height: 100%;
+    background-image: linear-gradient(#555, #777);
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-color: #555;
+}

@@ -1,8 +1,8 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { ProjectService } from '../_services/project.service';
 import { PartService } from '../_services/part.service';
-import { AdafruitApiService } from '../_services/adafruit-api.service';
 
 import { Observable } from 'rxjs';
 
@@ -11,23 +11,24 @@ import { Observable } from 'rxjs';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements AfterViewInit {
+export class DashboardComponent implements OnInit {
   public data: Observable<object> = this._route.data['_value']['dashboard']['body'];
-  public adafruitProducts: object;
+  // These will need to be moved into the route resolvers to be observables
+  public projects: object;
 
   constructor(
+    readonly _projectService: ProjectService,
     readonly _partService: PartService,
-    readonly _adafruitService: AdafruitApiService,
     readonly _route: ActivatedRoute,
     readonly _router: Router,
   ) { }
 
-  ngAfterViewInit() {
+  ngOnInit() {
     // console.log('DASHBOARD: ', this.data);
-      this._adafruitService.getAdafruitProducts()
+      this._projectService.getProjects()
       .subscribe(data => {
-        this.adafruitProducts = data;
-        console.log('ADAFRUIT: ', this.adafruitProducts);
+        this.projects = data.body;
+        console.log('PROJECTS: ', this.projects);
       })
   }
 
