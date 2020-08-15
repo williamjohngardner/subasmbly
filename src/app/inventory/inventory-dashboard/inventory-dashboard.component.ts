@@ -12,7 +12,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./inventory-dashboard.component.css']
 })
 export class InventoryDashboardComponent implements OnInit {
-  public data: Observable<object> = this._route.data['_value']['dashboard']['body'];
+  // **** CHANGE THIS RESOLVE
+  public data: Observable<object> = this._route.data['_value']['dashboard']['body']; // This is the Main Dashboard resolve, not Inventory specific
   // These will need to be moved into the route resolvers to be observables
   public projects: object;
 

@@ -10,7 +10,7 @@
                 <div class="col-5">
                     <div class="btn-group btn-group-sm float-right shadow-sm" role="group" aria-label="Basic example">
                         <button type="button" class="btn btn-light text-black-50 rounded-0" (click)="updatePart()">Update Part</button>
-                        <button type="button" class="btn btn-light text-black-50 rounded-0" routerLink="/create/part">Create Part</button>
+                        <button type="button" class="btn btn-light text-black-50 rounded-0" routerLink="/inventory/create/part">Create Part</button>
                         <button type="button" class="btn btn-light text-black-50 rounded-0" (click)="deletePart()">Delete Part</button>
                     </div>
                 </div>
@@ -152,12 +152,12 @@
             </div>
             <div class="row pt-3 px-3">
                 <div class="col">
-                    <div [formGroup]="partForm">
+                    <form [formGroup]="partForm">
                         <div class="form-group mt-2">
                             <h5 class="pb-2">description:</h5>
                             <textarea formControlName="description" class="pr-2 w-100" style="border: none;"></textarea>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
