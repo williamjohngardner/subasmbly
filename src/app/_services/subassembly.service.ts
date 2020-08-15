@@ -24,7 +24,7 @@ export class SubassemblyService {
     readonly _host: HostProviderService
   ) { }
 
-  public getSubassemblies (): Observable<HttpResponse<Subassembly>> {
+  public getSubassemblies (): Observable<HttpResponse<any>> {
     return this.http.get<Subassembly>(`${this.subassemblyUrl}`, { 
       headers: { 'Content-Type': 'application/json' },
       observe: 'response'

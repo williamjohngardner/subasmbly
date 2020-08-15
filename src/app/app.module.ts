@@ -12,22 +12,22 @@ import { WINDOW_PROVIDERS } from './_services/window.provider';
 import { HostProviderService } from './_services/host-provider.service';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './inventory/dashboard/dashboard.component';
 import { NavComponent } from './nav/nav.component';
-import { AssemblyComponent } from './assembly/assembly/assembly.component';
-import { AssemblyListingComponent } from './assembly/assembly-listing/assembly-listing.component';
-import { PartComponent } from './part/part/part.component';
-import { PartListingComponent } from './part/part-listing/part-listing.component';
-import { ProjectComponent } from './project/project/project.component';
-import { ProjectsListComponent } from './project/projects-listing/projects-list.component';
+import { AssemblyComponent } from './inventory/assembly/assembly/assembly.component';
+import { AssemblyListingComponent } from './inventory/assembly/assembly-listing/assembly-listing.component';
+import { PartComponent } from './inventory/part/part/part.component';
+import { PartListingComponent } from './inventory/part/part-listing/part-listing.component';
+import { ProjectComponent } from './projects/project/project.component';
+import { ProjectsListComponent } from './projects/projects-listing/projects-list.component';
 import { PurchaseComponent } from './purchase/purchase.component';
-import { SubassemblyComponent } from './subassembly/subassembly/subassembly.component';
-import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
-import { SupplyComponent } from './supply/supply.component';
-import { CreatePartComponent } from './part/create-part/create-part.component';
-import { CreateSubassemblyComponent } from './subassembly/create-subassembly/create-subassembly.component';
-import { CreateAssemblyComponent } from './assembly/create-assembly/create-assembly.component';
-import { CreateProjectComponent } from './project/create-project/create-project.component';
+import { SubassemblyComponent } from './inventory/subassembly/subassembly/subassembly.component';
+import { SubassemblyListingComponent } from './inventory/subassembly/subassembly-listing/subassembly-listing.component';
+import { SupplyComponent } from './sourcing/supply/supply.component';
+import { CreatePartComponent } from './inventory/part/create-part/create-part.component';
+import { CreateSubassemblyComponent } from './inventory/subassembly/create-subassembly/create-subassembly.component';
+import { CreateAssemblyComponent } from './inventory/assembly/create-assembly/create-assembly.component';
+import { CreateProjectComponent } from './projects/create-project/create-project.component';
 
 @NgModule({
   declarations: [

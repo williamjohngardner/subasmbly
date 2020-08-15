@@ -24,7 +24,7 @@ export class PartService {
     readonly _host: HostProviderService
   ) { }
 
-  public getParts (): Observable<HttpResponse<Part>> {
+  public getParts (): Observable<HttpResponse<any>> {
     return this.http.get<Part>(`${this.partUrl}`, { 
       headers: { 'Content-Type': 'application/json' },
       observe: 'response'

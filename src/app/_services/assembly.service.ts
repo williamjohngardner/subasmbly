@@ -24,7 +24,7 @@ export class AssemblyService {
     readonly _host: HostProviderService
   ) { }
 
-  public getAssemblies (): Observable<HttpResponse<Assembly>> {
+  public getAssemblies (): Observable<HttpResponse<any>> {
     return this.http.get<Assembly>(`${this.assemblyUrl}`, { 
       headers: { 'Content-Type': 'application/json' },
       observe: 'response'

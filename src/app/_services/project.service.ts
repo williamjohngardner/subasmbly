@@ -24,7 +24,7 @@ export class ProjectService {
     readonly _host: HostProviderService
   ) { }
 
-  public getProjects (): Observable<HttpResponse<Project>> {
+  public getProjects (): Observable<HttpResponse<any>> {
     return this.http.get<Project>(`${this.projectUrl}`, { 
       headers: { 'Content-Type': 'application/json' },
       observe: 'response'
