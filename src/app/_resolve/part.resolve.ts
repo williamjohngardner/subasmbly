@@ -4,7 +4,7 @@ import { HttpResponse } from '@angular/common/http';
 
 import { PartService } from '../_services/part.service';
 
-import { Part } from '../part/part';
+import { Part } from '../inventory/part/part';
 
 @Injectable()
 export class PartResolve implements Resolve<HttpResponse<Part>> {

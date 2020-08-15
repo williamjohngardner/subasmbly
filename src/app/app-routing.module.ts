@@ -1,21 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { AssemblyComponent } from './assembly/assembly/assembly.component';
-import { AssemblyListingComponent } from './assembly/assembly-listing/assembly-listing.component';
-import { CreateAssemblyModalWrapperComponent } from './assembly/create-assembly/create-assembly-modal-wrapper.component';
-import { PartComponent } from './part/part/part.component';
-import { PartListingComponent } from './part/part-listing/part-listing.component';
-import { CreatePartModalWrapperComponent } from './part/create-part/create-part-modal-wrapper.component';
-import { ProjectComponent } from './project/project/project.component';
-import { ProjectsListComponent } from './project/projects-listing/projects-list.component';
-import { CreateProjectModalWrapperComponent } from './project/create-project/create-project-modal-wrapper.component';
-import { PurchaseComponent } from './purchase/purchase.component';
-import { SubassemblyComponent } from './subassembly/subassembly/subassembly.component';
-import { SubassemblyListingComponent } from './subassembly/subassembly-listing/subassembly-listing.component';
-import { CreateSubassemblyModalWrapperComponent } from './subassembly/create-subassembly/create-subassembly-modal-wrapper';
-import { SupplyComponent } from './supply/supply.component';
+import { InventoryDashboardComponent } from './inventory/inventory-dashboard/inventory-dashboard.component';
+import { AssemblyComponent } from './inventory/assembly/assembly/assembly.component';
+import { AssemblyDashboardComponent } from './inventory/assembly/assembly-dashboard/assembly-dashboard.component';
+import { CreateAssemblyModalWrapperComponent } from './inventory/assembly/create-assembly/create-assembly-modal-wrapper.component';
+import { PartComponent } from './inventory/part/part/part.component';
+import { PartDashboardComponent } from './inventory/part/part-dashboard/part-dashboard.component';
+import { CreatePartModalWrapperComponent } from './inventory/part/create-part/create-part-modal-wrapper.component';
+import { ProjectComponent } from './projects-pricing/projects/project/project.component';
+import { ProjectsDashboardComponent } from './projects-pricing/projects/projects-dashboard/projects-dashboard.component';
+import { CreateProjectModalWrapperComponent } from './projects-pricing/projects/create-project/create-project-modal-wrapper.component';
+import { SubassemblyComponent } from './inventory/subassembly/subassembly/subassembly.component';
+import { SubassemblyDashboardComponent } from './inventory/subassembly/subassembly-dashboard/subassembly-dashboard.component';
+import { CreateSubassemblyModalWrapperComponent } from './inventory/subassembly/create-subassembly/create-subassembly-modal-wrapper';
 
 import { AssemblyResolve } from './_resolve/assembly.resolve';
 import { AssemblyByIdResolve } from './_resolve/assembly-by-id.resolve';
@@ -31,7 +29,7 @@ import { SubassemblyByIdResolve } from './_resolve/subassembly-by-id.resolve';
 
 const routes: Routes = [
   { path: '',
-    component: DashboardComponent,
+    component: InventoryDashboardComponent,
     runGuardsAndResolvers: 'always',
     resolve: {
       dashboard: DashboardResolve
@@ -42,7 +40,7 @@ const routes: Routes = [
     children: [
       { 
         path: '',
-        component: AssemblyListingComponent,
+        component: AssemblyDashboardComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
           assemblies: AssemblyResolve
@@ -88,7 +86,7 @@ const routes: Routes = [
     children: [
       { 
         path: '',
-        component: PartListingComponent,
+        component: PartDashboardComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
           part: PartResolve
@@ -109,7 +107,7 @@ const routes: Routes = [
     children: [
       { 
         path: '',
-        component: ProjectsListComponent,
+        component: ProjectsDashboardComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
           projects: ProjectResolve
@@ -126,28 +124,11 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'purchase',
-    children: [
-      { 
-        path: '',
-        component: PurchaseComponent
-      },
-      {
-        path: ':id',
-        component: PurchaseComponent,
-        runGuardsAndResolvers: 'always',
-        resolve: {
-          part: PartByIdResolve
-        }
-      }
-    ],
-  },
-  {
     path: 'subassembly',
     children: [
       { 
         path: '',
-        component: SubassemblyListingComponent,
+        component: SubassemblyDashboardComponent,
         runGuardsAndResolvers: 'always',
         resolve: {
           subassemblies: SubassemblyResolve
@@ -163,23 +144,6 @@ const routes: Routes = [
       }
     ],
   },
-  {
-    path: 'supply',
-    children: [
-      { 
-        path: '',
-        component: SupplyComponent
-      },
-      {
-        path: ':id',
-        component: SupplyComponent,
-        runGuardsAndResolvers: 'always',
-        resolve: {
-          part: PartByIdResolve
-        }
-      }
-    ],
-  }
 ];
 
 @NgModule({

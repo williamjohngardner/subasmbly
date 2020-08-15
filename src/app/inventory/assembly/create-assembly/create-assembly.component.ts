@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { AssemblyService } from '../../_services/assembly.service';
+import { AssemblyService } from '../../../_services/assembly.service';
 
 @Component({
   selector: 'app-create-assembly',

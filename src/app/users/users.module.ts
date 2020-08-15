@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+
 const USERS_ROUTES: Routes = [
 
 ]
@@ -12,7 +15,10 @@ const USERS_ROUTES: Routes = [
       CommonModule,
       HttpClientModule,
       RouterModule.forChild(USERS_ROUTES),],
-    declarations: [],
+    declarations: [
+      UserProfileComponent,
+      CreateUserComponent
+    ],
     providers: [],
     entryComponents: [],
     exports: []

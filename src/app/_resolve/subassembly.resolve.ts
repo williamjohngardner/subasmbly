@@ -4,7 +4,7 @@ import { HttpResponse } from '@angular/common/http';
 
 import { SubassemblyService } from '../_services/subassembly.service';
 
-import { Subassembly } from '../subassembly/subassembly';
+import { Subassembly } from '../inventory/subassembly/subassembly';
 
 @Injectable()
 export class SubassemblyResolve implements Resolve<HttpResponse<Subassembly>> {

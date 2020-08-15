@@ -4,7 +4,7 @@ import { HttpResponse } from '@angular/common/http';
 
 import { ProjectService } from '../_services/project.service';
 
-import { Project } from '../project/project';
+import { Project } from '../projects-pricing/projects/project';
 
 @Injectable()
 export class ProjectByIdResolve implements Resolve<HttpResponse<Project>> {

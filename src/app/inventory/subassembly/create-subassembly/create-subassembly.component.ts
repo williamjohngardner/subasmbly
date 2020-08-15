@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { SubassemblyService } from '../../_services/subassembly.service';
+import { SubassemblyService } from '../../../_services/subassembly.service';
 
 @Component({
   selector: 'app-create-subassembly',

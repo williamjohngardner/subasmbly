@@ -3,7 +3,7 @@ import { HttpClient, HttpParams, HttpResponse, HttpHeaders } from '@angular/comm
 
 import { HostProviderService } from './host-provider.service';
 
-import { Assembly } from '../assembly/assembly'
+import { Assembly } from '../inventory/assembly/assembly'
 
 import { Observable } from 'rxjs';
 

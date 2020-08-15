@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 
-import { PartService } from '../../_services/part.service'
+import { PartService } from '../../../_services/part.service'
 
 import { Observable } from 'rxjs';
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { PartService } from '../../_services/part.service';
+import { PartService } from '../../../_services/part.service';
 
 @Component({
   selector: 'app-create-part',

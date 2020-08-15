@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 
-import { AssemblyService } from '../../_services/assembly.service';
+import { AssemblyService } from '../../../_services/assembly.service';
 
 import { Observable } from 'rxjs';
 

@@ -4,7 +4,7 @@ import { HttpResponse } from '@angular/common/http';
 
 import { AssemblyService } from '../_services/assembly.service';
 
-import { Assembly } from '../assembly/assembly';
+import { Assembly } from '../inventory/assembly/assembly';
 
 @Injectable()
 export class AssemblyByIdResolve implements Resolve<HttpResponse<Assembly>> {
