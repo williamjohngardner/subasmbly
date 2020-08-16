@@ -8,21 +8,21 @@
     <h6 class="nav-link text-white-50" id="projectsPricingDropDown" (click)="projectsCollapse = !projectsCollapse">Projects & Pricing</h6>
     <div [ngbCollapse]="projectsCollapse">
         <div class="row">
-            <div class="col-10 px-0">
-                <h6 class="nav-link text-white-50" routerLink="/project">Projects</h6>
+            <div class="col-10 px-5">
+                <small class="nav-link text-white-50" routerLink="/project">Projects</small>
             </div>
             <div class="col-2">
                 <span class="badge badge-light">{{this.totalProjects}}</span>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 px-0">
-                <h6 class="nav-link text-white-50" routerLink="/pricing">Pricing</h6>
+            <div class="col-12 px-5">
+                <small class="nav-link text-white-50" routerLink="/pricing">Pricing</small>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 px-0">
-                <h6 class="nav-link text-white-50" routerLink="/revisioncontrol">Revision Control</h6>
+            <div class="col-12 px-5">
+                <small class="nav-link text-white-50" routerLink="/revisioncontrol">Revision Control</small>
             </div>
         </div>
     </div>
@@ -30,25 +30,24 @@
     <h6 class="nav-link text-white-50" id="inventoryDropDown" (click)="inventoryCollapse = !inventoryCollapse">Inventory</h6>
     <div [ngbCollapse]="inventoryCollapse">
         <div class="row">
-            <div class="col-10 px-0">
-                <h6 class="nav-link text-white-50" routerLink="/inventory/assembly">Assemblies</h6>
+            <div class="col-10 px-5">
+                <small class="nav-link text-white-50" routerLink="/inventory/assembly">Assemblies</small>
             </div>
             <div class="col-2">
                 <span class="badge badge-light">{{this.totalAssemblies}}</span>
             </div>
         </div>
         <div class="row">
-            <div class="col-10 px-0">
-                <h6 class="nav-link text-white-50" routerLink="/inventory/subassembly">Subassemblies
-                </h6>
+            <div class="col-10 px-5">
+                <small class="nav-link text-white-50" routerLink="/inventory/subassembly">Subassemblies</small>
             </div>
             <div class="col-2">
                 <span class="badge badge-light">{{this.totalSubassemblies}}</span>
             </div>
         </div>
         <div class="row">
-            <div class="col-10 px-0">
-                <h6 class="nav-link text-white-50" routerLink="/inventory/part">Parts</h6>
+            <div class="col-10 px-5">
+                <small class="nav-link text-white-50" routerLink="/inventory/part">Parts</small>
             </div>
             <div class="col-2">
                 <span class="badge badge-light">{{this.totalParts}}</span>
@@ -56,24 +55,27 @@
         </div>
     </div>
 
-    <h6 class="nav-link text-white-50" id="projectsPricingDropDown" (click)="sourcingCollapse = !sourcingCollapse">Projects & Pricing</h6>
+    <h6 class="nav-link text-white-50" id="projectsPricingDropDown" (click)="sourcingCollapse = !sourcingCollapse">Sourcing</h6>
     <div [ngbCollapse]="sourcingCollapse">
         <div class="row">
-            <div class="col-10 px-0">
-                <h6 class="nav-link text-white-50" routerLink="/project">Projects</h6>
+            <div class="col-10 px-5">
+                <small class="nav-link text-white-50" routerLink="/vendor">Vendors</small>
             </div>
             <div class="col-2">
                 <span class="badge badge-light">{{this.totalProjects}}</span>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 px-0">
-                <h6 class="nav-link text-white-50" routerLink="/pricing">Pricing</h6>
+            <div class="col-10 px-5">
+                <small class="nav-link text-white-50" routerLink="/customer">Customers</small>
+            </div>
+            <div class="col-2">
+                <span class="badge badge-light">{{this.totalProjects}}</span>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 px-0">
-                <h6 class="nav-link text-white-50" routerLink="/revisioncontrol">Revision Control</h6>
+            <div class="col-12 px-5">
+                <small class="nav-link text-white-50" routerLink="/accounting">Accounting</small>
             </div>
         </div>
     </div>

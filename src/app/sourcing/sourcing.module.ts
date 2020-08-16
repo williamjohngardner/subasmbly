@@ -11,7 +11,7 @@ import { CustomerDashboardComponent } from './customers/customer-dashboard/custo
 import { CustomerComponent } from './customers/customer/customer.component';
 import { CreateCustomerComponent } from './customers/create-customer/create-customer.component';
 
-import { ApArDashboardComponent } from './ap-ar/ap-ar-dashboard/ap-ar-dashboard.component';
+import { AccountingDashboardComponent } from './accounting/accounting-dashboard/accounting-dashboard.component';
 
 const SOURCING_ROUTES: Routes = [
   {
@@ -35,6 +35,41 @@ const SOURCING_ROUTES: Routes = [
       }
     ]
   },
+  {
+    path: 'customer',
+    children: [
+      {
+        path: '',
+        component: CustomerDashboardComponent,
+        runGuardsAndResolvers: 'always',
+        // resolve: {
+        //   projects: ProjectResolve
+        // }
+      },
+      {
+        path: ':id',
+        component: CustomerComponent,
+        runGuardsAndResolvers: 'always',
+        // resolve: {
+        //   project: ProjectByIdResolve
+        // }
+      }
+    ]
+  },
+  {
+    path: 'accounting',
+    children: [
+      {
+        path: '',
+        component: VendorDashboardComponent,
+        runGuardsAndResolvers: 'always',
+        // resolve: {
+        //   projects: ProjectResolve
+        // }
+      },
+
+    ]
+  },
 ]
 
 @NgModule({
@@ -49,7 +84,8 @@ const SOURCING_ROUTES: Routes = [
       CustomerDashboardComponent,
       CustomerComponent,
       CreateCustomerComponent,
-      ApArDashboardComponent],
+      AccountingDashboardComponent
+    ],
     providers: [],
     entryComponents: [],
     exports: []
