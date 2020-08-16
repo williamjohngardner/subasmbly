@@ -14,7 +14,27 @@ import { CreateCustomerComponent } from './customers/create-customer/create-cust
 import { ApArDashboardComponent } from './ap-ar/ap-ar-dashboard/ap-ar-dashboard.component';
 
 const SOURCING_ROUTES: Routes = [
-
+  {
+    path: 'vendor',
+    children: [
+      {
+        path: '',
+        component: VendorDashboardComponent,
+        runGuardsAndResolvers: 'always',
+        // resolve: {
+        //   projects: ProjectResolve
+        // }
+      },
+      {
+        path: ':id',
+        component: VendorComponent,
+        runGuardsAndResolvers: 'always',
+        // resolve: {
+        //   project: ProjectByIdResolve
+        // }
+      }
+    ]
+  },
 ]
 
 @NgModule({

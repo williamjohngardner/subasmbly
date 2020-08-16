@@ -15,6 +15,8 @@ export class NavComponent implements OnInit {
   public totalAssemblies: number;
   public totalSubassemblies: number;
   public totalParts: number;
+  public projectsCollapse = true;
+  public inventoryCollapse = true;
 
   constructor(
     readonly _projectService: ProjectService,

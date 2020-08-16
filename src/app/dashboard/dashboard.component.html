@@ -1,1 +1,143 @@
-{{data | json}}
+<div class="container-fluid">
+    <div class="row px-3">
+        <div class="col-9">
+            <div class="card p-3 border border-light rounded-0 shadow">
+                <div class="row">
+                    <div class="col">
+                        <h6 class="mb-2 pl-2">Recent Projects</h6>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div *ngFor="let project of this.projects" class="col-4">
+                        <div class="card shadow rounded-lg">
+                            <div class="card-body p-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <h5 class="card-title">{{project.projectName}}</h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <small>part #</small><h6>{{project.projectNumber}}</h6>
+                                    </div>
+                                    <div class="col-12">
+                                        <small>price</small><h6>{{project.projectPrice | currency}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-4">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pl-0">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 pl-0">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="card p-3 border border-light shadow rounded-0">
+                        <div class="row">
+                            <div class="col">
+                                <h6 class="mb-2 pl-2">Newest Parts</h6>
+                            </div>
+                        </div>
+                        <div class="table table-responsive">
+                            <thead class="thead-light">
+                                <th>Part Name</th>
+                                <th>Part Number</th>
+                                <th>Unit Cost</th>
+                                <th>Part Name</th>
+                                <th>Part Number</th>
+                                <th>Unit Cost</th>
+                            </thead>
+                            <tbody *ngFor="let part of this.data">
+                                <tr>
+                                    <td>{{part.partName}}</td>
+                                    <td>{{part.partNumber}}</td>
+                                    <td>{{part.unitCost}}</td>
+                                    <td>{{part.partName}}</td>
+                                    <td>{{part.partNumber}}</td>
+                                    <td>{{part.unitCost}}</td>
+                                </tr>
+                            </tbody>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card p-3 border border-light shadow rounded-0">
+                <div class="row">
+                    <div class="col">
+                        <h6 class="mb-2 pl-2">Section Title</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-3 p-3 border border-light shadow rounded-0">
+                <div class="row">
+                    <div class="col">
+                        <h6 class="mb-2 pl-2">Section Title</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="card shadow rounded-0">
+                            <div class="card-body px-5">
+                                <h3 class="card-title">Sub Card</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

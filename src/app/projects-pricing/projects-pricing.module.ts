@@ -38,6 +38,32 @@ const PROJECT_ROUTES: Routes = [
     ]
   },
   {
+    path: 'pricing',
+    children: [
+      {
+        path: '',
+        component: PricingDashboardComponent,
+        runGuardsAndResolvers: 'always',
+        // resolve: {
+        //   projects: ProjectResolve
+        // }
+      }
+    ]
+  },
+  {
+    path: 'revisioncontrol',
+    children: [
+      {
+        path: '',
+        component: RevisionControlComponent,
+        runGuardsAndResolvers: 'always',
+        // resolve: {
+        //   projects: ProjectResolve
+        // }
+      }
+    ]
+  },
+  {
     path: 'create',
     children: [
       {
