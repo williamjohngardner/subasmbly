@@ -6,7 +6,8 @@ const parts = require('./part');
 const projects = require('./project');
 const purchase = require('./purchase');
 const subassembly = require('./subassembly');
-const supply = require('./supply')
+const vendor = require('./vendor');
+const customer = require('./customer');
 
 /* Dashboard API */
 router.get('/dashboard', dashboard.get);
@@ -46,11 +47,18 @@ router.post('/subassembly', subassembly.create);
 router.put('/subassembly/:id', subassembly.modify);
 router.delete('/subassembly/:id', subassembly.remove);
 
-/* Supply API */
-router.get('/supply', supply.get);
-router.get('/supply/:id', supply.getById);
-router.post('/supply', supply.create);
-router.put('/supply/:id', supply.modify);
-router.delete('/supply/:id', supply.remove);
+/* Sourcing/Vendor API */
+router.get('/vendor', vendor.get);
+router.get('/vendor/:id', vendor.getById);
+router.post('/vendor', vendor.create);
+router.put('/vendor/:id', vendor.modify);
+router.delete('/vendor/:id', vendor.remove);
+
+/* Sourcing/Customer API */
+router.get('/customer', customer.get);
+router.get('/customer/:id', customer.getById);
+router.post('/customer', customer.create);
+router.put('/customer/:id', customer.modify);
+router.delete('/customer/:id', customer.remove);    
 
 module.exports = router;
