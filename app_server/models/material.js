@@ -1,12 +1,12 @@
 'use strict';
 
-/** Finish Schema */
+/** Material Schema */
 
 const mongoose = require('mongoose');
 
-const finishSchema = mongoose.Schema({
-    finishName: { type: String },
-    finishNumber: { type: String },
+const materialSchema = mongoose.Schema({
+    materialName: { type: String },
+    materialNumber: { type: String },
     description: { type: String },
     category: { type: String }, // Foreign Key to Category Model
     subCategory: { type: String }, // Foreign Key to subCategory Model
@@ -20,4 +20,4 @@ const finishSchema = mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('finish', finishSchema);
+module.exports = mongoose.model('material', materialSchema);

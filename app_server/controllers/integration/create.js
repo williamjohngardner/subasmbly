@@ -1,11 +1,11 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const Part = require('../../models/part.js');
+const Integration = require('../../models/integration.js');
 
 const create = function (req, res, next) {
-  let part = new Part(req.body);
-  part.save().then(function (result) {
+  let integration = new Integration(req.body);
+  integration.save().then(function (result) {
       res.status(200);
       res.json(result);
       return next();
