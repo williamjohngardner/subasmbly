@@ -1,11 +1,11 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const User = require('../../models/user.js');
+const Taxonomy = require('../../models/taxonomy.js');
 
 const create = function (req, res, next) {
-  let user = new User(req.body);
-  user.save().then(function (result) {
+  let taxonomy = new Taxonomy(req.body);
+  taxonomy.save().then(function (result) {
       res.status(200);
       res.json(result);
       return next();

@@ -1,11 +1,11 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const User = require('../../models/user.js');
+const Taxonomy = require('../../models/taxonomy.js');
 
 const modify = function (req, res, next) {
   const update = req.body;
-  User.findByIdAndUpdate(req.params.id, update, function (err, data) {
+  Taxonomy.findByIdAndUpdate(req.params.id, update, function (err, data) {
     if (err) {
       console.error('ERROR', err);
       return

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const assembly = require('./assembly');
+const customer = require('./customer');
 const dashboard = require('./dashboard');
 const finish = require('./finish');
 const integration = require('./integration')
@@ -8,13 +9,14 @@ const material = require('./material')
 const parts = require('./part');
 const projects = require('./project');
 const subassembly = require('./subassembly');
+const taxonomy = require('./taxonomy');
 const vendor = require('./vendor');
-const customer = require('./customer');
+const user = require('./user');
 
 /* Dashboard API */
 router.get('/dashboard', dashboard.get);
 
-/* integrations API */
+/* Integrations API */
 router.get('/integration', integration.get);
 router.get('/integration/:id', integration.getById);
 router.post('/integration', integration.create);
@@ -70,11 +72,25 @@ router.post('/customer', customer.create);
 router.put('/customer/:id', customer.modify);
 router.delete('/customer/:id', customer.remove); 
 
+/* Sourcing/User API */
+router.get('/user', user.get);
+router.get('/user/:id', user.getById);
+router.post('/user', user.create);
+router.put('/user/:id', user.modify);
+router.delete('/user/:id', user.remove);
+
 /* Sourcing/Vendor API */
 router.get('/vendor', vendor.get);
 router.get('/vendor/:id', vendor.getById);
 router.post('/vendor', vendor.create);
 router.put('/vendor/:id', vendor.modify);
 router.delete('/vendor/:id', vendor.remove);
+
+/* Taxonomy API */
+router.get('/taxonomy', taxonomy.get);
+router.get('/taxonomy/:id', taxonomy.getById);
+router.post('/taxonomy', taxonomy.create);
+router.put('/taxonomy/:id', taxonomy.modify);
+router.delete('/taxonomy/:id', taxonomy.remove);
 
 module.exports = router;

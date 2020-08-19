@@ -1,11 +1,11 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const User = require('../../models/user.js');
+const Part = require('../../models/part.js');
 
 const modify = function (req, res, next) {
   const update = req.body;
-  User.findByIdAndUpdate(req.params.id, update, function (err, data) {
+  Part.findByIdAndUpdate(req.params.id, update, function (err, data) {
     if (err) {
       console.error('ERROR', err);
       return
