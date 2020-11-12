@@ -1,10 +1,10 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const Part = require('../../models/part.js');
+const User = require('../../models/user.js');
 
 const getById = function (req, res) {
-    Part.findById(req.params.id).then(function (doc) {
+    User.findById(req.params.id).then(function (doc) {
         res.status(200);
         res.send(doc);
     }).catch(function (err) {

@@ -1,7 +1,8 @@
 const createError = require('http-errors');
 const express = require('express');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/subasmbly');
+// mongoose.connect('mongodb://localhost/subasmbly');
+mongoose.connect('mongodb+srv://billgardner:kact.LECH.maug7cou@subasmbly.upb61.mongodb.net/subasmbly?retryWrites=true&w=majority');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');

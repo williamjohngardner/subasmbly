@@ -37,7 +37,7 @@ router.post('/finish', finish.create);
 router.put('/finish/:id', finish.modify);
 router.delete('/finish/:id', finish.remove);
 
-/* Inventory/Parts API */
+/* Inventory/Materials API */
 router.get('/material', material.get);
 router.get('/material/:id', material.getById);
 router.post('/material', material.create);

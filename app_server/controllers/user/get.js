@@ -1,10 +1,10 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const Part = require('../../models/part.js');
+const User = require('../../models/user.js');
 
 const get = function (req, res) {
-    Part.find().exec() //.exec() makes this "thenable"?
+    User.find().exec() //.exec() makes this "thenable"?
         .then(doc => {
             res.status(200);
             res.send(doc);
