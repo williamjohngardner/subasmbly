@@ -4,6 +4,9 @@ import { RouterModule } from '@angular/router';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faChevronLeft, faChevronDown, faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 import { AppRoutingModule } from './app-routing.module';
 import { InventoryModule } from './inventory/inventory.module';
 import { ProjectsPricingModule } from './projects-pricing/projects-pricing.module';
@@ -34,6 +37,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     UsersModule,
     RouterModule,
     NgbModule,
+    FontAwesomeModule
   ],
   providers: [
     WINDOW_PROVIDERS,
@@ -41,4 +45,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faChevronLeft, faChevronDown, faCoffee);
+  }
+}

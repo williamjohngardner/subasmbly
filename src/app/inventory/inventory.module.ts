@@ -33,6 +33,10 @@ import { MaterialsDashboardComponent } from './materials/materials-dashboard/mat
 import { MaterialComponent } from './materials/material/material.component';
 import { CreateMaterialComponent } from './materials/create-material/create-material.component';
 
+import { FinishesDashboardComponent } from './finishes/finishes-dashboard/finishes-dashboard.component';
+import { FinishComponent } from './finishes/finish/finish.component';
+import { CreateFinishComponent } from './finishes/create-finish/create-finish.component';
+
 import { TaxonomyDashboardComponent } from './taxonomy/taxonomy-dashboard/taxonomy-dashboard.component';
 import { TaxonomyComponent } from './taxonomy/taxonomy/taxonomy.component';
 import { CreateTaxonomyComponent } from './taxonomy/create-taxonomy/create-taxonomy.component';
@@ -87,6 +91,16 @@ const INVENTORY_ROUTES: Routes = [
             path: 'subassembly',
             component: CreateSubassemblyModalWrapperComponent,
             runGuardsAndResolvers: 'always'
+          },
+          {
+            path: 'material',
+            component: CreateMaterialComponent,
+            runGuardsAndResolvers: 'always'
+          },
+          {
+            path: 'taxonomy',
+            component: CreateTaxonomyComponent,
+            runGuardsAndResolvers: 'always'
           }
         ]
       },
@@ -131,6 +145,69 @@ const INVENTORY_ROUTES: Routes = [
             }
           }
         ]
+      },
+      {
+        path: 'material',
+        children: [
+          {
+            path: '',
+            component: MaterialsDashboardComponent,
+            runGuardsAndResolvers: 'always',
+            // resolve: {
+            //   subassemblies: MaterialResolve
+            // }
+          },
+          {
+            path: ':id',
+            component: MaterialComponent,
+            runGuardsAndResolvers: 'always',
+            // resolve: {
+            //   subassembly: MaterialByIdResolve
+            // }
+          }
+        ]
+      },
+      {
+        path: 'finish',
+        children: [
+          {
+            path: '',
+            component: FinishesDashboardComponent,
+            runGuardsAndResolvers: 'always',
+            // resolve: {
+            //   subassemblies: FinishResolve
+            // }
+          },
+          {
+            path: ':id',
+            component: FinishComponent,
+            runGuardsAndResolvers: 'always',
+            // resolve: {
+            //   subassembly: FinishByIdResolve
+            // }
+          }
+        ]
+      },
+      {
+        path: 'taxonomy',
+        children: [
+          {
+            path: '',
+            component: TaxonomyDashboardComponent,
+            runGuardsAndResolvers: 'always',
+            // resolve: {
+            //   subassemblies: TaxonomyResolve
+            // }
+          },
+          {
+            path: ':id',
+            component: TaxonomyComponent,
+            runGuardsAndResolvers: 'always',
+            // resolve: {
+            //   subassembly: TaxonomyByIdResolve
+            // }
+          }
+        ]
       }
     ]
   }
@@ -163,7 +240,10 @@ const INVENTORY_ROUTES: Routes = [
     CreateMaterialComponent,
     TaxonomyDashboardComponent,
     TaxonomyComponent,
-    CreateTaxonomyComponent
+    CreateTaxonomyComponent,
+    FinishComponent,
+    CreateFinishComponent,
+    FinishesDashboardComponent
   ],
   providers: [
     AssemblyResolve,

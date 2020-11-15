@@ -1,11 +1,19 @@
 <nav>
     <div class="row pr-4">
         <div class="col-12">
-            <h6 class="nav-link text-white-50" routerLink="/">Dashboard</h6>
+            <h6 class="nav-link text-white-50" routerLink="/">Company Overview</h6>
         </div>
     </div>
 
-    <h6 class="nav-link text-white-50" id="projectsPricingDropDown" (click)="projectsCollapse = !projectsCollapse">Projects & Pricing</h6>
+    <div class="row pr-4">
+        <div class="col-10">
+            <h6 class="nav-link text-white-50" id="projectsPricingDropDown" (click)="projectsCollapse = !projectsCollapse">Projects</h6>
+        </div>
+        <div class="col-2 text-white-50">
+            <fa-icon *ngIf="projectsCollapse" icon="chevron-left" size="lg"></fa-icon>
+            <fa-icon *ngIf="!projectsCollapse" icon="chevron-down" size="lg"></fa-icon>
+        </div>
+    </div>
     <div [ngbCollapse]="projectsCollapse">
         <div class="row">
             <div class="col-10 px-5">
@@ -27,7 +35,15 @@
         </div>
     </div>
 
-    <h6 class="nav-link text-white-50" id="inventoryDropDown" (click)="inventoryCollapse = !inventoryCollapse">Inventory</h6>
+    <div class="row pr-4">
+        <div class="col-10">
+            <h6 class="nav-link text-white-50" id="inventoryDropDown" (click)="inventoryCollapse = !inventoryCollapse">Inventory</h6>
+        </div>
+        <div class="col-2 text-white-50">
+            <fa-icon *ngIf="inventoryCollapse" icon="chevron-left" size="lg"></fa-icon>
+            <fa-icon *ngIf="!inventoryCollapse" icon="chevron-down" size="lg"></fa-icon>
+        </div>
+    </div>
     <div [ngbCollapse]="inventoryCollapse">
         <div class="row">
             <div class="col-10 px-5">
@@ -53,9 +69,41 @@
                 <span class="badge badge-light">{{this.totalParts}}</span>
             </div>
         </div>
+        <div class="row">
+            <div class="col-10 px-5">
+                <small class="nav-link text-white-50" routerLink="/inventory/material">Materials</small>
+            </div>
+            <div class="col-2">
+                <!-- TODO: THIS NEEDS TO BE UPDATED TO THE PROPER API -->
+                <span class="badge badge-light">{{this.totalParts}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-10 px-5">
+                <small class="nav-link text-white-50" routerLink="/inventory/finish">Finishes</small>
+            </div>
+            <div class="col-2">
+                <!-- TODO: THIS NEEDS TO BE UPDATED TO THE PROPER API -->
+                <span class="badge badge-light">{{this.totalParts}}</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 px-5">
+                <small class="nav-link text-white-50" routerLink="/inventory/taxonomy">Taxonomy</small>
+            </div>
+        </div>
     </div>
 
-    <h6 class="nav-link text-white-50" id="projectsPricingDropDown" (click)="sourcingCollapse = !sourcingCollapse">Sourcing</h6>
+    <div class="row pr-4">
+        <div class="col-10">
+            <h6 class="nav-link text-white-50" id="projectsPricingDropDown" (click)="sourcingCollapse = !sourcingCollapse">Sourcing</h6>
+        </div>
+        <div class="col-2 text-white-50">
+            <fa-icon *ngIf="sourcingCollapse" icon="chevron-left" size="lg"></fa-icon>
+            <fa-icon *ngIf="!sourcingCollapse" icon="chevron-down" size="lg"></fa-icon>
+        </div>
+    </div>
+
     <div [ngbCollapse]="sourcingCollapse">
         <div class="row">
             <div class="col-10 px-5">
@@ -77,6 +125,16 @@
             <div class="col-12 px-5">
                 <small class="nav-link text-white-50" routerLink="/accounting">Accounting</small>
             </div>
+        </div>
+    </div>
+    <div class="row pr-4">
+        <div class="col-12">
+            <h6 class="nav-link text-white-50">Production</h6>
+        </div>
+    </div>
+    <div class="row pr-4">
+        <div class="col-12">
+            <h6 class="nav-link text-white-50" routerLink="/integration">Integration</h6>
         </div>
     </div>
 </nav>
