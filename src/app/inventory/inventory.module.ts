@@ -40,6 +40,7 @@ import { CreateFinishComponent } from './finishes/create-finish/create-finish.co
 import { TaxonomyDashboardComponent } from './taxonomy/taxonomy-dashboard/taxonomy-dashboard.component';
 import { TaxonomyComponent } from './taxonomy/taxonomy/taxonomy.component';
 import { CreateTaxonomyComponent } from './taxonomy/create-taxonomy/create-taxonomy.component';
+import { SearchAssemblyComponent } from './assembly/search-assembly/search-assembly.component';
 
 const INVENTORY_ROUTES: Routes = [
   {
@@ -243,7 +244,8 @@ const INVENTORY_ROUTES: Routes = [
     CreateTaxonomyComponent,
     FinishComponent,
     CreateFinishComponent,
-    FinishesDashboardComponent
+    FinishesDashboardComponent,
+    SearchAssemblyComponent
   ],
   providers: [
     AssemblyResolve,
