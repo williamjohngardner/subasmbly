@@ -4,6 +4,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faSearch, faRedo } from '@fortawesome/free-solid-svg-icons';
+
 import { AssemblyResolve } from '../_resolve/assembly.resolve';
 import { AssemblyByIdResolve } from '../_resolve/assembly-by-id.resolve';
 import { DashboardResolve } from '../_resolve/dashboard.resolve';
@@ -220,7 +223,8 @@ const INVENTORY_ROUTES: Routes = [
     HttpClientModule,
     RouterModule.forChild(INVENTORY_ROUTES),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   declarations: [
     InventoryDashboardComponent,
@@ -259,4 +263,8 @@ const INVENTORY_ROUTES: Routes = [
   entryComponents: [],
   exports: []
 })
-export class InventoryModule { }
+export class InventoryModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faSearch, faRedo);
+  }
+}

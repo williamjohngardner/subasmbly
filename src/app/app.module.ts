@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faChevronLeft, faChevronDown, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronDown, faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { InventoryModule } from './inventory/inventory.module';
@@ -47,6 +47,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faChevronLeft, faChevronDown, faCoffee);
+    library.addIcons(faChevronLeft, faChevronDown, faSearch);
   }
 }
