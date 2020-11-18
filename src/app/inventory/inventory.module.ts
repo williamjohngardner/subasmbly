@@ -17,18 +17,21 @@ import { SubassemblyByIdResolve } from '../_resolve/subassembly-by-id.resolve';
 
 import { InventoryDashboardComponent } from './inventory-dashboard/inventory-dashboard.component';
 
-import { AssemblyComponent } from './assembly/assembly/assembly.component';
 import { AssemblyDashboardComponent } from './assembly/assembly-dashboard/assembly-dashboard.component';
+import { SearchComponent } from '../dashboard-components/search/search.component';
+import { SmallTableComponent } from '../dashboard-components/small-table/small-table.component';
+
+import { AssemblyComponent } from './assembly/assembly/assembly.component';
 import { CreateAssemblyModalWrapperComponent } from './assembly/create-assembly/create-assembly-modal-wrapper.component';
 import { CreateAssemblyComponent } from './assembly/create-assembly/create-assembly.component';
 
-import { PartComponent } from './part/part/part.component';
 import { PartDashboardComponent } from './part/part-dashboard/part-dashboard.component';
+import { PartComponent } from './part/part/part.component';
 import { CreatePartModalWrapperComponent } from './part/create-part/create-part-modal-wrapper.component';
 import { CreatePartComponent } from './part/create-part/create-part.component';
 
-import { SubassemblyComponent } from './subassembly/subassembly/subassembly.component';
 import { SubassemblyDashboardComponent } from './subassembly/subassembly-dashboard/subassembly-dashboard.component';
+import { SubassemblyComponent } from './subassembly/subassembly/subassembly.component';
 import { CreateSubassemblyModalWrapperComponent } from './subassembly/create-subassembly/create-subassembly-modal-wrapper';
 import { CreateSubassemblyComponent } from './subassembly/create-subassembly/create-subassembly.component';
 
@@ -43,7 +46,6 @@ import { CreateFinishComponent } from './finishes/create-finish/create-finish.co
 import { TaxonomyDashboardComponent } from './taxonomy/taxonomy-dashboard/taxonomy-dashboard.component';
 import { TaxonomyComponent } from './taxonomy/taxonomy/taxonomy.component';
 import { CreateTaxonomyComponent } from './taxonomy/create-taxonomy/create-taxonomy.component';
-import { SearchAssemblyComponent } from './assembly/search-assembly/search-assembly.component';
 
 const INVENTORY_ROUTES: Routes = [
   {
@@ -249,7 +251,8 @@ const INVENTORY_ROUTES: Routes = [
     FinishComponent,
     CreateFinishComponent,
     FinishesDashboardComponent,
-    SearchAssemblyComponent
+    SearchComponent,
+    SmallTableComponent
   ],
   providers: [
     AssemblyResolve,

@@ -8,15 +8,20 @@
         <div class="col-6">
             <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-dark rounded-0" routerLink="/inventory/create/assembly">Create a New Assembly</button>
-                <button type="button" class="btn btn-dark rounded-0">Reset Search</button>
+                <button type="button" class="btn btn-dark rounded-0">Open Full Search</button>
             </div>
         </div>
     </div>
     <div class="row mb-3">
         <div class="col-8 pr-0">
-            <app-search-assembly></app-search-assembly>
+            <app-search></app-search>
         </div>
         <div class="col-4">
+            <app-small-table>
+                <small-table-title>Assembly Low Quantity</small-table-title>
+                <table-header-1>Assembly</table-header-1>
+                <table-header-2>Remaining</table-header-2>
+            </app-small-table>
         </div>
     </div>
     <div class="row">
@@ -58,7 +63,11 @@
             </div>
         </div>
         <div class="col-4">
-            <app-search-assembly style="height: 365px"></app-search-assembly>
+            <app-small-table style="height: 365px">
+                <small-table-title>Assembly Due Dates</small-table-title>
+                <table-header-1>Assembly</table-header-1>
+                <table-header-2>Due Date</table-header-2>
+            </app-small-table>
         </div>
     </div>
 </div>

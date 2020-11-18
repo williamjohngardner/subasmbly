@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchAssemblyComponent } from './search-assembly.component';
+import { SmallTableComponent } from './small-table.component';
 
-describe('SearchAssemblyComponent', () => {
-  let component: SearchAssemblyComponent;
-  let fixture: ComponentFixture<SearchAssemblyComponent>;
+describe('SmallTableComponent', () => {
+  let component: SmallTableComponent;
+  let fixture: ComponentFixture<SmallTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SearchAssemblyComponent ]
+      declarations: [ SmallTableComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SearchAssemblyComponent);
+    fixture = TestBed.createComponent(SmallTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
