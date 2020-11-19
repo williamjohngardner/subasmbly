@@ -17,10 +17,10 @@
             <app-search></app-search>
         </div>
         <div class="col-4">
-            <app-small-table>
-                <small-table-title>Assembly Low Quantity</small-table-title>
-                <table-header-1>Assembly</table-header-1>
-                <table-header-2>Remaining</table-header-2>
+            <app-small-table [componentHeight]="twoNinetyNine" [numberOfRows]="4">
+                <h5 class="text-white" id="small-table-title">Assembly Low Quantity</h5>
+                <th scope="col" id="table-header-1">Assembly</th>
+                <th scope="col" id="table-header-2">Quantity</th>
             </app-small-table>
         </div>
     </div>
@@ -63,10 +63,10 @@
             </div>
         </div>
         <div class="col-4">
-            <app-small-table style="height: 365px">
-                <small-table-title>Assembly Due Dates</small-table-title>
-                <table-header-1>Assembly</table-header-1>
-                <table-header-2>Due Date</table-header-2>
+            <app-small-table [componentHeight]="threeSixtyFive" [numberOfRows]="6">
+                <h5 class="text-white" id="small-table-title">Assembly Due Dates</h5>
+                <th scope="col" id="table-header-1">Assembly</th>
+                <th scope="col" id="table-header-2">Due Date</th>
             </app-small-table>
         </div>
     </div>
