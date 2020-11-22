@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public profileCollapse = false;
+  public user: object = {
+    name: 'Bill Gardner',
+    role: 'administrator'
+  };
 }

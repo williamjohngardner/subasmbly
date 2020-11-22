@@ -2,55 +2,52 @@
     <div class="card-header rounded-0">
         <div class="row">
             <div class="col-12">
-                <h5 class="text-white">Assembly Search</h5>
+                <h5 class="text-white">Assembly Quick Search</h5>
             </div>
         </div>
     </div>
     <div class="card-body mt-3 pt-0 px-3">
         <div class="row">
             <div class="col">
-                <form>
+                <form (ngSubmit)="onSubmit()" [formGroup]='searchForm'>
                     <div class="form-row">
                         <div class="col-6">
                             <div class="form-group mb-0">
-                                <label for="AssyName" class="text-white mb-0"><small>Assembly Name</small></label>
-                                <input type="search" class="form-control form-control-sm rounded-0"
-                                    id="search-assyNumber">
+                                <label for="searchAssemblyNameLabel" class="text-white mb-0" id="searchAssemblyNameLabel"><small>Assembly Name</small></label>
+                                <input type="search" class="form-control form-control-sm rounded-0" id="searchAssemblyName" formControlName="assemblyName">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group mb-0">
-                                <label for="AssyNumber" class="text-white mb-0"><small>Assembly Number</small></label>
-                                <input type="search" class="form-control form-control-sm rounded-0"
-                                    id="search-assyNumber">
+                                <label for="searchAssemblyNumber" class="text-white mb-0" id="searchAssemblyNumberLabel"><small>Assembly Number</small></label>
+                                <input type="search" class="form-control form-control-sm rounded-0" id="searchAssemblyNumber" formControlName="assemblyNumber">
                             </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-6">
                             <div class="form-group mb-0">
-                                <label for="searchCategory" class="text-white mb-0"><small>Category</small></label>
-                                <select class="form-control form-control-sm rounded-0" id="searchCategory">
+                                <label for="searchCategoryLabel" class="text-white mb-0" id="searchCategoryLabel"><small>Category</small></label>
+                                <select class="form-control form-control-sm rounded-0" id="searchCategory" formControlName="category">
                                     <option></option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option>Tools</option>
+                                    <option>Materials</option>
+                                    <option>Consumables</option>
+                                    <option>Hardware</option>
+                                    <option>Adhesives</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group mb-0">
-                                <label for="searchSubCategory"
-                                    class="text-white mb-0"><small>SubCategory</small></label>
-                                <select class="form-control form-control-sm rounded-0" id="search-subCategory">
+                                <label for="searchSubCategoryLabel" class="text-white mb-0" id="searchSubCategoryLabel"><small>SubCategory</small></label>
+                                <select class="form-control form-control-sm rounded-0" id="searchSubCategory" formControlName="subCategory">
                                     <option></option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option>Hammers</option>
+                                    <option>Saws</option>
+                                    <option>Screwdrivers</option>
+                                    <option>Pliers</option>
+                                    <option>Wrenches</option>
                                 </select>
                             </div>
                         </div>
@@ -58,27 +55,27 @@
                     <div class="form-row">
                         <div class="col-6">
                             <div class="form-group mb-0">
-                                <label for="searchMaterial" class="text-white mb-0"><small>Material</small></label>
-                                <select class="form-control form-control-sm rounded-0" id="material">
+                                <label for="searchMaterialLabel" class="text-white mb-0" id="searchMaterialLabel"><small>Material</small></label>
+                                <select class="form-control form-control-sm rounded-0" id="searchMaterial" formControlName="material">
                                     <option></option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option>Wood</option>
+                                    <option>Plastic</option>
+                                    <option>Metal</option>
+                                    <option>Fabric</option>
+                                    <option>Paper</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group mb-0">
-                                <label for="searchFinish" class="text-white mb-0"><small>Finish</small></label>
-                                <select class="form-control form-control-sm rounded-0" id="search-finish">
+                                <label for="searchFinishLabel" class="text-white mb-0" id="searchFinishLabel"><small>Finish</small></label>
+                                <select class="form-control form-control-sm rounded-0" id="searchFinish" formControlName="finish">
                                     <option></option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                    <option>Painted</option>
+                                    <option>Stained</option>
+                                    <option>Epoxy</option>
+                                    <option>Brushed</option>
+                                    <option>Lacquered</option>
                                 </select>
                             </div>
                         </div>
@@ -88,7 +85,7 @@
         </div>
         <div class="row">
             <div class="col-3 pl-3 pr-1">
-                <button type="submit" class="btn btn-success btn-sm mt-3 px-5 w-100 rounded-0">
+                <button type="submit" class="btn btn-success btn-sm mt-3 px-5 w-100 rounded-0" (click)="onSubmit()">
                     <fa-icon [icon]="['fas', 'search']" size="lg"></fa-icon>&nbsp;Search
                 </button>
             </div>

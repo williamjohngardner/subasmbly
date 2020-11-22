@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardResolve } from './_resolve/dashboard.resolve';
 
+import { UserProfileComponent } from './users/user-profile/user-profile.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -13,6 +15,14 @@ const routes: Routes = [
       dashboard: DashboardResolve
     }
   },
+  {
+    path: 'user',
+    component: UserProfileComponent,
+    // runGuardsAndResolvers: 'always',
+    // resolve: {
+    //   dashboard: DashboardResolve
+    // }
+  }
 ];
 
 @NgModule({

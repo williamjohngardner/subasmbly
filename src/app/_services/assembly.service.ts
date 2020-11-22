@@ -38,6 +38,23 @@ export class AssemblyService {
     });
   }
 
+  public searchAssemblies (value: any, skip: number, limit: number, sort: string): Observable<HttpResponse<Assembly>> {
+    const formattedParams = {};
+    // formattedParams['skip'] = (skip - 1) * limit;
+    // formattedParams['limit'] = limit;
+    // formattedParams['sort'] = sort;
+
+    Object.keys(value).forEach(key => {
+      formattedParams[key] = value[key];
+    });
+
+    return this.http.get<Assembly>(this.assemblyUrl, {
+      headers: { 'Content-Type': 'application/json' },
+      observe: 'response',
+      params: formattedParams
+    });
+  }
+
   public createAssembly (value: object): Observable<Assembly> {
     return this.http.post<Assembly>(`${this.assemblyUrl}`, value, { 
       headers: { 'Content-Type': 'application/json' }
