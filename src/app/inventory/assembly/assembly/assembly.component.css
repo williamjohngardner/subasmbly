@@ -34,3 +34,8 @@ img {
     height:300px;
     width: 300px;
 }
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}

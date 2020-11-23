@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
 
 import { AssemblyService } from '../../../_services/assembly.service';
 
-import { Observable } from 'rxjs';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-assembly',
@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./assembly.component.css']
 })
 export class AssemblyComponent implements OnInit {
-  public _assembly: Observable<object> = this._route.data['_value']['assembly']['body'];
+  @Input() _assembly: any;
   public assemblyForm: FormGroup;
 
   constructor(
@@ -20,6 +20,7 @@ export class AssemblyComponent implements OnInit {
     readonly _assemblyService: AssemblyService,
     readonly _router: Router,
     readonly _route: ActivatedRoute,
+    readonly _modalService: NgbActiveModal
   ) { }
 
   ngOnInit() {
@@ -92,5 +93,9 @@ export class AssemblyComponent implements OnInit {
         alert(Error);
       });
     }
+  }
+
+  closeModal () {
+    this._modalService.close();
   }
 }

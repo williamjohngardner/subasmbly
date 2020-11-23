@@ -17,24 +17,24 @@ export class CreateAssemblyModalWrapperComponent implements OnDestroy {
   currentDialog: any = null;
 
   constructor(
-    readonly modalService: NgbModal,
+    readonly _modalService: NgbModal,
     readonly _route: ActivatedRoute,
     readonly _router: Router,
   ) {
     _route.params.pipe(takeUntil(this.destroy)).subscribe(() => {
-      if (this.modalService.hasOpenModals() === false) {
+      if (this._modalService.hasOpenModals() === false) {
         // When router navigates to this component is takes the params and opens up the modal
-        this.currentDialog = this.modalService.open(CreateAssemblyComponent, {centered: true});
+        this.currentDialog = this._modalService.open(CreateAssemblyComponent, {centered: true});
       } else {
-        this.modalService.dismissAll();
-        this.currentDialog = this.modalService.open(CreateAssemblyComponent, {centered: true});
+        this._modalService.dismissAll();
+        this.currentDialog = this._modalService.open(CreateAssemblyComponent, {centered: true});
       }
 
       // Go back to home page after the modal is closed
       this.currentDialog.result.then((result: any) => {
-        _router.navigateByUrl('/assembly');
+        _router.navigateByUrl('/inventory/assembly');
       }, (reason: any) => {
-        _router.navigateByUrl('/assembly');
+        _router.navigateByUrl('/inventory/assembly');
       });
     });
   }

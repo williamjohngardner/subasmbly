@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faSearch, faRedo } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faRedo, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 import { AssemblyResolve } from '../_resolve/assembly.resolve';
 import { AssemblyByIdResolve } from '../_resolve/assembly-by-id.resolve';
@@ -22,6 +22,7 @@ import { SearchComponent } from '../dashboard-components/search/search.component
 import { SmallTableComponent } from '../dashboard-components/small-table/small-table.component';
 
 import { AssemblyComponent } from './assembly/assembly/assembly.component';
+import { AssemblyModalWrapperComponent } from './assembly/assembly/assembly-modal-wrapper.component';
 import { CreateAssemblyModalWrapperComponent } from './assembly/create-assembly/create-assembly-modal-wrapper.component';
 import { CreateAssemblyComponent } from './assembly/create-assembly/create-assembly.component';
 
@@ -72,7 +73,7 @@ const INVENTORY_ROUTES: Routes = [
           },
           {
             path: ':id',
-            component: AssemblyComponent,
+            component: AssemblyModalWrapperComponent,
             runGuardsAndResolvers: 'always',
             resolve: {
               assembly: AssemblyByIdResolve
@@ -232,6 +233,7 @@ const INVENTORY_ROUTES: Routes = [
     InventoryDashboardComponent,
     AssemblyComponent,
     AssemblyDashboardComponent,
+    AssemblyModalWrapperComponent,
     CreateAssemblyModalWrapperComponent,
     CreateAssemblyComponent,
     PartComponent,
@@ -268,6 +270,6 @@ const INVENTORY_ROUTES: Routes = [
 })
 export class InventoryModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faSearch, faRedo);
+    library.addIcons(faSearch, faRedo, faTimesCircle);
   }
 }

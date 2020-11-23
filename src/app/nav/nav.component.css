@@ -4,3 +4,8 @@ h6, small {
     text-transform: lowercase;
     cursor: pointer;
 }
+
+.nav-link:focus {
+    outline: none;
+    box-shadow: none;
+}
