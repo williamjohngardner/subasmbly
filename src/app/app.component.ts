@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 
+interface User {
+  name: string;
+  role: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +12,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public profileCollapse = false;
-  public user: object = {
+  public user: User = {
     name: 'Bill Gardner',
     role: 'administrator'
   };

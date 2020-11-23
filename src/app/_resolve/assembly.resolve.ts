@@ -3,6 +3,7 @@ import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/r
 import { HttpResponse } from '@angular/common/http';
 
 import { AssemblyService } from '../_services/assembly.service';
+import { QueryParamsParserService } from '../_services/queryParams-parse.service';
 
 import { Assembly } from '../inventory/assembly/assembly';
 
@@ -24,13 +25,12 @@ export class AssemblyResolve implements Resolve<HttpResponse<Assembly>> {
   };
   
   constructor (
-      readonly _assemblyService: AssemblyService
+      readonly _assemblyService: AssemblyService,
+      readonly _queryParamsParser: QueryParamsParserService
   ) {}
   
   resolve (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    console.log('ROUTE: ', route);
-    console.log('STATE:', state);
-    this.searchParams.terms = route.queryParams;
+    this.searchParams.terms = this._queryParamsParser.queryParamsParser(route.queryParams);
     return this._assemblyService.searchAssemblies(this.searchParams.terms, this.searchParams.skip, this.searchParams.limit, this.searchParams.sort);
   }
 }
