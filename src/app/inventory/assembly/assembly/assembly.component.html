@@ -1,12 +1,12 @@
 <div class="shadow">
-    <div class="modal-header p-5">
+    <div class="modal-header px-5 bg-secondary rounded-0">
         <div class="row w-100 pt-3">
-            <div class="col-8 px-0">
-                <h2>{{_assembly['assemblyName']}}</h2>
-                <h4>{{_assembly['assemblyNumber']}}</h4>
+            <div class="col-8 px-4">
+                <h2 class="text-white">{{_assembly['assemblyName']}}</h2>
+                <h4 class="text-white">{{_assembly['assemblyNumber']}}</h4>
             </div>
             <div class="col-4">
-                <button type="button" class="close" (click)="closeModal()">
+                <button type="button" class="close text-white pb-4" (click)="closeModal()">
                     <fa-icon [icon]="['fas', 'times-circle']" size="3x"></fa-icon>
                 </button>
             </div>
@@ -14,20 +14,16 @@
     </div>
     <div class="modal-body p-5">
         <div class="row pt-3 px-4">
-            <div class="col-4 pl-0">
-                <img class="shadow" src="../../assets/images/HTC82105A08R.jpeg" alt="ballPeenHamerImage">
-            </div>
-            <div class="col-8">
+            <div class="col-4">
                 <form [formGroup]="assemblyForm">
                     <div class="form-row">
                         <div class="col">
                             <div class="form-group mb-2 shadow-sm">
                                 <div class="input-group input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <label class="input-group-text rounded-0 w-100">Assembly Name</label>
+                                    <div class="input-group-prepend input-group-prepend-short">
+                                        <label class="input-group-text rounded-0 w-100">Name</label>
                                     </div>
-                                    <input formControlName="assemblyName" type="text" class="form-control rounded-0"
-                                        id="assemblyName">
+                                    <input formControlName="assemblyName" type="text" class="form-control form-control-sm rounded-0" id="assemblyName">
                                 </div>
                             </div>
                         </div>
@@ -36,11 +32,10 @@
                         <div class="col">
                             <div class="form-group mb-2 shadow-sm">
                                 <div class="input-group input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <label class="input-group-text rounded-0 w-100">Assembly Number</label>
+                                    <div class="input-group-prepend input-group-prepend-short">
+                                        <label class="input-group-text rounded-0 w-100">Number</label>
                                     </div>
-                                    <input formControlName="assemblyNumber" type="text" class="form-control rounded-0"
-                                        id="assemblyNumber">
+                                    <input formControlName="assemblyNumber" type="text" class="form-control form-control-sm rounded-0" id="assemblyNumber">
                                 </div>
                             </div>
                         </div>
@@ -52,33 +47,32 @@
                                     <div class="input-group-prepend input-group-prepend-short">
                                         <label class="input-group-text rounded-0 w-100">Category</label>
                                     </div>
-                                    <input formControlName="category" type="text" class="form-control rounded-0"
-                                        id="assemblyCategory">
+                                    <input formControlName="category" type="text" class="form-control form-control-sm rounded-0" id="assemblyCategory">
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-row">
                         <div class="col">
                             <div class="form-group mb-2 shadow-sm">
                                 <div class="input-group input-group-sm">
                                     <div class="input-group-prepend input-group-prepend-short">
                                         <label class="input-group-text rounded-0 w-100">Sub-Category</label>
                                     </div>
-                                    <input formControlName="subCategory" type="text" class="form-control rounded-0"
-                                        id="assemblySubCategory">
+                                    <input formControlName="subCategory" type="text" class="form-control form-control-sm rounded-0" id="assemblySubCategory">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div *ngFor="let part of this._assembly['parts']; let i=index">
+                    <!-- <div *ngFor="let part of this._assembly['parts']; let i=index">
                         <div class="form-row">
                             <div class="col">
                                 <div class="form-group mb-2 shadow-sm">
                                     <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
+                                        <div class="input-group-prepend input-group-prepend-short">
                                             <label class="input-group-text rounded-0 w-100">Part {{i + 1}}</label>
                                         </div>
-                                        <input type="text" class="form-control rounded-0" id="assemblyPartName{{i}}"
-                                            value="{{part.partName}}">
+                                        <input type="text" class="form-control form-control-sm rounded-0" id="assemblyPartName{{i}}" value="{{part.partName}}">
                                     </div>
                                 </div>
                             </div>
@@ -89,26 +83,24 @@
                             <div class="col">
                                 <div class="form-group mb-2 shadow-sm">
                                     <div class="input-group input-group-sm">
-                                        <div class="input-group-prepend">
+                                        <div class="input-group-prepend input-group-prepend-short">
                                             <label class="input-group-text rounded-0 w-100">Subassembly
                                                 {{i + 1}}</label>
                                         </div>
-                                        <input type="text" class="form-control rounded-0"
-                                            id="assemblySubassemblyName{{i}}" value="{{subassembly.subassemblyName}}">
+                                        <input type="text" class="form-control form-control-sm rounded-0" id="assemblySubassemblyName{{i}}" value="{{subassembly.subassemblyName}}">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-row">
                         <div class="col">
                             <div class="form-group mb-2 shadow-sm">
                                 <div class="input-group input-group-sm">
-                                    <div class="input-group-prepend">
+                                    <div class="input-group-prepend input-group-prepend-short">
                                         <label class="input-group-text rounded-0 w-100">UoM</label>
                                     </div>
-                                    <input formControlName="uom" type="text" class="form-control rounded-0"
-                                        id="assemblyUom">
+                                    <input formControlName="uom" type="text" class="form-control form-control-sm rounded-0" id="assemblyUom">
                                 </div>
                             </div>
                         </div>
@@ -120,19 +112,19 @@
                                     <div class="input-group-prepend input-group-prepend-short">
                                         <label class="input-group-text rounded-0 w-100">Unit Cost</label>
                                     </div>
-                                    <input formControlName="unitCost" type="text" class="form-control rounded-0"
-                                        id="assemblyUnitCost">
+                                    <input formControlName="unitCost" type="text" class="form-control form-control-sm rounded-0" id="assemblyUnitCost">
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-row">
                         <div class="col">
                             <div class="form-group mb-2 shadow-sm">
                                 <div class="input-group input-group-sm">
                                     <div class="input-group-prepend input-group-prepend-short">
                                         <label class="input-group-text rounded-0 w-100">Unit Price</label>
                                     </div>
-                                    <input formControlName="unitPrice" type="text" class="form-control rounded-0"
-                                        id="assemblyUnitPrice">
+                                    <input formControlName="unitPrice" type="text" class="form-control form-control-sm rounded-0" id="assemblyUnitPrice">
                                 </div>
                             </div>
                         </div>
@@ -144,46 +136,48 @@
                                     <div class="input-group-prepend input-group-prepend-short">
                                         <label class="input-group-text rounded-0 w-100">Date Created</label>
                                     </div>
-                                    <input formControlName="dateCreated" type="text" class="form-control rounded-0"
-                                        id="assemblyDateCreated">
+                                    <input formControlName="dateCreated" type="text" class="form-control form-control-sm rounded-0" id="assemblyDateCreated">
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="form-row">
                         <div class="col">
                             <div class="form-group mb-2 shadow-sm">
                                 <div class="input-group input-group-sm">
                                     <div class="input-group-prepend input-group-prepend-short">
                                         <label class="input-group-text rounded-0 w-100">Date Updated</label>
                                     </div>
-                                    <input formControlName="dateUpdated" type="text" class="form-control rounded-0"
-                                        id="assemblyDateUpdated">
+                                    <input formControlName="dateUpdated" type="text" class="form-control form-control-sm rounded-0" id="assemblyDateUpdated">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div [formGroup]="assemblyForm">
+                                <div class="form-group mt-2">
+                                    <h5 class="pb-2">description:</h5>
+                                    <textarea formControlName="description" class="pr-2 w-100" style="border: none;"></textarea>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="row pt-3 px-3">
-            <div class="col">
-                <div [formGroup]="assemblyForm">
-                    <div class="form-group mt-2">
-                        <h5 class="pb-2">description:</h5>
-                        <textarea formControlName="description" class="pr-2 w-100" style="border: none;"></textarea>
-                    </div>
-                </div>
+            <div class="col-8">
+                <app-assembly-bom></app-assembly-bom>
             </div>
         </div>
     </div>
     <div class="modal-footer p-5">
-        <div class="col-5">
+        <div class="col-8">
             <div class="btn-group btn-group-sm float-right shadow-sm" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-light text-black-50 rounded-0"
-                    (click)="updateAssembly()">Update Assembly</button>
-                <button type="button" class="btn btn-light text-black-50 rounded-0"
-                    routerLink="/inventory/create/assembly">Create Assembly</button>
-                <button type="button" class="btn btn-light text-black-50 rounded-0"
-                    (click)="deleteAssembly()">Delete Assembly</button>
+                <button type="button" class="btn btn-success rounded-0" (click)="updateAssembly()">Update
+                    Assembly</button>
+                <button type="button" class="btn btn-info rounded-0" routerLink="/">Assembly Options</button>
+                <button type="button" class="btn btn-danger rounded-0" (click)="deleteAssembly()">Delete
+                    Assembly</button>
             </div>
         </div>
     </div>

@@ -47,6 +47,8 @@ import { CreateFinishComponent } from './finishes/create-finish/create-finish.co
 import { TaxonomyDashboardComponent } from './taxonomy/taxonomy-dashboard/taxonomy-dashboard.component';
 import { TaxonomyComponent } from './taxonomy/taxonomy/taxonomy.component';
 import { CreateTaxonomyComponent } from './taxonomy/create-taxonomy/create-taxonomy.component';
+import { EditAssemblyComponent } from './assembly/assembly/edit-assembly/edit-assembly.component';
+import { AssemblyBomComponent } from './assembly/assembly/assembly-bom/assembly-bom.component';
 
 const INVENTORY_ROUTES: Routes = [
   {
@@ -254,7 +256,9 @@ const INVENTORY_ROUTES: Routes = [
     CreateFinishComponent,
     FinishesDashboardComponent,
     SearchComponent,
-    SmallTableComponent
+    SmallTableComponent,
+    EditAssemblyComponent,
+    AssemblyBomComponent
   ],
   providers: [
     AssemblyResolve,

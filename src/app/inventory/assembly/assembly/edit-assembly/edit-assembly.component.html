@@ -1,0 +1,89 @@
+<p>edit-assembly works!</p>
+<form [formGroup]="assemblyForm">
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group mb-0 shadow-sm">
+                <label class="mb-0 pl-2"><small>Assembly Name</small></label>
+                <input formControlName="assemblyName" type="text" class="form-control form-control-sm rounded-0" id="assemblyName">
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group mb-0 shadow-sm">
+                <label class="mb-0 pl-2"><small>Assembly Number</small></label>
+                <input formControlName="assemblyNumber" type="text" class="form-control form-control-sm rounded-0" id="assemblyNumber">
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group mb-0 shadow-sm">
+                <label class="mb-0 pl-2"><small>Category</small></label>
+                <input formControlName="category" type="text" class="form-control form-control-sm rounded-0" id="assemblyCategory">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group mb-0 shadow-sm">
+                <label class="mb-0 pl-2"><small>Sub-Category</small></label>
+                <input formControlName="subCategory" type="text" class="form-control form-control-sm rounded-0" id="assemblySubCategory">
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let part of this._assembly['parts']; let i=index">
+        <div class="form-row">
+            <div class="col">
+                <div class="form-group mb-0 shadow-sm">
+                    <label class="mb-0 pl-2"><small>Part {{i + 1}}</small></label>
+                    <input type="text" class="form-control form-control-sm rounded-0" id="assemblyPartName{{i}}" value="{{part.partName}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let subassembly of this._assembly['subassemblies']; let i=index">
+        <div class="form-row">
+            <div class="col">
+                <div class="form-group mb-0 shadow-sm">
+                    <label class="mb-0 pl-2"><small>Subassembly {{i + 1}}</small></label>
+                    <input type="text" class="form-control form-control-sm rounded-0" id="assemblySubassemblyName{{i}}" value="{{subassembly.subassemblyName}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group mb-0 shadow-sm">
+                <label class="mb-0 pl-2"><small>UoM</small></label>
+                <input formControlName="uom" type="text" class="form-control form-control-sm rounded-0" id="assemblyUom">
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group mb-0 shadow-sm">
+                <label class="mb-0 pl-2"><small>Unit Cost</small></label>
+                <input formControlName="unitCost" type="text" class="form-control form-control-sm rounded-0" id="assemblyUnitCost">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group mb-0 shadow-sm">
+                <label class="mb-0 pl-2"><small>Unit Price</small></label>
+                <input formControlName="unitPrice" type="text" class="form-control form-control-sm rounded-0" id="assemblyUnitPrice">
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group mb-0 shadow-sm">
+                <label class="mb-0 pl-2"><small>Date Created</small></label>
+                <input formControlName="dateCreated" type="text" class="form-control form-control-sm rounded-0" id="assemblyDateCreated">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group mb-0 shadow-sm">
+                <label class="mb-0 pl-2"><small>Date Updated</small></label>
+                <input formControlName="dateUpdated" type="text" class="form-control form-control-sm rounded-0" id="assemblyDateUpdated">
+            </div>
+        </div>
+    </div>
+</form>
