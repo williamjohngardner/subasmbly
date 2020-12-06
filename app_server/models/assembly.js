@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 const partSchema = mongoose.Schema({
     _id: {
         type: mongoose.Schema.Types.ObjectId,
-        required: false
+        required: true
     },
     partName: {
         type: String,
@@ -18,7 +18,7 @@ const partSchema = mongoose.Schema({
 const subassemblySchema = mongoose.Schema({
     _id: {
         type: mongoose.Schema.Types.ObjectId,
-        required: false
+        required: true
     },
     subassemblyName: {
         type: String,

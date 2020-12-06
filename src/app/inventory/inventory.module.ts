@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MaterialModule } from '../material.module';
+
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faSearch, faRedo, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
@@ -25,6 +27,8 @@ import { AssemblyComponent } from './assembly/assembly/assembly.component';
 import { AssemblyModalWrapperComponent } from './assembly/assembly/assembly-modal-wrapper.component';
 import { CreateAssemblyModalWrapperComponent } from './assembly/create-assembly/create-assembly-modal-wrapper.component';
 import { CreateAssemblyComponent } from './assembly/create-assembly/create-assembly.component';
+import { EditAssemblyComponent } from './assembly/assembly/edit-assembly/edit-assembly.component';
+import { AssemblyBomComponent } from './assembly/assembly/assembly-bom/assembly-bom.component';
 
 import { PartDashboardComponent } from './part/part-dashboard/part-dashboard.component';
 import { PartComponent } from './part/part/part.component';
@@ -47,8 +51,7 @@ import { CreateFinishComponent } from './finishes/create-finish/create-finish.co
 import { TaxonomyDashboardComponent } from './taxonomy/taxonomy-dashboard/taxonomy-dashboard.component';
 import { TaxonomyComponent } from './taxonomy/taxonomy/taxonomy.component';
 import { CreateTaxonomyComponent } from './taxonomy/create-taxonomy/create-taxonomy.component';
-import { EditAssemblyComponent } from './assembly/assembly/edit-assembly/edit-assembly.component';
-import { AssemblyBomComponent } from './assembly/assembly/assembly-bom/assembly-bom.component';
+
 
 const INVENTORY_ROUTES: Routes = [
   {
@@ -229,7 +232,8 @@ const INVENTORY_ROUTES: Routes = [
     RouterModule.forChild(INVENTORY_ROUTES),
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MaterialModule
   ],
   declarations: [
     InventoryDashboardComponent,
