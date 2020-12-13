@@ -8,8 +8,14 @@ const partSchema = mongoose.Schema({
     partName: { type: String },
     partNumber: { type: String },
     description: { type: String },
-    category: { type: String }, // Foreign Key to Category Model
-    subCategory: { type: String }, // Foreign Key to subCategory Model
+    // category: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: category
+    // },
+    // subCategory: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: subcategory
+    // },
     // purchasedPart: {
     //     purchased: { type: Boolean },
     //     manufacturer: { type: String },
@@ -29,9 +35,18 @@ const partSchema = mongoose.Schema({
     //         uom: { type: String }
     //     }
     // },
-    material: { type: String },
-    finish: { type: String }, // Foreign Key to Finish Model
-    plating: { type: String }, // Foreign Key to Plating Model\
+    // material: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: material
+    // },
+    // finish: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: finish
+    // },
+    // plating: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: plating
+    // },
     uom: { type: String },
     unitCost: { type: Number },
     unitPrice: { type: Number },

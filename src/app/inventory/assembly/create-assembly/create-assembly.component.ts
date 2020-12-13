@@ -4,6 +4,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, FormArray, Valida
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { AssemblyService } from '../../../_services/assembly.service';
+import { SubassemblyService } from '../../../_services/subassembly.service'
 
 @Component({
   selector: 'app-create-assembly',
@@ -13,6 +14,7 @@ import { AssemblyService } from '../../../_services/assembly.service';
 export class CreateAssemblyComponent implements OnInit {
 
   public createAssemblyForm: FormGroup;
+  public subAssemblyInputValue = '';
   public categories: Array<object> = [
     { n: 'Paints', v: 'Paint' },
     { n: 'Metals', v: 'Metal' },
@@ -28,7 +30,8 @@ export class CreateAssemblyComponent implements OnInit {
     readonly _modal: NgbModal,
     readonly _formBuilder: FormBuilder,
     readonly _router: Router,
-    readonly _assemblyService: AssemblyService
+    readonly _assemblyService: AssemblyService,
+    readonly _subAssemblyService: SubassemblyService
   ) { }
 
   ngOnInit(): void {
@@ -43,15 +46,28 @@ export class CreateAssemblyComponent implements OnInit {
       category: [{ value: '', disabled: false }],
       subCategory: [{ value: '', disabled: false }],
       parts: this._formBuilder.group({
+        id: [{ value: '', disabled: false}],
         partName: [{ value: '', disabled: false }]
       }),
-      subassemblies: this._formBuilder.group({
-        subassemblyName: [{ value: '', disabled: false }]
-      }),
+      // subassemblies: this._formBuilder.group({
+      //   id: [{ value: '', disabled: false}],
+      //   subassemblyName: [{ value: '', disabled: false }]
+      // }),
+      subassemblies: this._formBuilder.array([]),
       uom: [{ value: '', disabled: false }],
       unitCost: [{ value: '', disabled: false }],
       unitPrice: [{ value: '', disabled: false }]
     });
+  }
+
+  addSubassembly () {
+    const formValue: string = this.subAssemblyInputValue;
+    console.log('SUBASSEMBLY:', formValue);
+    const control: FormArray = this.createAssemblyForm.get('subassemblies') as FormArray;
+    const localSubassembly: object = this._subAssemblyService.getSubassemblyByName(formValue);
+    console.log('LOCAL SUBASSEMBLY: ', localSubassembly);
+    // control.push(this.createSubassemblyFormGroup(this._assembly['subassemblies'][item]));
+
   }
 
   onSubmit() {

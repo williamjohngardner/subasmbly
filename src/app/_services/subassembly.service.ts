@@ -31,6 +31,15 @@ export class SubassemblyService {
     });
   }
 
+  public getSubassemblyByName (name: string): Observable<HttpResponse<any>> {
+    console.log('NAME: ', `${this.subassemblyUrl}name`)
+    return this.http.get<Subassembly>(`${this.subassemblyUrl}name`, { 
+      headers: { 'Content-Type': 'application/json' },
+      observe: 'response',
+      params: { 'name': name }
+    });
+  }
+
   public getSubassemblyById (id: string): Observable<HttpResponse<Subassembly>> {
     return this.http.get<Subassembly>(`${this.subassemblyUrl}${id}`, { 
       headers: { 'Content-Type': 'application/json' },

@@ -53,6 +53,7 @@ router.delete('/part/:id', parts.remove);
 
 /* Inventory/Subassembly API */
 router.get('/subassembly', subassembly.get);
+router.get('/subassembly/name', subassembly.getByName);
 router.get('/subassembly/:id', subassembly.getById);
 router.post('/subassembly', subassembly.create);
 router.put('/subassembly/:id', subassembly.modify);

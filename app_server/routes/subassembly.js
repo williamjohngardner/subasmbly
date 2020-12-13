@@ -4,6 +4,7 @@
 // Subassemblies API Functions
 const get = require('../controllers/subassembly/get');
 const getById = require('../controllers/subassembly/getById');
+const getByName = require('../controllers/subassembly/getByName');
 const create = require('../controllers/subassembly/create');
 const modify = require('../controllers/subassembly/modify');
 const remove = require('../controllers/subassembly/remove');
@@ -12,6 +13,7 @@ const remove = require('../controllers/subassembly/remove');
 const subassemblies = {
     get: get,
     getById: getById,
+    getByName: getByName,
     create: create,
     modify: modify,
     remove: remove

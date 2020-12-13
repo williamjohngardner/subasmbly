@@ -8,8 +8,14 @@ const finishSchema = mongoose.Schema({
     finishName: { type: String },
     finishNumber: { type: String },
     description: { type: String },
-    category: { type: String }, // Foreign Key to Category Model
-    subCategory: { type: String }, // Foreign Key to subCategory Model
+    // category: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: category
+    // },
+    // subCategory: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: subcategory
+    // },
     _dateCreated: {
         type: Date,
         default: Date.now

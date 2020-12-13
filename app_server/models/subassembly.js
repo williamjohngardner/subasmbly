@@ -15,7 +15,7 @@ const partSchema = mongoose.Schema({
   }
 });
 
-const subassemblySchema = mongoose.Schema({
+const subassemblySubSchema = mongoose.Schema({
   _id: {
       type: mongoose.Schema.Types.ObjectId,
       required: true
@@ -30,10 +30,16 @@ const subassemblySchema = mongoose.Schema({
     subassemblyName: { type: String },
     subassemblyNumber: { type: String },
     description: { type: String },
-    category: { type: String }, // Foreign Key to Category Model
-    subCategory: { type: String }, // Foreign Key to subCategory Model
+  //   category: {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: category
+  // },
+  // subCategory: {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     ref: subcategory
+  // },
     parts: { type: [partSchema]},
-    subassemblies: { type: [subassemblySchema] },
+    subassemblies: { type: [subassemblySubSchema] },
     uom: { type: String },
     unitCost: { type: Number },
     _dateCreated: {
