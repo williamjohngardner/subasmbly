@@ -14,7 +14,6 @@ import { SubassemblyService } from '../../../_services/subassembly.service'
 export class CreateAssemblyComponent implements OnInit {
 
   public createAssemblyForm: FormGroup;
-  public subAssemblyInputValue = '';
   public categories: Array<object> = [
     { n: 'Paints', v: 'Paint' },
     { n: 'Metals', v: 'Metal' },
@@ -53,6 +52,7 @@ export class CreateAssemblyComponent implements OnInit {
       //   id: [{ value: '', disabled: false}],
       //   subassemblyName: [{ value: '', disabled: false }]
       // }),
+      subAssemblyName: [{ value: '', disabled: false }],
       subassemblies: this._formBuilder.array([]),
       uom: [{ value: '', disabled: false }],
       unitCost: [{ value: '', disabled: false }],
@@ -61,7 +61,7 @@ export class CreateAssemblyComponent implements OnInit {
   }
 
   addSubassembly () {
-    const formValue: string = this.subAssemblyInputValue;
+    const formValue: string = this.createAssemblyForm.controls.subAssemblyName.value;
     console.log('SUBASSEMBLY:', formValue);
     const control: FormArray = this.createAssemblyForm.get('subassemblies') as FormArray;
     const localSubassembly: object = this._subAssemblyService.getSubassemblyByName(formValue);

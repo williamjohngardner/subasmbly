@@ -3,9 +3,10 @@
 
 const Subassembly = require('../../models/subassembly.js');
 
-const get = function (req, res) {
-    console.log('REQ: ', req);
-    Subassembly.find(req).then(function (doc) {
+const getByName = function (req, res) {
+    let subassembly = new Subassembly(req.body);
+    console.log('REQ: ', subassembly);
+    subassembly.find().then(function (doc) {
         res.status(200);
         res.send(doc);
     }).catch(function (err) {
@@ -13,4 +14,4 @@ const get = function (req, res) {
     })
 };
 
-module.exports = get;
+module.exports = getByName;
