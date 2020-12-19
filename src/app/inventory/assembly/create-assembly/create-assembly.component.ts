@@ -64,8 +64,9 @@ export class CreateAssemblyComponent implements OnInit {
     const formValue: string = this.createAssemblyForm.controls.subAssemblyName.value;
     console.log('SUBASSEMBLY:', formValue);
     const control: FormArray = this.createAssemblyForm.get('subassemblies') as FormArray;
-    const localSubassembly: object = this._subAssemblyService.getSubassemblyByName(formValue);
-    console.log('LOCAL SUBASSEMBLY: ', localSubassembly);
+    this._subAssemblyService.getSubassemblyByName(formValue).subscribe(val => {
+      console.log('LOCAL SUBASSEMBLY: ', val);
+    });
     // control.push(this.createSubassemblyFormGroup(this._assembly['subassemblies'][item]));
 
   }

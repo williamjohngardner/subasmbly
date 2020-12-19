@@ -4,9 +4,8 @@
 const Subassembly = require('../../models/subassembly.js');
 
 const getByName = function (req, res) {
-    let subassembly = new Subassembly(req.body);
-    console.log('REQ: ', subassembly);
-    subassembly.find().then(function (doc) {
+    console.log('REQ: ', req.query);
+    Subassembly.findOne(req.query).then(function (doc) {
         res.status(200);
         res.send(doc);
     }).catch(function (err) {

@@ -12,8 +12,8 @@ const remove = require('../controllers/subassembly/remove');
 // Group library functions into one object.
 const subassemblies = {
     get: get,
-    getById: getById,
     getByName: getByName,
+    getById: getById,
     create: create,
     modify: modify,
     remove: remove

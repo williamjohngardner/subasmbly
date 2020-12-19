@@ -3,7 +3,10 @@
 /** Assembly Schema */
 
 const mongoose = require('mongoose');
+const Part = require('../models/part');
 const Subassembly = require('../models/subassembly');
+const Category = require('../models/category');
+const SubCategory = require('../models/subcategory');
 
 const partSchema = mongoose.Schema({
     _id: {
@@ -28,25 +31,58 @@ const subassemblySchema = mongoose.Schema({
 });
 
 const assemblySchema = mongoose.Schema({
-    assemblyName: { type: String },
-    assemblyNumber: { type: String },
-    description: { type: String },
+    assemblyName: {
+        type: String,
+        required: false
+    },
+    assemblyNumber: {
+        type: String,
+        required: false
+    },
+    description: {
+        type: String,
+        required: false
+    },
     // category: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: category
+    //     type: Category,
+    //     required: false
     // },
     // subCategory: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: subcategory
+    //     type: SubCategory,
+    //     required: false
     // },
-    parts: { type: [partSchema] },
-    subassemblies: { type: [subassemblySchema] },
-    uom: { type: String },
-    unitCost: { type: Number },
-    unitCostCurrency: { type: String },
-    unitMarkup: { type: Number },
-    unitPrice: { type: Number },
-    unitPriceCurrency: { type: String },
+    parts: {
+        type: [partSchema],
+        required: false
+    },
+    subassemblies: {
+        type: [subassemblySchema],
+        required: false
+    },
+    uom: {
+        type: String,
+        required: true
+    },
+    unitCost: {
+        type: Number,
+        required: true
+    },
+    unitCostCurrency: {
+        type: String,
+        required: true
+    },
+    unitMarkup: {
+        type: Number,
+        required: false
+    },
+    unitPrice: {
+        type: Number,
+        required: false
+    },
+    unitPriceCurrency: {
+        type: String,
+        required: false
+    },
     _dateCreated: {
         type: Date,
         default: Date.now
@@ -60,8 +96,7 @@ const assemblySchema = mongoose.Schema({
 assemblySchema.pre('save', async function calculateCost () {
     let totalCost = 0;
     for (const sub in assemblySchema.subassemblies) {
-        const id = sub._id;
-        const subassembly = this.Subassembly.findById(id).exec();
+        const subassembly = await this.Subassembly.findById(sub._id).exec();
         // const cost = subassembly.cost;
         console.log('***** SUBASSEMBLY *****', subassembly);
         // totalCost += cost;
