@@ -4,7 +4,8 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, FormArray, Valida
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { AssemblyService } from '../../../_services/assembly.service';
-import { SubassemblyService } from '../../../_services/subassembly.service'
+import { SubassemblyService } from '../../../_services/subassembly.service';
+import { PartService } from '../../../_services/part.service';
 
 @Component({
   selector: 'app-create-assembly',
@@ -30,7 +31,8 @@ export class CreateAssemblyComponent implements OnInit {
     readonly _formBuilder: FormBuilder,
     readonly _router: Router,
     readonly _assemblyService: AssemblyService,
-    readonly _subAssemblyService: SubassemblyService
+    readonly _subAssemblyService: SubassemblyService,
+    readonly _partService: PartService
   ) { }
 
   ngOnInit(): void {
@@ -44,31 +46,48 @@ export class CreateAssemblyComponent implements OnInit {
       description: [{ value: '', disabled: false }],
       category: [{ value: '', disabled: false }],
       subCategory: [{ value: '', disabled: false }],
-      parts: this._formBuilder.group({
-        id: [{ value: '', disabled: false}],
-        partName: [{ value: '', disabled: false }]
-      }),
-      // subassemblies: this._formBuilder.group({
-      //   id: [{ value: '', disabled: false}],
-      //   subassemblyName: [{ value: '', disabled: false }]
-      // }),
-      subAssemblyName: [{ value: '', disabled: false }],
+      partName: [{ value: '', disabled: false }],
+      parts: this._formBuilder.array([]),
+      subassemblyName: [{ value: '', disabled: false }],
       subassemblies: this._formBuilder.array([]),
       uom: [{ value: '', disabled: false }],
       unitCost: [{ value: '', disabled: false }],
+      unitCostCurrency: [{ value: '', disabled: false }],
+      unitPriceMarkup: [{ value: '', disabled: false }],
       unitPrice: [{ value: '', disabled: false }]
     });
   }
 
+  addPart () {
+    const formValue: string = this.createAssemblyForm.controls.partName.value;
+    console.log('PART NAME: ', formValue);
+    const control: FormArray = this.createAssemblyForm.get('parts') as FormArray;
+    this._partService.getPartByName(formValue).subscribe(val => {
+      console.log('VAL: ', val);
+      control.push(this.createPartFormGroup(val.body));
+    });
+  }
+
+  createPartFormGroup (part: object) {
+    return new FormGroup({
+      partName: new FormControl(part['partName']),
+      _id: new FormControl(part['_id']),
+    });
+  }
+
   addSubassembly () {
-    const formValue: string = this.createAssemblyForm.controls.subAssemblyName.value;
-    console.log('SUBASSEMBLY:', formValue);
+    const formValue: string = this.createAssemblyForm.controls.subassemblyName.value;
     const control: FormArray = this.createAssemblyForm.get('subassemblies') as FormArray;
     this._subAssemblyService.getSubassemblyByName(formValue).subscribe(val => {
-      console.log('LOCAL SUBASSEMBLY: ', val);
+      control.push(this.createSubassemblyFormGroup(val.body));
     });
-    // control.push(this.createSubassemblyFormGroup(this._assembly['subassemblies'][item]));
+  }
 
+  createSubassemblyFormGroup (subAssembly: object) {
+    return new FormGroup({
+      subassemblyName: new FormControl(subAssembly['subassemblyName']),
+      _id: new FormControl(subAssembly['_id']),
+    });
   }
 
   onSubmit() {

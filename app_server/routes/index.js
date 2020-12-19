@@ -46,6 +46,7 @@ router.delete('/material/:id', material.remove);
 
 /* Inventory/Parts API */
 router.get('/part', parts.get);
+router.get('/part/name', parts.getByName);
 router.get('/part/:id', parts.getById);
 router.post('/part', parts.create);
 router.put('/part/:id', parts.modify);

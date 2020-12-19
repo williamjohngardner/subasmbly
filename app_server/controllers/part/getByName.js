@@ -1,10 +1,10 @@
 /* jslint node: true, nomen: true */
 'use strict';
 
-const Subassembly = require('../../models/subassembly.js');
+const Part = require('../../models/part.js');
 
 const getByName = function (req, res) {
-    Subassembly.findOne(req.query).then(function (doc) {
+    Part.findOne(req.query).then(function (doc) {
         res.status(200);
         res.send(doc);
     }).catch(function (err) {

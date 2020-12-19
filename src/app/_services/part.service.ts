@@ -31,6 +31,15 @@ export class PartService {
     });
   }
 
+
+  public getPartByName (name: string): Observable<HttpResponse<any>> {
+    return this.http.get<Part>(`${this.partUrl}name`, { 
+      headers: { 'Content-Type': 'application/json' },
+      observe: 'response',
+      params: {'partName': name }
+    });
+  }
+
   public getPartById (id: string): Observable<HttpResponse<Part>> {
     return this.http.get<Part>(`${this.partUrl}${id}`, { 
       headers: { 'Content-Type': 'application/json' },

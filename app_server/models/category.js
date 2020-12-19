@@ -5,6 +5,8 @@
 const mongoose = require('mongoose');
 
 const categorySchema = mongoose.Schema({
+    // TODO:
+    // SHOULD CATEGORIES AND SUBCATEGORIES BE PROJECT SPECIFIC?
     categoryName: { type: String },
     categoryNumber: { type: Number },
     _dateCreated: {
