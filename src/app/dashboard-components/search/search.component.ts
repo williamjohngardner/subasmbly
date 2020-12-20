@@ -59,4 +59,9 @@ export class SearchComponent implements OnInit {
     }
     this._router.navigate(['inventory', 'assembly'], { queryParams: queryParams });
   }
+
+  resetSearchForm () {
+    this.searchForm.reset();
+    this._router.navigate(['inventory', 'assembly']);
+  }
 }

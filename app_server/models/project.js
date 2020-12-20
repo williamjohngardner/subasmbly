@@ -41,14 +41,14 @@ const projectSchema = mongoose.Schema({
     projectName: { type: String },
     projectNumber: { type: String },
     description: { type: String },
-    // category: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: category
-    // },
-    // subCategory: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: subcategory
-    // },
+    category: {
+        type: String,
+        required: false
+    },
+    subCategory: {
+        type: String,
+        required: false
+    },
     parts: { type: [partSchema] },
     subassemblies: { type: [subassemblySchema] },
     assemblies: { type: [assemblySchema] },

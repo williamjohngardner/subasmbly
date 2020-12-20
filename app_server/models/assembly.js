@@ -43,14 +43,14 @@ const assemblySchema = mongoose.Schema({
         type: String,
         required: false
     },
-    // category: {
-    //     type: Category,
-    //     required: false
-    // },
-    // subCategory: {
-    //     type: SubCategory,
-    //     required: false
-    // },
+    category: {
+        type: String,
+        required: false
+    },
+    subCategory: {
+        type: String,
+        required: false
+    },
     parts: {
         type: [partSchema],
         required: false
@@ -91,6 +91,9 @@ const assemblySchema = mongoose.Schema({
         type: Date,
         default: Date.now
     }
+    // partDrawing: THESE SHOULD BE MAP TYPES MAPPED TO AN AWS S3
+    // attachments: THESE SHOULD BE MAP TYPES MAPPED TO AN AWS S3
+    // partImage: THESE SHOULD BE MAP TYPES MAPPED TO AN AWS S3
 })
 
 assemblySchema.pre('save', async function calculateCost () {

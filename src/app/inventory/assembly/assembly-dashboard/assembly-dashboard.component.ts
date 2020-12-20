@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router'
 import { HttpClient } from '@angular/common/http';
 
@@ -11,8 +11,10 @@ import { Observable } from 'rxjs'
 })
 export class AssemblyDashboardComponent {
   public _assembly: Observable<object> = this._route.data;
+  public searchToggle: boolean = false;
   public threeSixtyFive: string = '365px';
   public twoNinetyNine: string = '299px';
+  @ViewChild('searchForm') searchForm: any;
 
   constructor(
     readonly http: HttpClient,
@@ -26,5 +28,12 @@ export class AssemblyDashboardComponent {
 
   createAssembly () {
     this._router.navigate(['create', 'assembly']);
+  }
+
+  toggleSearch () {
+    this.searchToggle = !this.searchToggle;
+    if (this.searchToggle === false) {
+      this.searchForm.resetSearchForm()
+    }
   }
 }

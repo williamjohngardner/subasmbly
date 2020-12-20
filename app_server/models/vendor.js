@@ -11,14 +11,14 @@ const vendorSchema = mongoose.Schema({
     contactEmail: { type: String },
     address: { type: String},
     description: { type: String },
-    // category: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: category
-    // },
-    // subCategory: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: subcategory
-    // },
+    category: {
+        type: String,
+        required: false
+    },
+    subCategory: {
+        type: String,
+        required: false
+    },
     _dateCreated: {
         type: Date,
         default: Date.now
@@ -27,7 +27,7 @@ const vendorSchema = mongoose.Schema({
         type: Date,
         default: Date.now
     }
-    // should have some type of forengn key to associated projectsy by project id
+    // should have some type of forengn key to associated projects by project id
 })
 
 module.exports = mongoose.model('vendor', vendorSchema);

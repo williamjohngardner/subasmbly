@@ -8,48 +8,108 @@ const partSchema = mongoose.Schema({
     partName: { type: String },
     partNumber: { type: String },
     description: { type: String },
-    // category: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: category
-    // },
-    // subCategory: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: subcategory
-    // },
-    // purchasedPart: {
-    //     purchased: { type: Boolean },
-    //     manufacturer: { type: String },
-    //     mfgPn: { type: String },
-    //     purchasePrice: { type: Number },
-    //     uom: { type: String },
-    //     url: { type: String },
-    //     vendor: { type: String }
-    // },
-    // dimension: {
-    //     length: { type: String },
-    //     width: { type: String },
-    //     height: { type: String },
-    //     circumference: { type: String },
-    //     weight: { 
-    //         weight: { type: String },
-    //         uom: { type: String }
-    //     }
-    // },
-    // material: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: material
-    // },
-    // finish: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: finish
-    // },
-    // plating: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: plating
-    // },
-    uom: { type: String },
-    unitCost: { type: Number },
-    unitPrice: { type: Number },
+    category: {
+        type: String,
+        required: false
+    },
+    subCategory: {
+        type: String,
+        required: false
+    },
+    purchasedPart: {
+        purchased: {
+            type: Boolean,
+            required: false
+        },
+        manufacturer: {
+            type: String,
+            required: false
+        },
+        mfgPn: {
+            type: String,
+            required: false
+        },
+        purchasePrice: {
+            type: Number,
+            required: false
+        },
+        uom: {
+            type: String,
+            required: false
+        },
+        url: {
+            type: String,
+            required: false
+        },
+        vendor: {
+            type: String,
+            required: false
+        }
+    },
+    dimensions: {
+        length: {
+            type: String,
+            required: false
+        },
+        width: {
+            type: String,
+            required: false
+        },
+        height: {
+            type: String,
+            required: false
+        },
+        circumference: {
+            type: String,
+            required: false
+        },
+        weight: { 
+            weight: {
+                type: String,
+                required: false
+            },
+            uom: {
+                type: String,
+                required: false
+             }
+        }
+    },
+    material: {
+        type: String,
+        required: false
+    },
+    finish: {
+        type: String,
+        required: false
+    },
+    plating: {
+        type: String,
+        required: false
+    },
+    uom: {
+        type: String,
+        required: true
+    },
+    unitCost: {
+        type: Number,
+        required: true
+    },
+    unitCostCurrency: {
+        type: String,
+        required: true
+    },
+    unitMarkup: {
+        type: Number,
+        required: false
+    },
+    unitPrice: {
+        type: Number,
+        required: false
+    },
+    unitPriceCurrency: {
+        type: String,
+        required: false
+    },
     // notes: {
     //     body: { type: String }
     // },

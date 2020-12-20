@@ -7,7 +7,8 @@ const mongoose = require('mongoose');
 const partSchema = mongoose.Schema({
   _id: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true
+    // required: true *** commented out until I can make the UI changes to accomodate this
+    required: false
   },
   partName: {
     type: String,
@@ -17,39 +18,68 @@ const partSchema = mongoose.Schema({
 
 const subassemblySubSchema = mongoose.Schema({
   _id: {
-      type: mongoose.Schema.Types.ObjectId,
-      required: true
+    type: mongoose.Schema.Types.ObjectId,
+    required: true
   },
   subassemblyName: {
-      type: String,
-      required: true,
+    type: String,
+    required: true,
   }
 });
 
 const subassemblySchema = mongoose.Schema({
-    subassemblyName: { type: String },
-    subassemblyNumber: { type: String },
-    description: { type: String },
-  //   category: {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: category
-  // },
-  // subCategory: {
-  //     type: mongoose.Schema.Types.ObjectId,
-  //     ref: subcategory
-  // },
-    parts: { type: [partSchema]},
-    subassemblies: { type: [subassemblySubSchema] },
-    uom: { type: String },
-    unitCost: { type: Number },
-    _dateCreated: {
-        type: Date,
-        default: Date.now
-    },
-    _dateUpdated: {
-        type: Date,
-        default: Date.now
-    }
+  subassemblyName: {
+    type: String,
+    required: true
+  },
+  subassemblyNumber: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: false
+  },
+  category: {
+    type: String,
+    required: false
+  },
+  subCategory: {
+    type: String,
+    required: false
+  },
+  parts: {
+    type: [partSchema],
+    required: false
+  },
+  subassemblies: {
+    type: [subassemblySubSchema],
+    required: false
+  },
+  uom: {
+    type: String,
+    required: true
+  },
+  unitCost: {
+    type: Number,
+    required: true
+  },
+  unitCostCurrency: {
+    type: String,
+    // required: true *** commented out until I can make the UI changes to accomodate this
+    required: false
+  },
+  _dateCreated: {
+    type: Date,
+    default: Date.now
+  },
+  _dateUpdated: {
+    type: Date,
+    default: Date.now
+  }
+  // partDrawing: THESE SHOULD BE MAP TYPES MAPPED TO AN AWS S3
+  // attachments: THESE SHOULD BE MAP TYPES MAPPED TO AN AWS S3
+  // partImage: THESE SHOULD BE MAP TYPES MAPPED TO AN AWS S3
 })
 
 module.exports = mongoose.model('subassembly', subassemblySchema);

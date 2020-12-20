@@ -8,68 +8,79 @@
         <div class="col-6">
             <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-dark rounded-0" routerLink="/inventory/create/assembly">Create a New Assembly</button>
+                <button type="button" class="btn btn-dark rounded-0" (click)="this.toggleSearch()">Toggle Quick Search</button>
                 <button type="button" class="btn btn-dark rounded-0">Open Advanced Search</button>
             </div>
         </div>
     </div>
-    <div class="row mb-3">
-        <div class="col-8 pr-0">
-            <app-search></app-search>
-        </div>
-        <div class="col-4">
-            <app-small-table [componentHeight]="twoNinetyNine" [numberOfRows]="4">
-                <h5 class="text-white" id="small-table-title">Assembly Low Quantity</h5>
-                <th scope="col" id="table-header-1">Assembly</th>
-                <th scope="col" id="table-header-2">Quantity</th>
-            </app-small-table>
-        </div>
-    </div>
     <div class="row">
-        <div class="col-8 pr-0">
-            <div class="card border-dark bg-dark pt-0 px-0 rounded-0 shadow tableModal" style="min-height: 365px;">
-                <div class="card-header rounded-0">
-                    <div class="row">
-                        <div class="col-12">
-                            <h5 class="text-white">Assembly Listing</h5>
-                        </div>
-                    </div>
+        <div class="col-8">
+            <div *ngIf="this.searchToggle === true" class="row mb-3">
+                <div class="col-12 pr-0">
+                    <app-search #searchForm></app-search>
                 </div>
-                <div class="card-body pt-0 px-3">
-                    <div class="row">
-                        <div class="col-12">
-                            <table class="table table-sm table-hover bg-white">
-                                <thead class="thead-dark">
-                                    <th scope="col">No</th>
-                                    <th>Assembly Name</th>
-                                    <th>Assembly Number</th>
-                                    <th>Category</th>
-                                    <th>SubCategory</th>
-                                    <th>Cost/Unit</th>
-                                    <th>Price/Unit</th>
-                                </thead>
-                                <tbody *ngFor="let assembly of this._assembly['_value']['assemblies']['body']; let i = index">
-                                    <tr *ngIf="i<7">
-                                        <th scope="row">{{i + 1}}</th>
-                                        <td (click)="openAssembly(assembly._id)" style="cursor: pointer">{{assembly.assemblyName}}</td>
-                                        <td>{{assembly.assemblyNumber}}</td>
-                                        <td>{{assembly.category}}</td>
-                                        <td>{{assembly.subCategory}}</td>
-                                        <td>{{assembly.unitCost}}</td>
-                                        <td>{{assembly.unitPrice}}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+            </div>
+            <div class="row">
+                <div class="col-12 pr-0">
+                    <div class="card border-dark bg-dark pt-0 px-0 mb-5 rounded-0 shadow tableModal" style="min-height: 680px;">
+                        <div class="card-header rounded-0">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="text-white">Assembly Listing</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body pt-0 px-3">
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-sm table-hover bg-white">
+                                        <thead class="thead-dark">
+                                            <th scope="col">No</th>
+                                            <th>Assembly Name</th>
+                                            <th>Assembly Number</th>
+                                            <th>Category</th>
+                                            <th>SubCategory</th>
+                                            <th>Cost/Unit</th>
+                                            <th>Price/Unit</th>
+                                        </thead>
+                                        <tbody *ngFor="let assembly of this._assembly['_value']['assemblies']['body']; let i = index">
+                                            <tr>
+                                                <th scope="row">{{i + 1}}</th>
+                                                <td (click)="openAssembly(assembly._id)" style="cursor: pointer">{{assembly.assemblyName}}</td>
+                                                <td>{{assembly.assemblyNumber}}</td>
+                                                <td>{{assembly.category}}</td>
+                                                <td>{{assembly.subCategory}}</td>
+                                                <td>{{assembly.unitCost}}</td>
+                                                <td>{{assembly.unitPrice}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-4">
-            <app-small-table [componentHeight]="threeSixtyFive" [numberOfRows]="6">
-                <h5 class="text-white" id="small-table-title">Assembly Due Dates</h5>
-                <th scope="col" id="table-header-1">Assembly</th>
-                <th scope="col" id="table-header-2">Due Date</th>
-            </app-small-table>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <app-small-table [componentHeight]="twoNinetyNine" [numberOfRows]="4">
+                        <h5 class="text-white" id="small-table-title">Assembly Low Quantity</h5>
+                        <th scope="col" id="table-header-1">Assembly</th>
+                        <th scope="col" id="table-header-2">Quantity</th>
+                    </app-small-table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <app-small-table [componentHeight]="threeSixtyFive" [numberOfRows]="6">
+                        <h5 class="text-white" id="small-table-title">Assembly Due Dates</h5>
+                        <th scope="col" id="table-header-1">Assembly</th>
+                        <th scope="col" id="table-header-2">Due Date</th>
+                    </app-small-table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
