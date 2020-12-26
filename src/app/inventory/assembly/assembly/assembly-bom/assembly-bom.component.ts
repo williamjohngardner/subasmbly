@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {FlatTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 
@@ -6,36 +6,21 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
  * Food data with nested structure.
  * Each node has a name and an optional list of children.
  */
-interface FoodNode {
+
+interface assemblyNode {
   name: string;
-  children?: FoodNode[];
+  // _id: string;
+  children?: assemblyNode[];
 }
 
-const TREE_DATA: FoodNode[] = [
+const TREE_DATA: assemblyNode[] = [
   {
-    name: 'Fruit',
-    children: [
-      {name: 'Apple'},
-      {name: 'Banana'},
-      {name: 'Fruit loops'},
-    ]
-  }, {
-    name: 'Vegetables',
-    children: [
-      {
-        name: 'Green',
-        children: [
-          {name: 'Broccoli'},
-          {name: 'Brussels sprouts'},
-        ]
-      }, {
-        name: 'Orange',
-        children: [
-          {name: 'Pumpkins'},
-          {name: 'Carrots'},
-        ]
-      },
-    ]
+    name: 'subassemblies',
+    children: []
+  }, 
+  {
+    name: 'parts',
+    children: []
   },
 ];
 
@@ -52,7 +37,8 @@ interface ExampleFlatNode {
   styleUrls: ['./assembly-bom.component.css']
 })
 export class AssemblyBomComponent {
-  private _transformer = (node: FoodNode, level: number) => {
+  @Input() _assemblyData: object;
+  private _transformer = (node: assemblyNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
@@ -60,16 +46,18 @@ export class AssemblyBomComponent {
     };
   }
 
-  treeControl = new FlatTreeControl<ExampleFlatNode>(
-      node => node.level, node => node.expandable);
+  treeControl = new FlatTreeControl<ExampleFlatNode>(node => node.level, node => node.expandable);
 
-  treeFlattener = new MatTreeFlattener(
-      this._transformer, node => node.level, node => node.expandable, node => node.children);
+  treeFlattener = new MatTreeFlattener(this._transformer, node => node.level, node => node.expandable, node => node.children);
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
   constructor() {
     this.dataSource.data = TREE_DATA;
+  }
+
+  ngAfterViewInit() {
+    console.log('ASSEMBLY DATA IN BOM COMPONENT: ', this._assemblyData);
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;

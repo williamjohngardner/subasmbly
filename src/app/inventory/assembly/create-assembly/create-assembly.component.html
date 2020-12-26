@@ -1,9 +1,16 @@
 <div>
     <div class="modal-header p-5">
-      <h4 class="modal-title" id="modal-basic-title">Create A New Assembly</h4>
-      <button type="button" class="close" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+      <div class="row w-100">
+        <div class="col-8">
+          <h4 class="modal-title" id="modal-basic-title">Create A New Assembly</h4>
+        </div>
+        <div class="col-4">
+          <button type="button" class="close text-dark" (click)="closeModal()">
+            <fa-icon [icon]="['fas', 'times-circle']" size="3x"></fa-icon>
+          </button>
+        </div>
+
+      </div>
     </div>
     <div class="modal-body p-5">
       <form [formGroup]="createAssemblyForm">

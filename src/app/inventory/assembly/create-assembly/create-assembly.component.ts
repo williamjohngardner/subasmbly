@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormArray, Validators } from '@angular/forms';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { AssemblyService } from '../../../_services/assembly.service';
 import { SubassemblyService } from '../../../_services/subassembly.service';
@@ -32,7 +32,8 @@ export class CreateAssemblyComponent implements OnInit {
     readonly _router: Router,
     readonly _assemblyService: AssemblyService,
     readonly _subAssemblyService: SubassemblyService,
-    readonly _partService: PartService
+    readonly _partService: PartService,
+    readonly _modalService: NgbActiveModal
   ) { }
 
   ngOnInit(): void {
@@ -99,5 +100,9 @@ export class CreateAssemblyComponent implements OnInit {
       Error => {
         alert(Error);
       });
+  }
+
+  closeModal () {
+    this._modalService.close();
   }
 }

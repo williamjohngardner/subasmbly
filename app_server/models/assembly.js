@@ -8,6 +8,17 @@ const Subassembly = require('../models/subassembly');
 const Category = require('../models/category');
 const SubCategory = require('../models/subcategory');
 
+const projectSchema = mongoose.Schema({
+    _id: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true
+    },
+    projectName: {
+        type: String,
+        required: true,
+    }
+});
+
 const partSchema = mongoose.Schema({
     _id: {
         type: mongoose.Schema.Types.ObjectId,
@@ -49,6 +60,10 @@ const assemblySchema = mongoose.Schema({
     },
     subCategory: {
         type: String,
+        required: false
+    },
+    projects: {
+        type: [projectSchema],
         required: false
     },
     parts: {

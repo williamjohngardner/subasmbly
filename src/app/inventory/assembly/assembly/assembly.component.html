@@ -122,9 +122,45 @@
                             <div class="form-group mb-2 shadow-sm">
                                 <div class="input-group input-group-sm">
                                     <div class="input-group-prepend input-group-prepend-short">
+                                        <label class="input-group-text rounded-0 w-100">Cost Currency</label>
+                                    </div>
+                                    <input formControlName="unitCostCurrency" type="text" class="form-control form-control-sm rounded-0" id="assemblyUnitCostCurrency">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group mb-2 shadow-sm">
+                                <div class="input-group input-group-sm">
+                                    <div class="input-group-prepend input-group-prepend-short">
+                                        <label class="input-group-text rounded-0 w-100">Unit Markup</label>
+                                    </div>
+                                    <input formControlName="unitMarkup" type="text" class="form-control form-control-sm rounded-0" id="assemblyUnitMarkup">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group mb-2 shadow-sm">
+                                <div class="input-group input-group-sm">
+                                    <div class="input-group-prepend input-group-prepend-short">
                                         <label class="input-group-text rounded-0 w-100">Unit Price</label>
                                     </div>
                                     <input formControlName="unitPrice" type="text" class="form-control form-control-sm rounded-0" id="assemblyUnitPrice">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <div class="form-group mb-2 shadow-sm">
+                                <div class="input-group input-group-sm">
+                                    <div class="input-group-prepend input-group-prepend-short">
+                                        <label class="input-group-text rounded-0 w-100">Price Currency</label>
+                                    </div>
+                                    <input formControlName="unitPriceCurrency" type="text" class="form-control form-control-sm rounded-0" id="assemblyUnitPriceCurrency">
                                 </div>
                             </div>
                         </div>
@@ -166,7 +202,7 @@
                 </form>
             </div>
             <div class="col-8">
-                <app-assembly-bom></app-assembly-bom>
+                <app-assembly-bom [_assemblyData]="this.structuredTree"></app-assembly-bom>
             </div>
         </div>
     </div>
