@@ -37,19 +37,19 @@ export class CreateProjectComponent implements OnInit {
 
   createForm() {
     this.createProjectForm = this._formBuilder.group({
-      projectName: [{ value: '', disabled: false }],
+      name: [{ value: '', disabled: false }],
       projectNumber: [{ value: '', disabled: false }],
       description: [{ value: '', disabled: false }],
       category: [{ value: '', disabled: false }],
       subCategory: [{ value: '', disabled: false }],
       parts: this._formBuilder.group({
-        partName: [{ value: '', disabled: false }]
+        name: [{ value: '', disabled: false }]
       }),
       subassemblies: this._formBuilder.group({
-        subassemblyName: [{ value: '', disabled: false }]
+        name: [{ value: '', disabled: false }]
       }),
       assemblies: this._formBuilder.group({
-        assemblyName: [{ value: '', disabled: false }]
+        name: [{ value: '', disabled: false }]
       }),
       projectCost: [{ value: '', disabled: false }],
       projectPrice: [{ value: '', disabled: false }]

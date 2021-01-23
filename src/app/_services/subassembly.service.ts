@@ -35,7 +35,7 @@ export class SubassemblyService {
     return this.http.get<Subassembly>(`${this.subassemblyUrl}name`, { 
       headers: { 'Content-Type': 'application/json' },
       observe: 'response',
-      params: {'subassemblyName': name }
+      params: {'name': name }
     });
   }
 

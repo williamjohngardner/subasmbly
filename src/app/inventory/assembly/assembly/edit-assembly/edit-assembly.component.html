@@ -4,7 +4,7 @@
         <div class="col">
             <div class="form-group mb-0 shadow-sm">
                 <label class="mb-0 pl-2"><small>Assembly Name</small></label>
-                <input formControlName="assemblyName" type="text" class="form-control form-control-sm rounded-0" id="assemblyName">
+                <input formControlName="name" type="text" class="form-control form-control-sm rounded-0" id="assemblyName">
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
             <div class="col">
                 <div class="form-group mb-0 shadow-sm">
                     <label class="mb-0 pl-2"><small>Part {{i + 1}}</small></label>
-                    <input type="text" class="form-control form-control-sm rounded-0" id="assemblyPartName{{i}}" value="{{part.partName}}">
+                    <input type="text" class="form-control form-control-sm rounded-0" id="assemblyPartName{{i}}" value="{{part.name}}">
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
             <div class="col">
                 <div class="form-group mb-0 shadow-sm">
                     <label class="mb-0 pl-2"><small>Subassembly {{i + 1}}</small></label>
-                    <input type="text" class="form-control form-control-sm rounded-0" id="assemblySubassemblyName{{i}}" value="{{subassembly.subassemblyName}}">
+                    <input type="text" class="form-control form-control-sm rounded-0" id="assemblySubassemblyName{{i}}" value="{{subassembly.name}}">
                 </div>
             </div>
         </div>

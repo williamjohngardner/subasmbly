@@ -26,7 +26,7 @@
                         </thead>
                         <tbody *ngFor="let project of _projects; let i = index">
                             <tr (click)="openProject(project._id)" style="cursor: pointer">
-                                <td>{{project.projectName}}</td>
+                                <td>{{project.name}}</td>
                                 <td>{{project.projectNumber}}</td>
                                 <td>{{project.category}}</td>
                                 <td>{{project.subCategory}}</td>

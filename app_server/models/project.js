@@ -9,9 +9,13 @@ const partSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: false
     },
-    partName: {
+    name: {
         type: String,
         required: true,
+    },
+    quantity: {
+        type: Number,
+        required: true
     }
 });
 
@@ -20,9 +24,13 @@ const subassemblySchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: false
     },
-    subassemblyName: {
+    name: {
         type: String,
         required: true,
+    },
+    quantity: {
+        type: Number,
+        required: true
     }
 });
 
@@ -31,14 +39,18 @@ const assemblySchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: false
     },
-    assemblyName: {
+    name: {
         type: String,
         required: true,
+    },
+    quantity: {
+        type: Number,
+        required: true
     }
 });
 
 const projectSchema = mongoose.Schema({
-    projectName: { type: String },
+    name: { type: String },
     projectNumber: { type: String },
     description: { type: String },
     category: {

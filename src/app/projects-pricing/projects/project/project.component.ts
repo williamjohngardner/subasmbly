@@ -29,7 +29,7 @@ export class ProjectComponent implements OnInit {
 
   createProjectForm() {
     this.projectForm = this._formBuilder.group({
-      projectName: [{ value: this._project['projectName'], disabled: false }],
+      name: [{ value: this._project['name'], disabled: false }],
       projectNumber: [{ value: this._project['projectNumber'], disabled: false }],
       description: [{ value: this._project['description'], disabled: false }],
       category: [{ value: this._project['category'], disabled: false }],
@@ -67,21 +67,21 @@ export class ProjectComponent implements OnInit {
 
   createPartsFormGroup (part: any) {
     return new FormGroup({
-      partName: new FormControl(part.partName),
+      name: new FormControl(part.name),
       _id: new FormControl(part._id),
     });
   }
 
   createSubassemblyFormGroup (subassembly: any) {
     return new FormGroup({
-      subassemblyName: new FormControl(subassembly.subassemblyName),
+      name: new FormControl(subassembly.name),
       _id: new FormControl(subassembly._id),
     });
   }
 
   createAssemblyFormGroup (assembly: any) {
     return new FormGroup({
-      assemblyName: new FormControl(assembly.assemblyName),
+      name: new FormControl(assembly.name),
       _id: new FormControl(assembly._id),
     });
   }

@@ -30,7 +30,7 @@ export class SearchComponent implements OnInit {
 
   createForm () {
     this.searchForm = this._formBuilder.group({
-      assemblyName: [''],
+      name: [''],
       assemblyNumber: [''],
       category: [''],
       subCategory: [''],

@@ -13,7 +13,7 @@
                             <div class="card-body p-4">
                                 <div class="row">
                                     <div class="col">
-                                        <h5 class="card-title">{{project.projectName}}</h5>
+                                        <h5 class="card-title">{{project.name}}</h5>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -71,10 +71,10 @@
                             </thead>
                             <tbody *ngFor="let part of this.data">
                                 <tr>
-                                    <td>{{part.partName}}</td>
+                                    <td>{{part.name}}</td>
                                     <td>{{part.partNumber}}</td>
                                     <td>{{part.unitCost}}</td>
-                                    <td>{{part.partName}}</td>
+                                    <td>{{part.name}}</td>
                                     <td>{{part.partNumber}}</td>
                                     <td>{{part.unitCost}}</td>
                                 </tr>

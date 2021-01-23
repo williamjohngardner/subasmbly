@@ -5,7 +5,7 @@
 const mongoose = require('mongoose');
 
 const partSchema = mongoose.Schema({
-    partName: { type: String },
+    name: { type: String },
     partNumber: { type: String },
     description: { type: String },
     category: {

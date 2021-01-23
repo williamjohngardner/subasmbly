@@ -28,7 +28,7 @@ export class PartComponent implements OnInit {
 
   createPartForm () {
     this.partForm = this._formBuilder.group({
-      partName: [{ value: this._part['partName'], disabled: false }],
+      name: [{ value: this._part['name'], disabled: false }],
       partNumber: [{ value: this._part['partNumber'], disabled: false }],
       description: [{ value: this._part['description'], disabled: false }],
       category: [{ value: this._part['category'], disabled: false }],

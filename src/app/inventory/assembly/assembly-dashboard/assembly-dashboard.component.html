@@ -46,7 +46,7 @@
                                         <tbody *ngFor="let assembly of this._assembly['_value']['assemblies']['body']; let i = index">
                                             <tr>
                                                 <th scope="row">{{i + 1}}</th>
-                                                <td (click)="openAssembly(assembly._id)" style="cursor: pointer">{{assembly.assemblyName}}</td>
+                                                <td (click)="openAssembly(assembly._id)" style="cursor: pointer">{{assembly.name}}</td>
                                                 <td>{{assembly.assemblyNumber}}</td>
                                                 <td>{{assembly.category}}</td>
                                                 <td>{{assembly.subCategory}}</td>

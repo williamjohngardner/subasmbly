@@ -29,7 +29,7 @@ export class SubassemblyComponent implements OnInit {
 
   createSubassemblyForm () {
     this.subassemblyForm = this._formBuilder.group({
-      subassemblyName: [{ value: this._subassembly['subassemblyName'], disabled: false }],
+      name: [{ value: this._subassembly['name'], disabled: false }],
       subassemblyNumber: [{ value: this._subassembly['subassemblyNumber'], disabled: false }],
       description: [{ value: this._subassembly['description'], disabled: false }],
       category: [{ value: this._subassembly['category'], disabled: false }],
@@ -52,7 +52,7 @@ export class SubassemblyComponent implements OnInit {
 
   createPartsFormGroup (part: any) {
     return new FormGroup({
-      partName: new FormControl(part.partName),
+      nme: new FormControl(part.name),
       _id: new FormControl(part._id),
     });
   }

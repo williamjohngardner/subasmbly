@@ -36,13 +36,13 @@ export class CreateSubassemblyComponent implements OnInit {
 
   createForm() {
     this.createSubassemblyForm = this._formBuilder.group({
-      subassemblyName: [{ value: '', disabled: false }],
+      name: [{ value: '', disabled: false }],
       subassemblyNumber: [{ value: '', disabled: false }],
       description: [{ value: '', disabled: false }],
       category: [{ value: '', disabled: false }],
       subCategory: [{ value: '', disabled: false }],
       parts: this._formBuilder.group({
-        partName: [{ value: '', disabled: false }]
+        name: [{ value: '', disabled: false }]
       }),
       uom: [{ value: '', disabled: false }],
       unitCost: [{ value: '', disabled: false }],

@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faChevronLeft, faChevronDown, faSearch, faExpandAlt, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft, faChevronRight, faChevronDown, faSearch, faExpandAlt, faUser } from '@fortawesome/free-solid-svg-icons';
 
 import { AppRoutingModule } from './app-routing.module';
 import { InventoryModule } from './inventory/inventory.module';
@@ -49,6 +49,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faChevronLeft, faChevronDown, faSearch, faExpandAlt, faUser);
+    library.addIcons(faChevronLeft, faChevronRight, faChevronDown, faSearch, faExpandAlt, faUser);
   }
 }

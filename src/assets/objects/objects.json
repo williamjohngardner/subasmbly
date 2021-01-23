@@ -94,7 +94,7 @@
     },
     {
         "subassembly": {
-            "subassemblyName": "THIS NOT THE FIFTH SUBASSEMBLY",
+            "name": "THIS NOT THE FIFTH SUBASSEMBLY",
             "subassemblyNumber": "23456-654",
             "description": "This is a description of a subassembly",
             "category": "Here is your category",

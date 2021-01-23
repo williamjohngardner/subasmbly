@@ -28,7 +28,7 @@
                                 </thead>
                                 <tbody *ngFor="let part of this._part['_value']['part']['body']; let i = index">
                                     <tr>
-                                        <td (click)="openPart(part._id)" style="cursor: pointer">{{part.partName}}</td>
+                                        <td (click)="openPart(part._id)" style="cursor: pointer">{{part.name}}</td>
                                         <td>{{part.partNumber}}</td>
                                         <td>{{part.category}}</td>
                                         <td>{{part.subCategory}}</td>

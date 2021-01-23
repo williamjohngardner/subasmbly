@@ -1,18 +1,18 @@
 export interface Assembly {
-    assemblyName: string;
+    name: string;
     assemblyNumber: string;
     description: string;
     category: string;
     subCategory: string;
     parts: [
         {
-            partName: string;
+            name: string;
             _id: string;
         }
     ];
     subassemblies: [
         {
-            partName: string;
+            name: string;
             _id: string;
         }
     ];

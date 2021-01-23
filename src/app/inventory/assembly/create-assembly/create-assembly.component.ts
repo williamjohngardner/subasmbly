@@ -42,7 +42,7 @@ export class CreateAssemblyComponent implements OnInit {
 
   createForm() {
     this.createAssemblyForm = this._formBuilder.group({
-      assemblyName: [{ value: '', disabled: false }],
+      name: [{ value: '', disabled: false }],
       assemblyNumber: [{ value: '', disabled: false }],
       description: [{ value: '', disabled: false }],
       category: [{ value: '', disabled: false }],
@@ -71,7 +71,7 @@ export class CreateAssemblyComponent implements OnInit {
 
   createPartFormGroup (part: object) {
     return new FormGroup({
-      partName: new FormControl(part['partName']),
+      name: new FormControl(part['name']),
       _id: new FormControl(part['_id']),
     });
   }
@@ -86,7 +86,7 @@ export class CreateAssemblyComponent implements OnInit {
 
   createSubassemblyFormGroup (subAssembly: object) {
     return new FormGroup({
-      subassemblyName: new FormControl(subAssembly['subassemblyName']),
+      name: new FormControl(subAssembly['name']),
       _id: new FormControl(subAssembly['_id']),
     });
   }

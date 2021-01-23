@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import {FlatTreeControl} from '@angular/cdk/tree';
-import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
+import { NestedTreeControl } from '@angular/cdk/tree';
+import { MatTreeNestedDataSource } from '@angular/material/tree';
 
 /**
  * Food data with nested structure.
@@ -9,26 +9,9 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 
 interface assemblyNode {
   name: string;
+  assemblyNumber: string;
   // _id: string;
   children?: assemblyNode[];
-}
-
-const TREE_DATA: assemblyNode[] = [
-  {
-    name: 'subassemblies',
-    children: []
-  }, 
-  {
-    name: 'parts',
-    children: []
-  },
-];
-
-/** Flat node with expandable and level information */
-interface ExampleFlatNode {
-  expandable: boolean;
-  name: string;
-  level: number;
 }
 
 @Component({
@@ -38,27 +21,33 @@ interface ExampleFlatNode {
 })
 export class AssemblyBomComponent {
   @Input() _assemblyData: object;
-  private _transformer = (node: assemblyNode, level: number) => {
-    return {
-      expandable: !!node.children && node.children.length > 0,
-      name: node.name,
-      level: level,
-    };
-  }
-
-  treeControl = new FlatTreeControl<ExampleFlatNode>(node => node.level, node => node.expandable);
-
-  treeFlattener = new MatTreeFlattener(this._transformer, node => node.level, node => node.expandable, node => node.children);
-
-  dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+  treeControl = new NestedTreeControl<assemblyNode>(node => node.children);
+  dataSource = new MatTreeNestedDataSource<assemblyNode>();
+  private structuredData: assemblyNode[] = [
+    {
+      name: '',
+      assemblyNumber: '',
+      children: []
+    }
+  ];
 
   constructor() {
-    this.dataSource.data = TREE_DATA;
+    
   }
 
   ngAfterViewInit() {
     console.log('ASSEMBLY DATA IN BOM COMPONENT: ', this._assemblyData);
+    this.structuredData[0].name = this._assemblyData['name'];
+    this.structuredData[0].assemblyNumber = this._assemblyData['assemblyNumber'];
+    for(const sub of this._assemblyData['subassemblies']) {
+      this.structuredData[0].children.push(sub);
+    }
+    for(const part of this._assemblyData['parts']){
+      this.structuredData[0].children.push(part);
+    }
+    console.log('STRUCTURED DATA: ', this.structuredData);
+    this.dataSource.data = this.structuredData;
   }
 
-  hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+  hasChild = (_: number, node: assemblyNode) => !!node.children && node.children.length > 0;
 }

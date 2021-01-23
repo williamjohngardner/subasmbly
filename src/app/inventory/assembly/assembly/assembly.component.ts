@@ -34,14 +34,17 @@ export class AssemblyComponent implements OnInit {
   ngOnInit() {
     this.createassemblyForm();
     this.structuredTree = {
+      name: this._assembly.name,
+      assemblyNumber: this._assembly.assemblyNumber,
       subassemblies: this._assembly.subassemblies,
       parts: this._assembly.parts
     };
+    console.log('STRUCTRED TREE: ', this.structuredTree, this._assembly);
   }
 
   createassemblyForm() {
     this.assemblyForm = this._formBuilder.group({
-      assemblyName: [{ value: this._assembly['assemblyName'], disabled: false }],
+      name: [{ value: this._assembly['name'], disabled: false }],
       assemblyNumber: [{ value: this._assembly['assemblyNumber'], disabled: false }],
       description: [{ value: this._assembly['description'], disabled: false }],
       category: [{ value: this._assembly['category'], disabled: false }],
@@ -69,7 +72,7 @@ export class AssemblyComponent implements OnInit {
 
   createProjectsFormGroup (project: any) {
     return new FormGroup({
-      projectName: new FormControl(project.projectName),
+      name: new FormControl(project.name),
       _id: new FormControl(project._id),
     });
   }
@@ -83,7 +86,7 @@ export class AssemblyComponent implements OnInit {
 
   createPartsFormGroup (part: any) {
     return new FormGroup({
-      partName: new FormControl(part.partName),
+      name: new FormControl(part.name),
       _id: new FormControl(part._id),
     });
   }
@@ -97,7 +100,7 @@ export class AssemblyComponent implements OnInit {
 
   createSubassemblyFormGroup (subassembly: any) {
     return new FormGroup({
-      subassemblyName: new FormControl(subassembly.subassemblyName),
+      name: new FormControl(subassembly.name),
       _id: new FormControl(subassembly._id),
     });
   }

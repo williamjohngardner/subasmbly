@@ -36,7 +36,7 @@ export class PartService {
     return this.http.get<Part>(`${this.partUrl}name`, { 
       headers: { 'Content-Type': 'application/json' },
       observe: 'response',
-      params: {'partName': name }
+      params: {'name': name }
     });
   }
 

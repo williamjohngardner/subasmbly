@@ -10,9 +10,13 @@ const partSchema = mongoose.Schema({
     // required: true *** commented out until I can make the UI changes to accomodate this
     required: false
   },
-  partName: {
+  name: {
     type: String,
     required: true,
+  },
+  quantity: {
+      type: Number,
+      required: true
   }
 });
 
@@ -21,14 +25,18 @@ const subassemblySubSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true
   },
-  subassemblyName: {
+  name: {
     type: String,
     required: true,
+  },
+  quantity: {
+      type: Number,
+      required: true
   }
 });
 
 const subassemblySchema = mongoose.Schema({
-  subassemblyName: {
+  name: {
     type: String,
     required: true
   },

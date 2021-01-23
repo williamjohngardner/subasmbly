@@ -1,12 +1,12 @@
 export interface Subassembly {
-    subassemblyName: string;
+    name: string;
     subassemblyNumber: string;
     description: string;
     category: string;
     subCategory: string;
     parts: [
         {
-            partName: string;
+            name: string;
             _id: string;
         }
     ];

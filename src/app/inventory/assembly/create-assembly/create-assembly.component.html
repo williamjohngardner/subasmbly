@@ -19,7 +19,7 @@
             <div class="input-group-prepend">
               <label for="assemblyName" class="input-group-text rounded-0" id="createFormName">Assembly Name</label>
             </div>
-            <input formControlName="assemblyName" type="text" class="form-control rounded-0">
+            <input formControlName="name" type="text" class="form-control rounded-0">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -61,7 +61,7 @@
         </div>
         <div *ngFor="let part of this.createAssemblyForm.controls.parts.value" class="form-row">
           <h6>
-            {{part.partName | json}}
+            {{part.name | json}}
           </h6>
         </div>
         <div class="form-row">
@@ -73,7 +73,7 @@
       </div>
       <div *ngFor="let sub of this.createAssemblyForm.controls.subassemblies.value" class="form-row">
         <h6>
-          {{sub.subassemblyName | json}}
+          {{sub.name | json}}
         </h6>
       </div>
         <div class="form-row">

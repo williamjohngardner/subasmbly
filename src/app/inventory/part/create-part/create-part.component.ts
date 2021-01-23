@@ -35,7 +35,7 @@ export class CreatePartComponent implements OnInit {
 
   createForm() {
     this.createPartForm = this._formBuilder.group({
-      partName: [{ value: '', disabled: false }],
+      name: [{ value: '', disabled: false }],
       partNumber: [{ value: '', disabled: false }],
       description: [{ value: '', disabled: false }],
       category: [{ value: '', disabled: false }],
