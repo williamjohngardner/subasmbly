@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
@@ -31,7 +33,9 @@ export class AssemblyBomComponent {
     }
   ];
 
-  constructor() {
+  constructor(
+    readonly _router: Router
+  ) {
     
   }
 
@@ -50,4 +54,8 @@ export class AssemblyBomComponent {
   }
 
   hasChild = (_: number, node: assemblyNode) => !!node.children && node.children.length > 0;
+
+  openNode(id: string) {
+    this._router.navigate(['inventory', 'subassembly', id]);
+  }
 }
