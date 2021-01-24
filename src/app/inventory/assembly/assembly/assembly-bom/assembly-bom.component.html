@@ -7,7 +7,7 @@
       <table class="table table-sm bg-white">
         <tbody>
           <tr>
-            <th scope="row"></th>
+            <th scope="row">-</th>
             <td (click)="openNode(node._id)">{{node.name}}</td>
             <td>{{node._id}}</td>
             <td>5</td>
@@ -26,7 +26,10 @@
             <fa-icon *ngIf="treeControl.isExpanded(node)" icon="chevron-down" size="md"></fa-icon>
           </mat-icon>
         </button>
-        {{node.name}}
+        <ul style="width: 100%">
+          <li style="width: 40%; list-style-type: none; display: inline-block;">{{node.name}}</li>
+          <li style="width: 60%; list-style-type: none; display: inline-block">{{node.partNumber}}</li>
+        </ul>
       </div>
       <ul [class.example-tree-invisible]="!treeControl.isExpanded(node)">
         <header>

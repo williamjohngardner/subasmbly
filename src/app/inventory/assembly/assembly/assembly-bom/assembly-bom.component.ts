@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
+import { PartService } from '../../../../_services/part.service';
+import { SubassemblyService } from '../../../../_services/subassembly.service';
+
 /**
  * Food data with nested structure.
  * Each node has a name and an optional list of children.
@@ -11,7 +14,7 @@ import { MatTreeNestedDataSource } from '@angular/material/tree';
 
 interface assemblyNode {
   name: string;
-  assemblyNumber: string;
+  partNumber: string;
   // _id: string;
   children?: assemblyNode[];
 }
@@ -28,29 +31,45 @@ export class AssemblyBomComponent {
   private structuredData: assemblyNode[] = [
     {
       name: '',
-      assemblyNumber: '',
+      partNumber: '',
       children: []
     }
   ];
 
   constructor(
-    readonly _router: Router
-  ) {
-    
-  }
+    readonly _router: Router,
+    readonly _subassemblyService: SubassemblyService,
+    readonly _partService: PartService
+  ) { }
 
   ngAfterViewInit() {
     console.log('ASSEMBLY DATA IN BOM COMPONENT: ', this._assemblyData);
     this.structuredData[0].name = this._assemblyData['name'];
-    this.structuredData[0].assemblyNumber = this._assemblyData['assemblyNumber'];
-    for(const sub of this._assemblyData['subassemblies']) {
-      this.structuredData[0].children.push(sub);
-    }
+    this.structuredData[0].partNumber = this._assemblyData['assemblyNumber'];
     for(const part of this._assemblyData['parts']){
       this.structuredData[0].children.push(part);
     }
-    console.log('STRUCTURED DATA: ', this.structuredData);
-    this.dataSource.data = this.structuredData;
+    // Subassemblies can have child subassemblies and parts.  This call gets children 1 level down.
+    for(const sub of this._assemblyData['subassemblies']) {
+      const localSubassembly: any = {
+        name: '',
+        partNumber: '',
+      };
+      this._subassemblyService.getSubassemblyById(sub['_id']).subscribe(data => {
+        console.log('DATA CALL: ', data);
+        localSubassembly['name'] = data['body']['name'];
+        localSubassembly['_id'] = data['body']['_id'];
+        localSubassembly['partNumber'] = data['body']['subassemblyNumber'];
+        localSubassembly['children'] = data['body']['subassemblies'];
+        for(const part of data['body']['parts'])
+        {
+          localSubassembly['children'].push(part);
+        }
+        this.structuredData[0].children.push(localSubassembly);
+        console.log('STRUCTURED DATA: ', this.structuredData);
+        this.dataSource.data = this.structuredData;
+      })
+    }
   }
 
   hasChild = (_: number, node: assemblyNode) => !!node.children && node.children.length > 0;
